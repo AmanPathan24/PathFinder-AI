@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePath } from '@/context/PathContext';
 import { SkillTreeVisualizer } from '@/components/SkillTreeVisualizer';
 import {
-  Sparkles,
   Clock,
   CheckCircle2,
   AlertCircle,
@@ -31,16 +30,16 @@ export default function PathPage() {
   if (!pathOutput || !parsedProfile) {
     return (
       <div className="max-w-xl mx-auto text-center py-20 space-y-6">
-        <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center mx-auto text-teal-400">
+        <div className="w-16 h-16 rounded-2xl bg-[#FFF9F0] border border-[#E6DCCF] flex items-center justify-center mx-auto text-[#C96F4A] paper-shadow">
           <GitFork className="w-8 h-8" />
         </div>
-        <h1 className="text-2xl font-bold text-white">No Active Learning Roadmap</h1>
-        <p className="text-slate-400 text-sm">
-          Please enter your learning goal on the intake page to generate your personalized path.
+        <h1 className="text-3xl font-serif font-bold text-[#4A3728]">No Active Learning Roadmap</h1>
+        <p className="text-[#7A6553] text-sm">
+          Please enter your learning ambition on the intake page to generate your personalized path.
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-slate-950 font-bold rounded-xl text-sm shadow-lg shadow-teal-500/20 hover:bg-teal-400 transition-all"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#C96F4A] text-white font-bold rounded-xl text-sm shadow-md hover:bg-[#A85331] transition-all"
         >
           Go to Intake
           <ArrowRight className="w-4 h-4" />
@@ -54,24 +53,22 @@ export default function PathPage() {
   return (
     <div className="max-w-6xl mx-auto space-y-10 py-4">
       {/* Header Banner */}
-      <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-teal-500/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
-
+      <div className="bg-[#FFF9F0] border border-[#E6DCCF] rounded-3xl p-6 sm:p-10 paper-shadow-lg relative overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-semibold text-teal-400 bg-teal-500/10 px-3 py-1 rounded-full border border-teal-500/20">
-                Track: {parsedProfile.target_track.toUpperCase()}
+              <span className="text-xs font-bold text-[#8C9A76] bg-[#E4EAD9] px-3 py-1 rounded-full border border-[#8C9A76]/30 uppercase tracking-wider">
+                Track: {parsedProfile.target_track}
               </span>
-              <span className="text-xs text-slate-400 flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5" />
+              <span className="text-xs text-[#7A6553] font-semibold flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5 text-[#B58B65]" />
                 {total_est_hours} Total Hours ({parsedProfile.time_budget_weeks} Weeks)
               </span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-serif text-[#4A3728] font-bold tracking-tight">
               Personalized Learning Roadmap
             </h1>
-            <p className="text-xs sm:text-sm text-slate-400 max-w-xl italic">
+            <p className="text-xs sm:text-sm text-[#7A6553] italic max-w-xl font-medium">
               "{parsedProfile.raw_goal}"
             </p>
           </div>
@@ -79,16 +76,16 @@ export default function PathPage() {
           <div className="flex items-center gap-3 shrink-0">
             <Link
               href="/onboarding"
-              className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 flex items-center gap-2 transition-all"
+              className="px-4 py-2.5 bg-[#FFFFFF] hover:bg-[#F0E8DC] text-[#4A3728] text-xs font-bold rounded-xl border border-[#E6DCCF] flex items-center gap-2 transition-all shadow-sm"
             >
-              <Sliders className="w-4 h-4 text-teal-400" />
+              <Sliders className="w-4 h-4 text-[#C96F4A]" />
               Adjust Profile
             </Link>
             <Link
               href="/dashboard"
-              className="px-4 py-2.5 bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 text-xs font-bold rounded-xl shadow-lg shadow-teal-500/20 flex items-center gap-2 transition-all"
+              className="px-5 py-2.5 bg-[#C96F4A] hover:bg-[#A85331] text-white text-xs font-bold rounded-xl shadow-md flex items-center gap-2 transition-all"
             >
-              View Analytics
+              View Dashboard
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -96,11 +93,11 @@ export default function PathPage() {
 
         {/* Budget Trimming Banner */}
         {is_trimmed && (
-          <div className="mt-6 bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 flex items-start gap-3 text-amber-200 text-xs">
-            <AlertCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+          <div className="mt-6 bg-[#FFF9F0] border-2 border-[#C96F4A]/40 rounded-2xl p-4 flex items-start gap-3 text-[#4A3728] text-xs">
+            <AlertCircle className="w-5 h-5 text-[#C96F4A] shrink-0 mt-0.5" />
             <div>
-              <div className="font-semibold text-amber-300">Time Budget Constrained Optimization</div>
-              <div className="mt-0.5 opacity-90 leading-relaxed">
+              <div className="font-bold text-[#A85331]">Time Budget Constrained Optimization</div>
+              <div className="mt-0.5 text-[#7A6553] leading-relaxed font-medium">
                 Total track content ({total_est_hours + trimmed_nodes.reduce((s, n) => s + n.est_hours, 0)}h) exceeded your {time_budget_hours}h limit.
                 The Path Engine automatically trimmed {trimmed_nodes.length} optional topic(s) to keep your path achievable within budget!
               </div>
@@ -124,13 +121,13 @@ export default function PathPage() {
 
       {/* Detailed Milestone Roadmap List */}
       <div className="space-y-6">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-          <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <Layers className="w-5 h-5 text-teal-400" />
+        <div className="flex items-center justify-between border-b border-[#E6DCCF] pb-4">
+          <h2 className="text-2xl font-serif text-[#4A3728] font-bold flex items-center gap-2">
+            <Layers className="w-5 h-5 text-[#C96F4A]" />
             Milestone Breakdown & Grounded Explanations
           </h2>
           {isLoading && (
-            <span className="text-xs text-teal-400 flex items-center gap-1.5 animate-pulse">
+            <span className="text-xs text-[#C96F4A] font-bold flex items-center gap-1.5 animate-pulse">
               <RefreshCw className="w-3.5 h-3.5 animate-spin" /> Recalculating path...
             </span>
           )}
@@ -140,29 +137,29 @@ export default function PathPage() {
           {milestones.map((milestone) => (
             <div
               key={milestone.milestone_index}
-              className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 space-y-4"
+              className="bg-[#FFF9F0] border border-[#E6DCCF] rounded-3xl p-6 sm:p-8 space-y-5 paper-shadow"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-teal-500/15 border border-teal-500/30 text-teal-300 font-bold text-sm flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-xl bg-[#4A3728] text-white font-serif font-bold text-base flex items-center justify-center shadow-sm">
                     M{milestone.milestone_index}
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-white">{milestone.title}</h3>
-                    <p className="text-xs text-slate-400 mt-0.5">
-                      Estimated Time: {milestone.est_hours} Hours &bull; {milestone.nodes.length} Topic(s)
+                    <h3 className="text-lg font-serif font-bold text-[#4A3728]">{milestone.title}</h3>
+                    <p className="text-xs text-[#7A6553] font-medium mt-0.5">
+                      Estimated Duration: {milestone.est_hours} Hours &bull; {milestone.nodes.length} Topic(s)
                     </p>
                   </div>
                 </div>
 
                 {milestone.is_parallel && (
-                  <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-                    ⚡ Parallel Milestone
+                  <span className="text-xs font-bold text-[#8C9A76] bg-[#E4EAD9] px-3.5 py-1 rounded-full border border-[#8C9A76]/30">
+                    ⚡ Parallel Study Milestone
                   </span>
                 )}
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {milestone.nodes.map((node) => {
                   const isDone = completedNodeIds.includes(node.id);
                   const isExcluded = excludedNodeIds.includes(node.id);
@@ -171,26 +168,26 @@ export default function PathPage() {
                   return (
                     <div
                       key={node.id}
-                      className={`p-4 rounded-xl border transition-all ${
+                      className={`p-5 rounded-2xl border transition-all ${
                         isDone
-                          ? 'bg-emerald-950/20 border-emerald-500/40 text-emerald-100'
+                          ? 'bg-[#E4EAD9] border-[#8C9A76] text-[#4A3728]'
                           : isExcluded
-                          ? 'bg-slate-950/40 border-slate-800 opacity-60'
-                          : 'bg-slate-950/80 border-slate-800 hover:border-slate-700'
+                          ? 'bg-[#F7F1E7] border-[#E6DCCF] opacity-60'
+                          : 'bg-[#FFFFFF] border-[#E6DCCF] paper-shadow'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div className="space-y-1.5">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-bold text-white">{node.title}</span>
-                            <span className="text-[10px] font-semibold text-slate-400 bg-slate-800 px-2 py-0.5 rounded">
-                              {node.type.toUpperCase()}
+                            <span className="text-base font-serif font-bold text-[#4A3728]">{node.title}</span>
+                            <span className="text-[10px] font-bold text-[#7A6553] bg-[#F0E8DC] px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                              {node.type}
                             </span>
                           </div>
-                          <p className="text-xs text-slate-400 leading-relaxed">{node.description}</p>
+                          <p className="text-xs text-[#7A6553] leading-relaxed font-medium">{node.description}</p>
                           {exp && (
-                            <p className="text-xs text-teal-300/90 font-medium italic bg-teal-500/5 p-2.5 rounded-lg border border-teal-500/15 mt-2">
-                              💡 {exp}
+                            <p className="text-xs text-[#4A3728] font-medium italic bg-[#FFF9F0] p-3 rounded-xl border border-[#E6DCCF] mt-2 leading-relaxed">
+                              💡 "{exp}"
                             </p>
                           )}
                         </div>
@@ -199,23 +196,23 @@ export default function PathPage() {
                           <button
                             type="button"
                             onClick={() => toggleNodeCompleted(node.id)}
-                            className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                            className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
                               isDone
-                                ? 'bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20'
-                                : 'bg-slate-800 text-slate-300 hover:bg-emerald-500/20 hover:text-emerald-300'
+                                ? 'bg-[#8C9A76] text-white shadow-sm'
+                                : 'bg-[#F0E8DC] text-[#4A3728] hover:bg-[#8C9A76] hover:text-white'
                             }`}
                           >
                             <CheckCircle2 className="w-3.5 h-3.5" />
-                            {isDone ? 'Completed' : 'Mark Done'}
+                            {isDone ? 'Mastered' : 'Mark Done'}
                           </button>
 
                           <button
                             type="button"
                             onClick={() => toggleNodeExcluded(node.id)}
-                            className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
+                            className={`px-3 py-2 rounded-xl text-xs font-bold border transition-all ${
                               isExcluded
-                                ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
-                                : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-amber-300 hover:bg-slate-800'
+                                ? 'bg-[#C96F4A]/20 text-[#A85331] border-[#C96F4A]/40'
+                                : 'bg-[#FFFFFF] border-[#E6DCCF] text-[#7A6553] hover:text-[#4A3728]'
                             }`}
                           >
                             {isExcluded ? 'Skipped' : 'Skip'}

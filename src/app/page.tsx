@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { usePath } from '@/context/PathContext';
-import { Sparkles, ArrowRight, CheckCircle2, Cpu, GitBranch, ShieldCheck } from 'lucide-react';
+import { Sparkles, ArrowRight, GitBranch, Cpu, ShieldCheck, BookOpen } from 'lucide-react';
 
 const SUGGESTED_PROMPTS = [
   {
@@ -14,12 +14,12 @@ const SUGGESTED_PROMPTS = [
   {
     title: 'Frontend React Engineering',
     prompt: 'I know basic HTML, CSS, and Vanilla JavaScript. I want to master React, TypeScript, and Next.js in 12 weeks.',
-    track: 'Frontend Development',
+    track: 'Frontend Dev',
   },
   {
     title: 'DevOps & Cloud Automation',
     prompt: 'I have basic Linux terminal and Git experience. I want to learn Docker, CI/CD, Terraform, and Kubernetes in 16 weeks.',
-    track: 'DevOps & Cloud',
+    track: 'DevOps',
   },
 ];
 
@@ -54,7 +54,6 @@ export default function LandingPage() {
       setPathOutput(data.path);
       setExplanations(data.explanations || {});
 
-      // Navigate to onboarding page for user confirmation
       router.push('/onboarding');
     } catch (err: any) {
       setError(err?.message || 'Something went wrong. Please try again.');
@@ -66,66 +65,67 @@ export default function LandingPage() {
   return (
     <div className="max-w-4xl mx-auto space-y-12 py-6">
       {/* Hero Header */}
-      <div className="text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-semibold tracking-wide">
-          <Sparkles className="w-4 h-4 text-teal-400" />
-          Deterministic DAG Graph Engine + Grounded AI
+      <div className="text-center space-y-5">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E4EAD9] border border-[#8C9A76]/40 text-[#4A3728] text-xs font-bold tracking-wide">
+          <BookOpen className="w-3.5 h-3.5 text-[#8C9A76]" />
+          Warm Editorial Tech &bull; Graph Algorithm Core
         </div>
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-          Personalized Learning Paths Built on{' '}
-          <span className="bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400 bg-clip-text text-transparent">
-            Real Graph Algorithms
-          </span>
+
+        <h1 className="text-4xl sm:text-6xl font-serif text-[#4A3728] leading-[1.1] tracking-tight">
+          Personalized Learning Paths,<br />
+          <span className="italic font-normal text-[#C96F4A]">Engineered with Precision.</span>
         </h1>
-        <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-          Tell us your goal and existing skills. PathFinder maps your intent against a 
-          verified skill ontology graph—generating optimal, parallelized, and budget-tailored roadmaps.
+
+        <p className="text-[#7A6553] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+          Describe your background and goals in plain language. PathFinder maps your ambition against a curated skill ontology graph to generate an optimal, parallelized roadmap.
         </p>
       </div>
 
-      {/* Goal Intake Card */}
-      <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
+      {/* Main Intake Form Card */}
+      <div className="bg-[#FFF9F0] border border-[#E6DCCF] rounded-3xl p-6 sm:p-10 paper-shadow-lg relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-48 h-48 bg-[#B58B65]/10 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none" />
 
         <form
           onSubmit={(e) => {
             e.preventDefault();
             handleSubmitGoal(rawGoal);
           }}
-          className="space-y-4 relative z-10"
+          className="space-y-5 relative z-10"
         >
-          <label className="block text-sm font-semibold text-slate-200">
-            Describe your background and target goal in plain English:
+          <label className="block text-sm font-bold uppercase tracking-wider text-[#4A3728]">
+            Your Background & Ambition
           </label>
+
           <div className="relative">
             <textarea
               rows={4}
               value={rawGoal}
               onChange={(e) => setRawGoal(e.target.value)}
-              placeholder="e.g. I know Python and basic SQL, and I want to become a data scientist in 6 months..."
-              className="w-full bg-slate-950/80 border border-slate-700/80 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 rounded-xl p-4 text-slate-100 placeholder-slate-500 text-sm sm:text-base resize-none transition-all outline-none"
+              placeholder="e.g. I know Python and basic SQL, and I want to become a Data Scientist in 6 months..."
+              className="w-full bg-[#FFFFFF] border-2 border-[#E6DCCF] focus:border-[#C96F4A] focus:ring-4 focus:ring-[#C96F4A]/10 rounded-2xl p-5 text-[#4A3728] placeholder-[#B58B65]/60 text-base resize-none transition-all outline-none font-medium shadow-inner"
             />
           </div>
 
           {error && (
-            <p className="text-red-400 text-xs sm:text-sm font-medium bg-red-500/10 border border-red-500/20 rounded-lg p-3">
+            <p className="text-[#A85331] text-xs sm:text-sm font-semibold bg-[#C96F4A]/10 border border-[#C96F4A]/20 rounded-xl p-3.5">
               {error}
             </p>
           )}
 
-          <div className="flex items-center justify-between pt-2">
-            <div className="text-xs text-slate-500 hidden sm:block">
-              Stage 1: Intent Extraction &bull; Stage 2: Profiling &bull; Stage 3: DAG Engine
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+            <div className="text-xs text-[#7A6553] font-medium text-center sm:text-left">
+              Stage 1: Intent &bull; Stage 2: Profiling &bull; Stage 3: DAG Engine
             </div>
+
             <button
               type="submit"
               disabled={isLoading || !rawGoal.trim()}
-              className="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-bold rounded-xl shadow-lg shadow-teal-500/20 flex items-center justify-center gap-2.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full sm:w-auto px-8 py-4 bg-[#C96F4A] hover:bg-[#A85331] text-white font-bold text-sm rounded-2xl shadow-md flex items-center justify-center gap-2.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <>
-                  <div className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
-                  Generating Roadmap...
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Building Roadmap...
                 </>
               ) : (
                 <>
@@ -140,10 +140,10 @@ export default function LandingPage() {
 
       {/* Suggested Prompt Cards */}
       <div className="space-y-4">
-        <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400">
-          Or try a quick demo prompt:
+        <h2 className="text-xs font-bold uppercase tracking-widest text-[#7A6553] text-center sm:text-left">
+          Or Select an Exemplar Path Prompt:
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {SUGGESTED_PROMPTS.map((item, idx) => (
             <button
               key={idx}
@@ -152,18 +152,18 @@ export default function LandingPage() {
                 handleSubmitGoal(item.prompt);
               }}
               disabled={isLoading}
-              className="text-left bg-slate-900/50 hover:bg-slate-900 border border-slate-800 hover:border-teal-500/50 rounded-xl p-5 transition-all group hover:shadow-lg hover:shadow-teal-500/5"
+              className="text-left bg-[#FFF9F0] hover:bg-[#FFFFFF] border border-[#E6DCCF] hover:border-[#B58B65] rounded-2xl p-6 transition-all group paper-shadow hover:-translate-y-0.5"
             >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-semibold text-teal-400 bg-teal-500/10 px-2.5 py-0.5 rounded-full border border-teal-500/20">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[11px] font-bold text-[#8C9A76] bg-[#E4EAD9] px-2.5 py-1 rounded-full border border-[#8C9A76]/30 uppercase tracking-wider">
                   {item.track}
                 </span>
-                <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-teal-400 group-hover:translate-x-1 transition-all" />
+                <ArrowRight className="w-4 h-4 text-[#B58B65] group-hover:text-[#C96F4A] group-hover:translate-x-1 transition-all" />
               </div>
-              <h3 className="text-sm font-semibold text-slate-200 mb-1 group-hover:text-white">
+              <h3 className="text-base font-bold text-[#4A3728] font-serif mb-1.5">
                 {item.title}
               </h3>
-              <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+              <p className="text-xs text-[#7A6553] leading-relaxed line-clamp-2">
                 "{item.prompt}"
               </p>
             </button>
@@ -171,40 +171,40 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Key Architectural Differentiator Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-900">
-        <div className="flex gap-3">
-          <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0 text-teal-400">
-            <GitBranch className="w-5 h-5" />
+      {/* Feature Highlights */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-[#E6DCCF]">
+        <div className="flex gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-[#FFF9F0] border border-[#E6DCCF] flex items-center justify-center shrink-0 text-[#C96F4A] paper-shadow">
+            <GitBranch className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-sm font-semibold text-slate-200">Deterministic Path Engine</h4>
-            <p className="text-xs text-slate-400 mt-1">
-              Topological DAG sort ensures true prerequisite ordering, parallel milestones, and strict budget trimming.
+            <h4 className="text-sm font-bold text-[#4A3728]">Deterministic DAG</h4>
+            <p className="text-xs text-[#7A6553] mt-1 leading-relaxed">
+              Real graph traversal algorithm ensures topological order and parallel milestones.
             </p>
           </div>
         </div>
 
-        <div className="flex gap-3">
-          <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0 text-emerald-400">
-            <Cpu className="w-5 h-5" />
+        <div className="flex gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-[#FFF9F0] border border-[#E6DCCF] flex items-center justify-center shrink-0 text-[#8C9A76] paper-shadow">
+            <Cpu className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-sm font-semibold text-slate-200">Vector Skill Profiler</h4>
-            <p className="text-xs text-slate-400 mt-1">
-              Embedding cosine-similarity maps fuzzy user input to canonical skill nodes automatically.
+            <h4 className="text-sm font-bold text-[#4A3728]">Vector Profiling</h4>
+            <p className="text-xs text-[#7A6553] mt-1 leading-relaxed">
+              Embedding cosine similarity maps your free-text skills to canonical nodes.
             </p>
           </div>
         </div>
 
-        <div className="flex gap-3">
-          <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0 text-cyan-400">
-            <ShieldCheck className="w-5 h-5" />
+        <div className="flex gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-[#FFF9F0] border border-[#E6DCCF] flex items-center justify-center shrink-0 text-[#B58B65] paper-shadow">
+            <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-sm font-semibold text-slate-200">Grounded LLM Explanations</h4>
-            <p className="text-xs text-slate-400 mt-1">
-              Explanations are constrained strictly to graph facts—preventing hallucinations while keeping human tone.
+            <h4 className="text-sm font-bold text-[#4A3728]">Grounded Explanations</h4>
+            <p className="text-xs text-[#7A6553] mt-1 leading-relaxed">
+              Explanations are strictly constrained to graph facts—preventing AI hallucinations.
             </p>
           </div>
         </div>

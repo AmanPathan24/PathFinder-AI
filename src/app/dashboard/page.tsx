@@ -7,7 +7,6 @@ import { SkillTreeVisualizer } from '@/components/SkillTreeVisualizer';
 import {
   Trophy,
   Clock,
-  CheckCircle2,
   GitFork,
   Plus,
   Flame,
@@ -33,16 +32,16 @@ export default function DashboardPage() {
   if (!pathOutput || !parsedProfile) {
     return (
       <div className="max-w-xl mx-auto text-center py-20 space-y-6">
-        <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center mx-auto text-teal-400">
+        <div className="w-16 h-16 rounded-2xl bg-[#FFF9F0] border border-[#E6DCCF] flex items-center justify-center mx-auto text-[#C96F4A] paper-shadow">
           <Trophy className="w-8 h-8" />
         </div>
-        <h1 className="text-2xl font-bold text-white">No Learning Progress Found</h1>
-        <p className="text-slate-400 text-sm">
-          Please enter your learning goal on the intake page to start tracking your progress.
+        <h1 className="text-3xl font-serif font-bold text-[#4A3728]">No Learning Progress Found</h1>
+        <p className="text-[#7A6553] text-sm">
+          Please enter your learning ambition on the intake page to start tracking your progress.
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-slate-950 font-bold rounded-xl text-sm shadow-lg shadow-teal-500/20 hover:bg-teal-400 transition-all"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#C96F4A] text-white font-bold rounded-xl text-sm shadow-md hover:bg-[#A85331] transition-all"
         >
           Go to Intake
           <ArrowRight className="w-4 h-4" />
@@ -62,7 +61,6 @@ export default function DashboardPage() {
 
   const totalLoggedHours = Object.values(loggedHoursMap).reduce((a, b) => a + b, 0);
 
-  // Next up recommended node (first incomplete node in milestone order)
   const nextNode = recommended_nodes.find((n) => !completedNodeIds.includes(n.id));
 
   const handleLogHoursSubmit = (e: React.FormEvent) => {
@@ -76,18 +74,18 @@ export default function DashboardPage() {
   return (
     <div className="max-w-6xl mx-auto space-y-10 py-4">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E6DCCF] pb-6">
         <div>
-          <h1 className="text-3xl font-extrabold text-white tracking-tight">
+          <h1 className="text-4xl font-serif text-[#4A3728] font-bold tracking-tight">
             Learning Progress Dashboard
           </h1>
-          <p className="text-slate-400 text-sm mt-1">
+          <p className="text-[#7A6553] text-sm mt-1">
             Track your milestones, log study hours, and monitor your skill acquisition curve.
           </p>
         </div>
         <Link
           href="/path"
-          className="px-5 py-2.5 bg-teal-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-teal-500/20 flex items-center gap-2 hover:bg-teal-400 transition-all shrink-0"
+          className="px-5 py-2.5 bg-[#C96F4A] text-white font-bold text-xs rounded-xl shadow-md flex items-center gap-2 hover:bg-[#A85331] transition-all shrink-0"
         >
           <GitFork className="w-4 h-4" />
           View Full Path
@@ -97,68 +95,68 @@ export default function DashboardPage() {
       {/* Analytics Metric Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
         {/* % Completion */}
-        <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 space-y-2">
+        <div className="bg-[#FFF9F0] border border-[#E6DCCF] rounded-3xl p-6 space-y-3 paper-shadow">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-slate-400">Path Completion</span>
-            <Trophy className="w-4 h-4 text-emerald-400" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#7A6553]">Path Completion</span>
+            <Trophy className="w-4 h-4 text-[#8C9A76]" />
           </div>
-          <div className="text-3xl font-black text-white">{completionPercentage}%</div>
-          <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden mt-2">
+          <div className="text-4xl font-serif font-bold text-[#4A3728]">{completionPercentage}%</div>
+          <div className="w-full bg-[#E6DCCF] h-2.5 rounded-full overflow-hidden mt-2">
             <div
-              className="bg-gradient-to-r from-teal-500 to-emerald-400 h-full transition-all duration-500"
+              className="bg-[#8C9A76] h-full transition-all duration-500 rounded-full"
               style={{ width: `${completionPercentage}%` }}
             />
           </div>
-          <p className="text-[11px] text-slate-500">
+          <p className="text-[11px] text-[#7A6553] font-medium">
             {completedCount} of {totalNodesCount} Topics Mastered
           </p>
         </div>
 
         {/* Total Hours Logged */}
-        <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 space-y-2">
+        <div className="bg-[#FFF9F0] border border-[#E6DCCF] rounded-3xl p-6 space-y-3 paper-shadow">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-slate-400">Hours Logged</span>
-            <Clock className="w-4 h-4 text-teal-400" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#7A6553]">Hours Logged</span>
+            <Clock className="w-4 h-4 text-[#C96F4A]" />
           </div>
-          <div className="text-3xl font-black text-white">{totalLoggedHours}h</div>
-          <p className="text-[11px] text-slate-500">
+          <div className="text-4xl font-serif font-bold text-[#4A3728]">{totalLoggedHours}h</div>
+          <p className="text-[11px] text-[#7A6553] font-medium">
             Out of {total_est_hours}h total estimated roadmap duration
           </p>
         </div>
 
         {/* Active Track */}
-        <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 space-y-2">
+        <div className="bg-[#FFF9F0] border border-[#E6DCCF] rounded-3xl p-6 space-y-3 paper-shadow">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-slate-400">Target Track</span>
-            <Target className="w-4 h-4 text-cyan-400" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#7A6553]">Target Track</span>
+            <Target className="w-4 h-4 text-[#B58B65]" />
           </div>
-          <div className="text-xl font-bold text-white truncate capitalize">
+          <div className="text-xl font-bold font-serif text-[#4A3728] truncate capitalize">
             {parsedProfile.target_track}
           </div>
-          <p className="text-[11px] text-slate-500">
+          <p className="text-[11px] text-[#7A6553] font-medium">
             {parsedProfile.time_budget_weeks} Weeks Time Budget
           </p>
         </div>
 
         {/* Next Recommendation */}
-        <div className="bg-slate-900/80 border border-teal-500/30 rounded-2xl p-5 space-y-2">
+        <div className="bg-[#FFF9F0] border-2 border-[#C96F4A]/40 rounded-3xl p-6 space-y-3 paper-shadow">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-teal-400">Next Action</span>
-            <Flame className="w-4 h-4 text-amber-400" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#C96F4A]">Next Up</span>
+            <Flame className="w-4 h-4 text-[#C96F4A]" />
           </div>
-          <div className="text-sm font-bold text-white truncate">
+          <div className="text-[#4A3728] font-serif font-bold text-base truncate">
             {nextNode ? nextNode.title : 'All Milestones Complete! 🎉'}
           </div>
-          <p className="text-[11px] text-slate-400">
-            {nextNode ? `${nextNode.est_hours}h • Diff ${nextNode.difficulty}/5` : 'Great job!'}
+          <p className="text-[11px] text-[#7A6553] font-medium">
+            {nextNode ? `${nextNode.est_hours}h • Level ${nextNode.difficulty}/5` : 'Great job!'}
           </p>
         </div>
       </div>
 
       {/* Log Study Hours Card */}
-      <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-4">
-        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
-          <Clock className="w-4 h-4 text-teal-400" />
+      <div className="bg-[#FFF9F0] border border-[#E6DCCF] rounded-3xl p-6 sm:p-8 space-y-4 paper-shadow">
+        <h3 className="text-sm font-bold uppercase tracking-wider text-[#4A3728] flex items-center gap-2">
+          <Clock className="w-4 h-4 text-[#C96F4A]" />
           Log Study Hours
         </h3>
 
@@ -166,7 +164,7 @@ export default function DashboardPage() {
           <select
             value={selectedLogNodeId}
             onChange={(e) => setSelectedLogNodeId(e.target.value)}
-            className="w-full sm:flex-1 bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full sm:flex-1 bg-[#FFFFFF] border-2 border-[#E6DCCF] rounded-xl px-4 py-3 text-xs text-[#4A3728] font-semibold focus:outline-none focus:border-[#C96F4A]"
           >
             <option value="">-- Select Topic to Log Hours --</option>
             {recommended_nodes.map((node) => (
@@ -183,13 +181,13 @@ export default function DashboardPage() {
             step={0.5}
             value={inputHours}
             onChange={(e) => setInputHours(Number(e.target.value))}
-            className="w-full sm:w-28 bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full sm:w-28 bg-[#FFFFFF] border-2 border-[#E6DCCF] rounded-xl px-4 py-3 text-xs text-[#4A3728] font-bold focus:outline-none focus:border-[#C96F4A]"
           />
 
           <button
             type="submit"
             disabled={!selectedLogNodeId}
-            className="w-full sm:w-auto px-5 py-2.5 bg-teal-500 hover:bg-teal-400 disabled:opacity-50 text-slate-950 font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all shrink-0"
+            className="w-full sm:w-auto px-6 py-3 bg-[#C96F4A] hover:bg-[#A85331] disabled:opacity-50 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-md shrink-0"
           >
             <Plus className="w-4 h-4" /> Log Hours
           </button>

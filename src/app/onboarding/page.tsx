@@ -29,7 +29,6 @@ export default function OnboardingPage() {
   const [budgetWeeks, setBudgetWeeks] = useState<number>(24);
   const [selectedKnownNodeIds, setSelectedKnownNodeIds] = useState<string[]>([]);
 
-  // Track nodes for the selected track
   const trackNodes = rawOntology.nodes.filter((n) => n.track === selectedTrack);
 
   useEffect(() => {
@@ -87,23 +86,23 @@ export default function OnboardingPage() {
   return (
     <div className="max-w-4xl mx-auto space-y-8 py-4">
       {/* Header */}
-      <div className="border-b border-slate-800 pb-6">
-        <div className="inline-flex items-center gap-2 text-xs font-semibold text-teal-400 bg-teal-500/10 px-3 py-1 rounded-full border border-teal-500/20 mb-3">
-          <Sparkles className="w-3.5 h-3.5" /> Stage 2: Profile Confirmation
+      <div className="border-b border-[#E6DCCF] pb-6">
+        <div className="inline-flex items-center gap-2 text-xs font-bold text-[#8C9A76] bg-[#E4EAD9] px-3.5 py-1 rounded-full border border-[#8C9A76]/30 mb-3 uppercase tracking-wider">
+          <Sparkles className="w-3.5 h-3.5" /> Stage 2: Profile Calibration
         </div>
-        <h1 className="text-3xl font-extrabold text-white tracking-tight">
-          Review & Refine Your Profile
+        <h1 className="text-4xl font-serif text-[#4A3728] tracking-tight">
+          Refine & Calibrate Your Intent
         </h1>
-        <p className="text-slate-400 text-sm mt-1">
-          PathFinder parsed your goal into structured intent. Adjust your current skills, target track, or time budget below before building your graph.
+        <p className="text-[#7A6553] text-sm mt-1">
+          Review the extracted track, time budget, and existing competencies before initiating the graph recommendation engine.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Track Selection */}
-        <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-4">
-          <label className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
-            <Layers className="w-4 h-4 text-teal-400" /> Target Career Track
+        <div className="bg-[#FFF9F0] border border-[#E6DCCF] rounded-2xl p-6 space-y-4 paper-shadow">
+          <label className="text-xs font-bold uppercase tracking-wider text-[#4A3728] flex items-center gap-2">
+            <Layers className="w-4 h-4 text-[#C96F4A]" /> Target Track
           </label>
           <div className="space-y-3">
             {(Object.keys(TRACK_NAMES) as TrackId[]).map((trackId) => (
@@ -111,10 +110,10 @@ export default function OnboardingPage() {
                 key={trackId}
                 type="button"
                 onClick={() => setSelectedTrack(trackId)}
-                className={`w-full text-left p-3.5 rounded-xl border text-sm font-medium transition-all ${
+                className={`w-full text-left p-4 rounded-xl border text-sm font-semibold transition-all ${
                   selectedTrack === trackId
-                    ? 'bg-teal-500/15 border-teal-500/50 text-teal-200 shadow-sm'
-                    : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-slate-200 hover:bg-slate-850'
+                    ? 'bg-[#C96F4A] text-white border-[#C96F4A] shadow-md'
+                    : 'bg-[#FFFFFF] border-[#E6DCCF] text-[#4A3728] hover:border-[#B58B65]'
                 }`}
               >
                 {TRACK_NAMES[trackId]}
@@ -124,14 +123,14 @@ export default function OnboardingPage() {
         </div>
 
         {/* Time Budget */}
-        <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-4">
-          <label className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
-            <Clock className="w-4 h-4 text-teal-400" /> Time Budget (Weeks)
+        <div className="bg-[#FFF9F0] border border-[#E6DCCF] rounded-2xl p-6 space-y-4 paper-shadow">
+          <label className="text-xs font-bold uppercase tracking-wider text-[#4A3728] flex items-center gap-2">
+            <Clock className="w-4 h-4 text-[#C96F4A]" /> Time Budget (Weeks)
           </label>
           <div className="space-y-4">
-            <div className="text-center py-4 bg-slate-950/60 rounded-xl border border-slate-800">
-              <span className="text-4xl font-extrabold text-teal-400">{budgetWeeks}</span>
-              <span className="text-slate-400 text-xs block mt-1">Weeks (~{budgetWeeks * 10} Hours)</span>
+            <div className="text-center py-4 bg-[#FFFFFF] rounded-xl border border-[#E6DCCF]">
+              <span className="text-4xl font-serif text-[#C96F4A] font-bold">{budgetWeeks}</span>
+              <span className="text-[#7A6553] text-xs font-semibold block mt-1">Weeks (~{budgetWeeks * 10} Hours)</span>
             </div>
             <input
               type="range"
@@ -140,23 +139,23 @@ export default function OnboardingPage() {
               step={2}
               value={budgetWeeks}
               onChange={(e) => setBudgetWeeks(Number(e.target.value))}
-              className="w-full accent-teal-500 bg-slate-800 h-2 rounded-lg cursor-pointer"
+              className="w-full accent-[#C96F4A] bg-[#E6DCCF] h-2 rounded-lg cursor-pointer"
             />
-            <div className="flex justify-between text-[11px] text-slate-500 font-mono">
-              <span>4 Wks (Fast)</span>
+            <div className="flex justify-between text-[11px] text-[#7A6553] font-medium">
+              <span>4 Wks (Accelerated)</span>
               <span>24 Wks (Standard)</span>
-              <span>52 Wks (Deep)</span>
+              <span>52 Wks (Comprehensive)</span>
             </div>
           </div>
         </div>
 
-        {/* Mapped Known Skills */}
-        <div className="md:col-span-3 bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-4">
+        {/* Known Skills Mapping */}
+        <div className="md:col-span-3 bg-[#FFF9F0] border border-[#E6DCCF] rounded-2xl p-6 space-y-4 paper-shadow">
           <div className="flex items-center justify-between">
-            <label className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              Select Skills You Already Know (Path Engine will skip these)
+            <label className="text-xs font-bold uppercase tracking-wider text-[#4A3728]">
+              Existing Competencies (Will be excluded from learning path)
             </label>
-            <span className="text-xs text-teal-400 font-semibold">
+            <span className="text-xs text-[#8C9A76] font-bold bg-[#E4EAD9] px-3 py-1 rounded-full border border-[#8C9A76]/30">
               {selectedKnownNodeIds.length} Selected
             </span>
           </div>
@@ -169,25 +168,25 @@ export default function OnboardingPage() {
                   key={node.id}
                   type="button"
                   onClick={() => toggleKnownNode(node.id)}
-                  className={`flex items-start gap-3 p-3 rounded-xl border text-left text-xs transition-all ${
+                  className={`flex items-start gap-3 p-3.5 rounded-xl border text-left text-xs transition-all ${
                     isChecked
-                      ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-300'
-                      : 'bg-slate-950/60 border-slate-800/80 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+                      ? 'bg-[#E4EAD9] border-[#8C9A76] text-[#4A3728] shadow-sm'
+                      : 'bg-[#FFFFFF] border-[#E6DCCF] text-[#7A6553] hover:border-[#B58B65]'
                   }`}
                 >
                   <div
                     className={`w-4 h-4 rounded border mt-0.5 flex items-center justify-center shrink-0 ${
                       isChecked
-                        ? 'bg-emerald-500 border-emerald-500 text-slate-950'
-                        : 'border-slate-700 bg-slate-900'
+                        ? 'bg-[#8C9A76] border-[#8C9A76] text-white'
+                        : 'border-[#B58B65] bg-white'
                     }`}
                   >
                     {isChecked && <Check className="w-3 h-3 stroke-[3]" />}
                   </div>
                   <div>
-                    <div className="font-semibold">{node.title}</div>
-                    <div className="text-[11px] opacity-75 mt-0.5">
-                      {node.est_hours}h &bull; Diff {node.difficulty}/5
+                    <div className="font-bold text-[#4A3728]">{node.title}</div>
+                    <div className="text-[11px] text-[#7A6553] mt-0.5">
+                      {node.est_hours}h &bull; Difficulty {node.difficulty}/5
                     </div>
                   </div>
                 </button>
@@ -198,11 +197,11 @@ export default function OnboardingPage() {
       </div>
 
       {/* Action Footer */}
-      <div className="flex items-center justify-between pt-4 border-t border-slate-800">
+      <div className="flex items-center justify-between pt-4 border-t border-[#E6DCCF]">
         <button
           type="button"
           onClick={() => router.push('/')}
-          className="text-xs text-slate-400 hover:text-slate-200 flex items-center gap-1.5"
+          className="text-xs text-[#7A6553] hover:text-[#4A3728] font-semibold flex items-center gap-1.5"
         >
           <RefreshCw className="w-3.5 h-3.5" /> Re-enter Goal Text
         </button>
@@ -211,9 +210,9 @@ export default function OnboardingPage() {
           type="button"
           onClick={handleConfirmProfile}
           disabled={isLoading}
-          className="px-8 py-3.5 bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-bold text-sm rounded-xl shadow-lg shadow-teal-500/20 flex items-center gap-2 transition-all disabled:opacity-50"
+          className="px-8 py-3.5 bg-[#C96F4A] hover:bg-[#A85331] text-white font-bold text-sm rounded-xl shadow-md flex items-center gap-2 transition-all disabled:opacity-50"
         >
-          {isLoading ? 'Running Path Engine...' : 'Confirm & Build Roadmap'}
+          {isLoading ? 'Running Path Engine...' : 'Confirm & Generate Roadmap'}
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>

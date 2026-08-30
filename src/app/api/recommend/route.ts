@@ -4,6 +4,8 @@ import { resolveKnownSkillNodeIds } from '@/lib/engine/skill-profiler';
 import { generateLearningPath, getOntology } from '@/lib/engine/path-engine';
 import { generateGroundedExplanations } from '@/lib/llm/explainer';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -27,14 +29,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Resolve known skill strings to node IDs if not already resolved
     let knownNodeIds = explicitKnownIds || profile.known_node_ids || [];
     if (knownNodeIds.length === 0 && profile.known_skills?.length > 0) {
       knownNodeIds = resolveKnownSkillNodeIds(profile.known_skills);
       profile.known_node_ids = knownNodeIds;
     }
 
-    // Run Stage 3 Path Engine
     const pathOutput = generateLearningPath({
       knownNodeIds,
       targetTrack: profile.target_track,
@@ -42,7 +42,6 @@ export async function POST(req: NextRequest) {
       excludedNodeIds,
     });
 
-    // Prepare graph facts for Stage 4 Grounded Explanations
     const ontology = getOntology();
     const nodeMap = new Map(ontology.nodes.map((n) => [n.id, n]));
     const prereqs = new Map<string, string[]>();
