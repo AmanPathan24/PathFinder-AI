@@ -1,9 +1,18 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { OntologyNode } from '@/types/ontology';
 import { NodeStatusType } from '@/types/roadmap';
 import { Resource } from '@/types/resource';
+
+export interface DrawerSubject {
+  id: string;
+  title: string;
+  type: string;
+  est_hours: number;
+  difficulty?: number;
+  description?: string;
+  parent_skill_id?: string;
+}
 import {
   X,
   BookOpen,
@@ -23,7 +32,7 @@ import {
 import rawCuratedResources from '@/data/curated-resources.json';
 
 interface NodeDetailDrawerProps {
-  node: OntologyNode | null;
+  node: DrawerSubject | null;
   status: NodeStatusType;
   groundedExplanation?: string;
   isOpen: boolean;
@@ -66,8 +75,10 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({
     if (!node) return;
 
     // Filter curated resources by parent_skill_id
-    const curated = (rawCuratedResources as Resource[]).filter(
-      (r) => r.parent_skill_id === node.id
+    const curated = (rawCuratedResources as Resource[]).filter((r) =>
+      node.type === 'subtopic'
+        ? r.subtopic_id === node.id || r.parent_skill_id === node.parent_skill_id
+        : r.parent_skill_id === node.id
     );
 
     if (curated.length > 0) {
@@ -203,7 +214,8 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-[10px] font-bold uppercase tracking-wider text-[#7A6553] bg-[#F7F1E7] px-2.5 py-1 rounded-full border border-[#E6DCCF]">
-              {node.type} &bull; Level {node.difficulty}/5
+              {node.type}
+              {node.difficulty ? ` • Level ${node.difficulty}/5` : ''}
             </span>
             <span className="text-[11px] text-[#7A6553] font-semibold flex items-center gap-1">
               <Clock className="w-3.5 h-3.5 text-[#B58B65]" />

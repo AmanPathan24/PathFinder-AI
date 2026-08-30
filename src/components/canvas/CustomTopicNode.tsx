@@ -9,16 +9,14 @@ import {
   AlertTriangle,
   Circle,
   Clock,
-  Sparkles,
   Zap,
-  MoreVertical,
 } from 'lucide-react';
 import { NodeStatusType } from '@/types/roadmap';
 
 export interface CustomNodeData {
   id: string;
   title: string;
-  type: 'skill' | 'course' | 'project' | 'subtopic';
+  type: string;
   difficulty?: number;
   est_hours: number;
   description?: string;
@@ -75,7 +73,7 @@ export const CustomTopicNode = memo(({ data, selected }: NodeProps<any>) => {
         return (
           <span
             title="Currently Learning"
-            className="w-6 h-6 rounded-full bg-[#C96F4A] text-white flex items-center justify-center shadow-md ring-2 ring-white animate-pulse"
+            className="w-6 h-6 rounded-full bg-[#C96F4A] text-white flex items-center justify-center shadow-md ring-2 ring-white"
           >
             <BookOpen className="w-3.5 h-3.5" />
           </span>
@@ -101,13 +99,13 @@ export const CustomTopicNode = memo(({ data, selected }: NodeProps<any>) => {
     }
   };
 
-  // Node container styling based on status & role
+  // Status only changes color — never ring/opacity/size that would reflow the graph.
   const getBorderColor = () => {
-    if (selected) return 'border-[#C96F4A] ring-4 ring-[#C96F4A]/20 shadow-xl';
+    if (selected) return 'border-[#C96F4A] bg-white';
     if (status === 'done') return 'border-[#8C9A76] bg-[#F2F6ED]';
     if (status === 'known-prior') return 'border-[#B58B65] bg-[#F9F5EF]';
-    if (status === 'learning') return 'border-[#C96F4A] ring-2 ring-[#C96F4A]/30 bg-white';
-    if (status === 'skipped') return 'border-[#E6DCCF] bg-[#F7F1E7]/70 opacity-60';
+    if (status === 'learning') return 'border-[#C96F4A] bg-white';
+    if (status === 'skipped') return 'border-[#D1C5B4] bg-[#F7F1E7]';
     if (isMainPath) return 'border-[#4A3728] bg-white';
     if (isSubtopic) return 'border-dashed border-[#B58B65]/70 bg-[#FFFDF9]';
     return 'border-[#E6DCCF] bg-white';
@@ -129,8 +127,12 @@ export const CustomTopicNode = memo(({ data, selected }: NodeProps<any>) => {
     <div
       onClick={() => onSelectNode?.(id)}
       onContextMenu={handleContextMenu}
-      className={`relative rounded-2xl border transition-all cursor-grab active:cursor-grabbing select-none ${getBorderColor()} ${
-        isSubtopic ? 'p-3 w-56' : isMainPath ? 'p-4 sm:p-5 w-72 sm:w-80 shadow-md' : 'p-3.5 w-64 shadow-sm'
+      className={`relative box-border rounded-2xl border-2 cursor-pointer select-none ${getBorderColor()} ${
+        isSubtopic
+          ? 'p-3 w-56 h-[90px] shadow-sm'
+          : isMainPath
+          ? 'p-4 w-80 h-[152px] shadow-md'
+          : 'p-3.5 w-64 h-[152px] shadow-sm'
       }`}
     >
       {/* Handles for Flow connections */}
@@ -196,7 +198,17 @@ export const CustomTopicNode = memo(({ data, selected }: NodeProps<any>) => {
               ? '⊘ Skipped'
               : '○ Click to view'}
           </span>
-          <span className="text-[9px] text-[#C96F4A] font-bold hover:underline">Details &rarr;</span>
+          <button
+            type="button"
+            aria-label="Set status"
+            className="nodrag nopan text-[9px] text-[#C96F4A] font-bold hover:underline"
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowMenu((open) => !open);
+            }}
+          >
+            Status
+          </button>
         </div>
       </div>
 

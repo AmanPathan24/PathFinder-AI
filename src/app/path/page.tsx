@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { usePath } from '@/context/PathContext';
 import { RoadmapCanvas } from '@/components/canvas/RoadmapCanvas';
@@ -23,6 +23,7 @@ import rawOntology from '@/data/ontology.json';
 import rawSubtopics from '@/data/subtopics.json';
 import { SkillOntology } from '@/types/ontology';
 import { Subtopic } from '@/types/resource';
+import { syncParentAndSubtopicStatuses } from '@/lib/canvas/layoutGraph';
 
 export default function PathPage() {
   const {
@@ -60,6 +61,23 @@ export default function PathPage() {
     return map;
   }, []);
 
+  useEffect(() => {
+    Array.from(subtopicsByParent.entries()).forEach(([parentId, subs]) => {
+      if (!subs.length || subs.length === 1) return;
+
+      const allChildrenDone = subs.every((sub) => (nodeStatuses[sub.id] ?? 'not-started') === 'done');
+      const parentDone = (nodeStatuses[parentId] ?? 'not-started') === 'done';
+
+      if (allChildrenDone && !parentDone) {
+        setNodeStatusAction(parentId, 'done');
+      }
+
+      if (!allChildrenDone && parentDone) {
+        setNodeStatusAction(parentId, 'not-started');
+      }
+    });
+  }, [nodeStatuses, setNodeStatusAction, subtopicsByParent]);
+
   if (!pathOutput || !parsedProfile) {
     return (
       <div className="max-w-xl mx-auto text-center py-20 space-y-6">
@@ -84,7 +102,7 @@ export default function PathPage() {
   const { milestones, total_est_hours, time_budget_hours, is_trimmed, trimmed_nodes } = pathOutput;
 
   return (
-    <div className="max-w-7xl mx-auto space-y-8 py-2">
+    <div className="w-full max-w-[calc(100vw-2rem)] mx-auto space-y-8 py-2">
       {/* Top Banner */}
       <div className="bg-[#FFF9F0] border border-[#E6DCCF] rounded-3xl p-6 sm:p-8 paper-shadow-lg relative overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
@@ -355,17 +373,45 @@ export default function PathPage() {
                                   <div className="text-[10px] font-bold uppercase tracking-wider text-[#B58B65]">
                                     Subtopics
                                   </div>
-                                  {(subtopicsByParent.get(node.id) || []).map((subtopic) => (
-                                    <div
-                                      key={subtopic.id}
-                                      className="flex items-center justify-between gap-3 text-xs text-[#4A3728]"
-                                    >
-                                      <span>{subtopic.title}</span>
-                                      <span className="shrink-0 text-[10px] text-[#7A6553]">
-                                        {subtopic.est_hours}h
-                                      </span>
-                                    </div>
-                                  ))}
+                                  {(subtopicsByParent.get(node.id) || []).map((subtopic) => {
+                                    const subStatus = nodeStatuses[subtopic.id] || 'not-started';
+                                    const isSubDone = subStatus === 'done';
+                                    const isSubKnown = subStatus === 'known-prior';
+                                    return (
+                                      <div
+                                        key={subtopic.id}
+                                        className="flex items-center justify-between gap-3 text-xs text-[#4A3728]"
+                                      >
+                                        <label className="flex items-center gap-2 cursor-pointer select-none flex-1">
+                                          <input
+                                            type="checkbox"
+                                            checked={isSubDone}
+                                            onChange={() => {
+                                              const nextStatus = isSubDone ? 'not-started' : 'done';
+                                              const nextStatuses = syncParentAndSubtopicStatuses(
+                                                nodeStatuses,
+                                                subtopicsByParent,
+                                                subtopic.id,
+                                                nextStatus
+                                              );
+                                              Object.entries(nextStatuses).forEach(([id, status]) => {
+                                                if ((nodeStatuses[id] ?? 'not-started') !== status) {
+                                                  setNodeStatusAction(id, status);
+                                                }
+                                              });
+                                            }}
+                                            className="h-3.5 w-3.5 rounded border-[#B58B65] text-[#C96F4A] focus:ring-[#C96F4A]"
+                                          />
+                                          <span className={isSubKnown ? 'line-through text-[#7A6553]' : ''}>
+                                            {subtopic.title}
+                                          </span>
+                                        </label>
+                                        <span className="shrink-0 text-[10px] text-[#7A6553]">
+                                          {subtopic.est_hours}h
+                                        </span>
+                                      </div>
+                                    );
+                                  })}
                                 </div>
                               )}
                               {exp && (
@@ -393,9 +439,20 @@ export default function PathPage() {
 
                               <button
                                 type="button"
-                                onClick={() =>
-                                  setNodeStatusAction(node.id, isDone ? 'not-started' : 'done')
-                                }
+                                onClick={() => {
+                                  const nextStatus = isDone ? 'not-started' : 'done';
+                                  const nextStatuses = syncParentAndSubtopicStatuses(
+                                    nodeStatuses,
+                                    subtopicsByParent,
+                                    node.id,
+                                    nextStatus
+                                  );
+                                  Object.entries(nextStatuses).forEach(([id, status]) => {
+                                    if (nodeStatuses[id] !== status) {
+                                      setNodeStatusAction(id, status);
+                                    }
+                                  });
+                                }}
                                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1 ${
                                   isDone
                                     ? 'bg-[#8C9A76] text-white shadow-sm'

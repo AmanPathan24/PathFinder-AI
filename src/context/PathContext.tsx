@@ -328,9 +328,7 @@ export const PathProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Set Single Node Status Action
   const setNodeStatusAction = async (nodeId: string, status: NodeStatusType) => {
-    // Optimistic UI update
-    const updatedStatuses = { ...nodeStatuses, [nodeId]: status };
-    setNodeStatuses(updatedStatuses);
+    setNodeStatuses((prev) => ({ ...prev, [nodeId]: status }));
 
     if (status === 'done' || status === 'known-prior') {
       const source = status === 'known-prior' ? 'prior-knowledge' : 'roadmap-completed';
@@ -348,19 +346,6 @@ export const PathProvider: React.FC<{ children: React.ReactNode }> = ({ children
         console.error('Failed to sync node status to server:', err);
       }
     }
-
-    // Completion and prior knowledge only change status. Keep the current graph
-    // and its positions intact; skipped nodes still require recalculation.
-    if (status === 'done' || status === 'known-prior') return;
-
-    // Trigger recalculation for skipped nodes
-    const known = Object.keys(updatedStatuses).filter(
-      (id) => updatedStatuses[id] === 'done' || updatedStatuses[id] === 'known-prior'
-    );
-    const excluded = Object.keys(updatedStatuses).filter(
-      (id) => updatedStatuses[id] === 'skipped'
-    );
-    await recalculatePath({ knownIds: known, excludedIds: excluded });
   };
 
   // Bulk Set Known-Prior (Used during Onboarding)

@@ -23,7 +23,7 @@ export const CheckpointCard = memo(({ data }: NodeProps<any>) => {
   } = data as CheckpointNodeData;
 
   return (
-    <div className="bg-[#FFF9F0] border-2 border-[#C96F4A]/40 rounded-3xl p-5 sm:p-6 w-80 sm:w-96 shadow-lg space-y-3 text-[#4A3728]">
+    <div className="box-border bg-[#FFF9F0] border-2 border-[#C96F4A]/40 rounded-3xl p-5 w-96 h-[176px] overflow-hidden shadow-lg space-y-3 text-[#4A3728]">
       <Handle type="target" position={Position.Top} id="top" className="!w-2.5 !h-2.5 !bg-[#4A3728]" />
       <Handle type="source" position={Position.Bottom} id="bottom" className="!w-2.5 !h-2.5 !bg-[#C96F4A]" />
 
