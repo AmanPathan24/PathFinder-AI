@@ -82,7 +82,7 @@ function fallbackParseGoal(userPrompt: string): UserParsedProfile {
     }
   });
 
-  // Time budget extraction (e.g. "6 months" -> 24 weeks, "12 weeks" -> 12 weeks)
+  // Time budget extraction
   let time_budget_weeks = 24;
   const monthMatch = text.match(/(\d+)\s*month/);
   if (monthMatch) {
@@ -104,18 +104,94 @@ function fallbackParseGoal(userPrompt: string): UserParsedProfile {
 }
 
 /**
- * Main parser function supporting OpenAI, Gemini, or Fallback Engine.
+ * Main parser function supporting Gemini 3.7 Flash, OpenAI, or Fallback Engine.
  */
 export async function parseUserGoal(userPrompt: string): Promise<UserParsedProfile> {
-  const openAiKey = process.env.OPENAI_API_KEY;
   const geminiKey = process.env.GEMINI_API_KEY;
+  const openAiKey = process.env.OPENAI_API_KEY;
+  const geminiModel = process.env.GEMINI_MODEL || 'gemini-3.7-flash';
 
   if (!openAiKey && !geminiKey) {
     return fallbackParseGoal(userPrompt);
   }
 
-  try {
-    if (openAiKey) {
+  // Try Gemini REST endpoint first if GEMINI_API_KEY is present
+  if (geminiKey) {
+    try {
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${geminiModel}:generateContent?key=${geminiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [
+              {
+                parts: [
+                  {
+                    text: `${SYSTEM_PROMPT}\n\nUser Input: ${userPrompt}\nOutput JSON:`,
+                  },
+                ],
+              },
+            ],
+            generationConfig: {
+              responseMimeType: 'application/json',
+              temperature: 0.1,
+            },
+          }),
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        const rawJsonText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (rawJsonText) {
+          const parsed = JSON.parse(rawJsonText);
+          return {
+            target_track: parsed.target_track || 'data-science',
+            known_skills: parsed.known_skills || [],
+            known_node_ids: [],
+            time_budget_weeks: parsed.time_budget_weeks || 24,
+            raw_goal: userPrompt,
+          };
+        }
+      } else {
+        const errText = await response.text();
+        console.warn(`Gemini API returned ${response.status}: ${errText}. Falling back to standard endpoints.`);
+        // Fallback to gemini-1.5-flash or 2.0-flash if model name is experimental in region
+        const fallbackResp = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: `${SYSTEM_PROMPT}\n\nUser Input: ${userPrompt}\nOutput JSON:` }] }],
+              generationConfig: { responseMimeType: 'application/json', temperature: 0.1 },
+            }),
+          }
+        );
+        if (fallbackResp.ok) {
+          const data = await fallbackResp.json();
+          const rawJsonText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (rawJsonText) {
+            const parsed = JSON.parse(rawJsonText);
+            return {
+              target_track: parsed.target_track || 'data-science',
+              known_skills: parsed.known_skills || [],
+              known_node_ids: [],
+              time_budget_weeks: parsed.time_budget_weeks || 24,
+              raw_goal: userPrompt,
+            };
+          }
+        }
+      }
+    } catch (err) {
+      console.warn('Gemini intake parse error, trying OpenAI / fallback:', err);
+    }
+  }
+
+  // Try OpenAI endpoint if OPENAI_API_KEY is present
+  if (openAiKey) {
+    try {
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -147,9 +223,9 @@ export async function parseUserGoal(userPrompt: string): Promise<UserParsedProfi
           };
         }
       }
+    } catch (err) {
+      console.warn('OpenAI intake parse failed, falling back to heuristic:', err);
     }
-  } catch (err) {
-    console.warn('LLM intake parsing failed, falling back to heuristic parser:', err);
   }
 
   return fallbackParseGoal(userPrompt);
