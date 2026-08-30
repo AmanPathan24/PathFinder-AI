@@ -1,0 +1,390 @@
+{
+  "nodes": [
+    {
+      "id": "ds-python-basics",
+      "title": "Python Programming Fundamentals",
+      "type": "skill",
+      "track": "data-science",
+      "difficulty": 1,
+      "est_hours": 15,
+      "description": "Master core syntax, data structures (lists, dicts), control flow, functions, and modules in Python.",
+      "keywords": ["python", "py", "coding", "programming", "python3", "data types", "functions"]
+    },
+    {
+      "id": "ds-sql-basics",
+      "title": "Relational Databases & SQL Basics",
+      "type": "skill",
+      "track": "data-science",
+      "difficulty": 1,
+      "est_hours": 12,
+      "description": "Learn SELECT, WHERE, JOINs, GROUP BY, aggregations, and subqueries for querying relational databases.",
+      "keywords": ["sql", "database", "postgres", "queries", "select", "joins", "relational"]
+    },
+    {
+      "id": "ds-math-stats",
+      "title": "Applied Math & Statistics for Data Science",
+      "type": "skill",
+      "track": "data-science",
+      "difficulty": 2,
+      "est_hours": 18,
+      "description": "Descriptive statistics, probability distributions, hypothesis testing, linear algebra, and calculus foundations.",
+      "keywords": ["statistics", "math", "probability", "linear algebra", "calculus", "stats", "hypothesis testing"]
+    },
+    {
+      "id": "ds-numpy-pandas",
+      "title": "Data Manipulation with NumPy & Pandas",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 2,
+      "est_hours": 20,
+      "description": "Efficient vector operations with NumPy and data manipulation, cleaning, and transformation with Pandas DataFrames.",
+      "keywords": ["pandas", "numpy", "data manipulation", "dataframe", "data cleaning", "data wrangling"]
+    },
+    {
+      "id": "ds-data-visualization",
+      "title": "Exploratory Data Analysis & Visualization",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 2,
+      "est_hours": 15,
+      "description": "Build insightful charts and dashboards using Matplotlib, Seaborn, and Plotly to discover data patterns.",
+      "keywords": ["data visualization", "matplotlib", "seaborn", "plotly", "eda", "charts", "plots"]
+    },
+    {
+      "id": "ds-feature-engineering",
+      "title": "Feature Engineering & Data Preprocessing",
+      "type": "skill",
+      "track": "data-science",
+      "difficulty": 3,
+      "est_hours": 16,
+      "description": "Handle missing values, encoding categorical variables, feature scaling, dimensionality reduction (PCA), and feature selection.",
+      "keywords": ["feature engineering", "preprocessing", "one-hot encoding", "pca", "scaling", "feature selection"]
+    },
+    {
+      "id": "ds-scikit-learn",
+      "title": "Supervised Machine Learning with Scikit-Learn",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 3,
+      "est_hours": 25,
+      "description": "Build, evaluate, and tune classification and regression models (Linear/Logistic Regression, Decision Trees, Random Forests, XGBoost).",
+      "keywords": ["machine learning", "ml", "scikit-learn", "sklearn", "regression", "classification", "xgboost", "random forest"]
+    },
+    {
+      "id": "ds-unsupervised-learning",
+      "title": "Unsupervised Learning & Clustering",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 3,
+      "est_hours": 18,
+      "description": "Discover hidden clusters and patterns using K-Means, Hierarchical Clustering, DBSCAN, and anomaly detection.",
+      "keywords": ["unsupervised learning", "clustering", "kmeans", "dbscan", "anomaly detection", "segmentation"]
+    },
+    {
+      "id": "ds-deep-learning",
+      "title": "Deep Learning & Neural Networks with PyTorch",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 4,
+      "est_hours": 30,
+      "description": "Neural network architectures, backpropagation, CNNs for computer vision, RNNs, and PyTorch framework mastery.",
+      "keywords": ["deep learning", "pytorch", "neural networks", "cnn", "rnn", "tensorflow", "dl"]
+    },
+    {
+      "id": "ds-nlp-llms",
+      "title": "Natural Language Processing & LLM Fine-Tuning",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 4,
+      "est_hours": 28,
+      "description": "Text tokenization, embeddings, HuggingFace Transformers, RAG architecture, and fine-tuning Large Language Models.",
+      "keywords": ["nlp", "natural language processing", "llm", "transformers", "huggingface", "bert", "gpt", "rag"]
+    },
+    {
+      "id": "ds-mlops-deployment",
+      "title": "MLOps & Model Deployment",
+      "type": "skill",
+      "track": "data-science",
+      "difficulty": 4,
+      "est_hours": 22,
+      "description": "Serve ML models with FastAPI/Flask, track experiments with MLflow, containerize with Docker, and monitor model drift.",
+      "keywords": ["mlops", "model deployment", "fastapi", "mlflow", "docker", "serving", "pipeline"]
+    },
+    {
+      "id": "ds-capstone-project",
+      "title": "End-to-End Predictive Data Science Project",
+      "type": "project",
+      "track": "data-science",
+      "difficulty": 5,
+      "est_hours": 35,
+      "description": "Build a production-grade data science application from data ingestion to model deployment and interactive web dashboard.",
+      "keywords": ["data science capstone", "ds project", "portfolio project", "end to end ml"]
+    },
+
+    {
+      "id": "fe-html-css",
+      "title": "HTML5 & Modern CSS Foundations",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 1,
+      "est_hours": 12,
+      "description": "Master semantic HTML tags, CSS Flexbox, Grid, responsive design, and CSS variables.",
+      "keywords": ["html", "css", "html5", "css3", "flexbox", "grid", "responsive design", "web design"]
+    },
+    {
+      "id": "fe-js-basics",
+      "title": "JavaScript Fundamentals & DOM Manipulation",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 1,
+      "est_hours": 18,
+      "description": "Variables, data types, functions, DOM selection, event listeners, and ES6+ features (arrow functions, destructuring).",
+      "keywords": ["javascript", "js", "dom", "es6", "vanilla js", "functions", "events"]
+    },
+    {
+      "id": "fe-git-github",
+      "title": "Git Version Control & GitHub Workflow",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 1,
+      "est_hours": 8,
+      "description": "Branching, merging, commit hygiene, pull requests, resolving merge conflicts, and GitHub collaboration.",
+      "keywords": ["git", "github", "version control", "commits", "branches", "pr"]
+    },
+    {
+      "id": "fe-async-api",
+      "title": "Asynchronous JavaScript & REST APIs",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 2,
+      "est_hours": 14,
+      "description": "Promises, async/await, fetch API, JSON parsing, error handling, and integrating third-party REST APIs.",
+      "keywords": ["async", "promises", "async await", "fetch", "rest api", "json", "ajax"]
+    },
+    {
+      "id": "fe-react-basics",
+      "title": "React Core Principles & Hooks",
+      "type": "course",
+      "track": "frontend",
+      "difficulty": 2,
+      "est_hours": 25,
+      "description": "JSX, components, props, state (useState), side effects (useEffect), refs, and React component lifecycle.",
+      "keywords": ["react", "react.js", "jsx", "hooks", "usestate", "useeffect", "components"]
+    },
+    {
+      "id": "fe-tailwind-ui",
+      "title": "Tailwind CSS & Component Design Systems",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 2,
+      "est_hours": 12,
+      "description": "Utility-first styling with Tailwind CSS, custom design tokens, dark mode, animation utilities, and accessible UI components.",
+      "keywords": ["tailwind", "tailwindcss", "css framework", "ui design", "shadcn", "components"]
+    },
+    {
+      "id": "fe-typescript",
+      "title": "TypeScript for Web Developers",
+      "type": "course",
+      "track": "frontend",
+      "difficulty": 3,
+      "est_hours": 20,
+      "description": "Type annotations, interfaces, generics, union types, type narrowing, and typing React props and API responses.",
+      "keywords": ["typescript", "ts", "types", "type safety", "interfaces", "generics"]
+    },
+    {
+      "id": "fe-state-management",
+      "title": "Advanced State Management (Zustand / Redux)",
+      "type": "course",
+      "track": "frontend",
+      "difficulty": 3,
+      "est_hours": 16,
+      "description": "Global application state management, context API, Zustand store design, immutability, and state persistence.",
+      "keywords": ["state management", "zustand", "redux", "context api", "global state", "store"]
+    },
+    {
+      "id": "fe-nextjs-app",
+      "title": "Next.js App Router & Server Components",
+      "type": "course",
+      "track": "frontend",
+      "difficulty": 4,
+      "est_hours": 28,
+      "description": "Full-stack React with Next.js: file-based routing, React Server Components (RSC), Server Actions, API routes, and SSR/SSG.",
+      "keywords": ["next.js", "nextjs", "app router", "rsc", "server components", "server actions", "ssr"]
+    },
+    {
+      "id": "fe-testing-perf",
+      "title": "Frontend Testing & Web Performance Optimization",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 4,
+      "est_hours": 18,
+      "description": "Unit testing with Vitest/Jest, component testing with React Testing Library, Core Web Vitals, code splitting, and memoization.",
+      "keywords": ["testing", "vitest", "jest", "react testing library", "web vitals", "performance", "optimization"]
+    },
+    {
+      "id": "fe-capstone-project",
+      "title": "Production React/Next.js Web Application Capstone",
+      "type": "project",
+      "track": "frontend",
+      "difficulty": 5,
+      "est_hours": 35,
+      "description": "Build and deploy a feature-rich, high-performance web application with full state management, API integration, and polished UI.",
+      "keywords": ["frontend capstone", "react project", "nextjs app", "portfolio website"]
+    },
+
+    {
+      "id": "dev-linux-bash",
+      "title": "Linux Systems & Bash Shell Scripting",
+      "type": "skill",
+      "track": "devops",
+      "difficulty": 1,
+      "est_hours": 15,
+      "description": "File system navigation, permissions, process management, text processing (grep, awk, sed), and automation scripts.",
+      "keywords": ["linux", "bash", "shell", "terminal", "cli", "command line", "ubuntu"]
+    },
+    {
+      "id": "dev-networking-http",
+      "title": "Computer Networking & Web Protocols",
+      "type": "skill",
+      "track": "devops",
+      "difficulty": 1,
+      "est_hours": 12,
+      "description": "TCP/IP, DNS resolution, HTTP/HTTPS, SSL/TLS certificates, reverse proxies (Nginx), firewalls, and ports.",
+      "keywords": ["networking", "dns", "http", "https", "nginx", "tcp/ip", "ssl", "tls", "proxy"]
+    },
+    {
+      "id": "dev-git-automation",
+      "title": "Git & Code Repository Management",
+      "type": "skill",
+      "track": "devops",
+      "difficulty": 1,
+      "est_hours": 8,
+      "description": "Git branching strategies (GitFlow, trunk-based), hooks, tagging, release management, and repository security.",
+      "keywords": ["git", "github", "version control", "gitflow", "trunk based"]
+    },
+    {
+      "id": "dev-docker-basics",
+      "title": "Containerization with Docker",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 2,
+      "est_hours": 20,
+      "description": "Dockerfiles, image optimization, multi-stage builds, container lifecycle, volumes, and networking.",
+      "keywords": ["docker", "containers", "dockerfile", "containerization", "images"]
+    },
+    {
+      "id": "dev-docker-compose",
+      "title": "Multi-Container Applications with Docker Compose",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 2,
+      "est_hours": 14,
+      "description": "Define and run multi-container Docker applications (web, DB, cache) with YAML configurations and environment variables.",
+      "keywords": ["docker compose", "microservices", "containers", "yaml", "orchestration"]
+    },
+    {
+      "id": "dev-cicd-actions",
+      "title": "CI/CD Pipelines with GitHub Actions",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 3,
+      "est_hours": 22,
+      "description": "Automated linting, testing, building, and deployment workflows triggered on git commits and pull requests.",
+      "keywords": ["ci/cd", "github actions", "pipelines", "automation", "deployment", "continuous integration"]
+    },
+    {
+      "id": "dev-terraform-iac",
+      "title": "Infrastructure as Code (IaC) with Terraform",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 3,
+      "est_hours": 25,
+      "description": "Provision and manage cloud infrastructure declaratively using HashiCorp Terraform HCL, modules, and state files.",
+      "keywords": ["terraform", "iac", "infrastructure as code", "hcl", "cloud provisioning"]
+    },
+    {
+      "id": "dev-cloud-aws",
+      "title": "Cloud Computing Essentials (AWS / GCP)",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 3,
+      "est_hours": 24,
+      "description": "Cloud fundamentals: EC2 compute, S3 storage, IAM roles, VPC networking, RDS databases, and serverless functions.",
+      "keywords": ["aws", "cloud", "gcp", "ec2", "s3", "vpc", "iam", "cloud engineering"]
+    },
+    {
+      "id": "dev-kubernetes",
+      "title": "Container Orchestration with Kubernetes (k8s)",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 4,
+      "est_hours": 32,
+      "description": "Deploy, scale, and manage containerized applications using Pods, Deployments, Services, Ingress, and Helm charts.",
+      "keywords": ["kubernetes", "k8s", "orchestration", "pods", "deployments", "helm", "kubectl"]
+    },
+    {
+      "id": "dev-monitoring-logging",
+      "title": "Observability: Prometheus, Grafana & ELK",
+      "type": "skill",
+      "track": "devops",
+      "difficulty": 4,
+      "est_hours": 20,
+      "description": "Monitor system metrics with Prometheus, build dashboards in Grafana, and centralize logs with Elasticsearch/Logstash.",
+      "keywords": ["monitoring", "prometheus", "grafana", "observability", "logging", "elk", "metrics"]
+    },
+    {
+      "id": "dev-capstone-project",
+      "title": "Automated Cloud Infrastructure Capstone Project",
+      "type": "project",
+      "track": "devops",
+      "difficulty": 5,
+      "est_hours": 35,
+      "description": "Design and deploy a resilient, self-healing k8s cluster infrastructure with automated CI/CD and full monitoring.",
+      "keywords": ["devops capstone", "k8s project", "terraform aws project", "infrastructure project"]
+    }
+  ],
+  "edges": [
+    { "from_id": "ds-python-basics", "to_id": "ds-numpy-pandas" },
+    { "from_id": "ds-python-basics", "to_id": "ds-math-stats" },
+    { "from_id": "ds-sql-basics", "to_id": "ds-numpy-pandas" },
+    { "from_id": "ds-numpy-pandas", "to_id": "ds-data-visualization" },
+    { "from_id": "ds-numpy-pandas", "to_id": "ds-feature-engineering" },
+    { "from_id": "ds-math-stats", "to_id": "ds-scikit-learn" },
+    { "from_id": "ds-feature-engineering", "to_id": "ds-scikit-learn" },
+    { "from_id": "ds-feature-engineering", "to_id": "ds-unsupervised-learning" },
+    { "from_id": "ds-scikit-learn", "to_id": "ds-deep-learning" },
+    { "from_id": "ds-scikit-learn", "to_id": "ds-nlp-llms" },
+    { "from_id": "ds-deep-learning", "to_id": "ds-nlp-llms" },
+    { "from_id": "ds-scikit-learn", "to_id": "ds-mlops-deployment" },
+    { "from_id": "ds-data-visualization", "to_id": "ds-capstone-project" },
+    { "from_id": "ds-mlops-deployment", "to_id": "ds-capstone-project" },
+    { "from_id": "ds-nlp-llms", "to_id": "ds-capstone-project" },
+
+    { "from_id": "fe-html-css", "to_id": "fe-js-basics" },
+    { "from_id": "fe-html-css", "to_id": "fe-tailwind-ui" },
+    { "from_id": "fe-js-basics", "to_id": "fe-async-api" },
+    { "from_id": "fe-js-basics", "to_id": "fe-git-github" },
+    { "from_id": "fe-js-basics", "to_id": "fe-react-basics" },
+    { "from_id": "fe-async-api", "to_id": "fe-react-basics" },
+    { "from_id": "fe-react-basics", "to_id": "fe-typescript" },
+    { "from_id": "fe-react-basics", "to_id": "fe-state-management" },
+    { "from_id": "fe-typescript", "to_id": "fe-nextjs-app" },
+    { "from_id": "fe-tailwind-ui", "to_id": "fe-nextjs-app" },
+    { "from_id": "fe-state-management", "to_id": "fe-nextjs-app" },
+    { "from_id": "fe-nextjs-app", "to_id": "fe-testing-perf" },
+    { "from_id": "fe-testing-perf", "to_id": "fe-capstone-project" },
+
+    { "from_id": "dev-linux-bash", "to_id": "dev-networking-http" },
+    { "from_id": "dev-linux-bash", "to_id": "dev-docker-basics" },
+    { "from_id": "dev-git-automation", "to_id": "dev-cicd-actions" },
+    { "from_id": "dev-docker-basics", "to_id": "dev-docker-compose" },
+    { "from_id": "dev-docker-basics", "to_id": "dev-cicd-actions" },
+    { "from_id": "dev-docker-compose", "to_id": "dev-kubernetes" },
+    { "from_id": "dev-cicd-actions", "to_id": "dev-terraform-iac" },
+    { "from_id": "dev-networking-http", "to_id": "dev-cloud-aws" },
+    { "from_id": "dev-terraform-iac", "to_id": "dev-cloud-aws" },
+    { "from_id": "dev-cloud-aws", "to_id": "dev-kubernetes" },
+    { "from_id": "dev-kubernetes", "to_id": "dev-monitoring-logging" },
+    { "from_id": "dev-monitoring-logging", "to_id": "dev-capstone-project" }
+  ]
+}
