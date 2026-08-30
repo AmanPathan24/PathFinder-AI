@@ -104,25 +104,29 @@ function fallbackParseGoal(userPrompt: string): UserParsedProfile {
 }
 
 /**
- * Main parser function supporting Gemini 3.7 Flash, OpenAI, or Fallback Engine.
+ * Main parser function supporting Gemini, OpenAI, or Fallback Engine with 3-second timeout protection.
  */
 export async function parseUserGoal(userPrompt: string): Promise<UserParsedProfile> {
   const geminiKey = process.env.GEMINI_API_KEY;
   const openAiKey = process.env.OPENAI_API_KEY;
-  const geminiModel = process.env.GEMINI_MODEL || 'gemini-3.7-flash';
+  const geminiModel = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
 
   if (!openAiKey && !geminiKey) {
     return fallbackParseGoal(userPrompt);
   }
 
-  // Try Gemini REST endpoint first if GEMINI_API_KEY is present
+  // Try Gemini REST API with 3-second timeout
   if (geminiKey) {
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3000);
+
       const response = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${geminiModel}:generateContent?key=${geminiKey}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          signal: controller.signal,
           body: JSON.stringify({
             contents: [
               {
@@ -140,6 +144,7 @@ export async function parseUserGoal(userPrompt: string): Promise<UserParsedProfi
           }),
         }
       );
+      clearTimeout(timeoutId);
 
       if (response.ok) {
         const data = await response.json();
@@ -154,50 +159,25 @@ export async function parseUserGoal(userPrompt: string): Promise<UserParsedProfi
             raw_goal: userPrompt,
           };
         }
-      } else {
-        const errText = await response.text();
-        console.warn(`Gemini API returned ${response.status}: ${errText}. Falling back to standard endpoints.`);
-        // Fallback to gemini-1.5-flash or 2.0-flash if model name is experimental in region
-        const fallbackResp = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              contents: [{ parts: [{ text: `${SYSTEM_PROMPT}\n\nUser Input: ${userPrompt}\nOutput JSON:` }] }],
-              generationConfig: { responseMimeType: 'application/json', temperature: 0.1 },
-            }),
-          }
-        );
-        if (fallbackResp.ok) {
-          const data = await fallbackResp.json();
-          const rawJsonText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (rawJsonText) {
-            const parsed = JSON.parse(rawJsonText);
-            return {
-              target_track: parsed.target_track || 'data-science',
-              known_skills: parsed.known_skills || [],
-              known_node_ids: [],
-              time_budget_weeks: parsed.time_budget_weeks || 24,
-              raw_goal: userPrompt,
-            };
-          }
-        }
       }
     } catch (err) {
-      console.warn('Gemini intake parse error, trying OpenAI / fallback:', err);
+      console.warn('Gemini intake parse timeout or error, falling back:', err);
     }
   }
 
-  // Try OpenAI endpoint if OPENAI_API_KEY is present
+  // Try OpenAI API with 3-second timeout
   if (openAiKey) {
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3000);
+
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${openAiKey}`,
         },
+        signal: controller.signal,
         body: JSON.stringify({
           model: 'gpt-4o-mini',
           messages: [
@@ -208,6 +188,7 @@ export async function parseUserGoal(userPrompt: string): Promise<UserParsedProfi
           response_format: { type: 'json_object' },
         }),
       });
+      clearTimeout(timeoutId);
 
       if (response.ok) {
         const data = await response.json();
@@ -224,7 +205,7 @@ export async function parseUserGoal(userPrompt: string): Promise<UserParsedProfi
         }
       }
     } catch (err) {
-      console.warn('OpenAI intake parse failed, falling back to heuristic:', err);
+      console.warn('OpenAI intake parse timeout or error, falling back:', err);
     }
   }
 
