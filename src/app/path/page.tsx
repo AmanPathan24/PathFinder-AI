@@ -41,6 +41,16 @@ export default function PathPage() {
   } = usePath();
 
   const [viewMode, setViewMode] = useState<'canvas' | 'cards'>('canvas');
+  const [isSwitchingView, setIsSwitchingView] = useState(false);
+
+  const handleViewModeChange = (nextMode: 'canvas' | 'cards') => {
+    if (nextMode === viewMode) return;
+    setIsSwitchingView(true);
+    window.setTimeout(() => {
+      setViewMode(nextMode);
+      window.setTimeout(() => setIsSwitchingView(false), 180);
+    }, 120);
+  };
 
   const bottlenecks = useMemo(() => {
     if (!parsedProfile?.target_track) return [];
@@ -136,7 +146,7 @@ export default function PathPage() {
             <div className="bg-[#FFFFFF] border border-[#E6DCCF] rounded-xl p-1 flex items-center shadow-sm">
               <button
                 type="button"
-                onClick={() => setViewMode('canvas')}
+                onClick={() => handleViewModeChange('canvas')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                   viewMode === 'canvas'
                     ? 'bg-[#C96F4A] text-white shadow-sm'
@@ -147,7 +157,7 @@ export default function PathPage() {
               </button>
               <button
                 type="button"
-                onClick={() => setViewMode('cards')}
+                onClick={() => handleViewModeChange('cards')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                   viewMode === 'cards'
                     ? 'bg-[#C96F4A] text-white shadow-sm'
@@ -194,7 +204,7 @@ export default function PathPage() {
 
       {/* Main Interactive Graph Canvas View */}
       {viewMode === 'canvas' ? (
-        <div className="space-y-4">
+        <div className={`space-y-4 transition-all duration-300 ${isSwitchingView ? 'animate-route-fade' : 'animate-route-enter'}`}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h2 className="text-xl font-serif text-[#4A3728] font-bold flex items-center gap-2">
@@ -234,7 +244,7 @@ export default function PathPage() {
         </div>
       ) : (
         /* Detailed Milestone Cards List View */
-        <div className="space-y-6">
+        <div className={`space-y-6 transition-all duration-300 ${isSwitchingView ? 'animate-route-fade' : 'animate-route-enter'}`}>
           <div className="flex items-center justify-between border-b border-[#E6DCCF] pb-4">
             <h2 className="text-2xl font-serif text-[#4A3728] font-bold flex items-center gap-2">
               <Layers className="w-5 h-5 text-[#C96F4A]" />

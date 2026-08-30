@@ -59,8 +59,38 @@ h1, h2, h3, .font-serif-editorial {
   }
 }
 
+@keyframes routeFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes routeFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.995);
+  }
+}
+
 .animate-warm-pulse {
   animation: warmPulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.animate-route-enter {
+  animation: routeFadeIn 280ms ease-out;
+}
+
+.animate-route-fade {
+  animation: routeFadeOut 180ms ease-in forwards;
 }
 
 .paper-shadow {

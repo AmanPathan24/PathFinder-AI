@@ -95,6 +95,7 @@ const RoadmapCanvasInner: React.FC<RoadmapCanvasProps> = ({
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [drawerTab, setDrawerTab] = useState<'resources' | 'tutor'>('resources');
   const [drawerQuery, setDrawerQuery] = useState('');
+  const [isCanvasReady, setIsCanvasReady] = useState(false);
   const { fitView } = useReactFlow();
 
   const nodeMap = useMemo(() => {
@@ -207,7 +208,13 @@ const RoadmapCanvasInner: React.FC<RoadmapCanvasProps> = ({
   }, [decorateNodes, graphSignature, layoutEdges, layoutNodes, setEdges, setNodes]);
 
   useEffect(() => {
-    requestAnimationFrame(() => fitView(FIT_VIEW_OPTIONS));
+    setIsCanvasReady(false);
+    const frame = requestAnimationFrame(() => {
+      fitView(FIT_VIEW_OPTIONS);
+      window.setTimeout(() => setIsCanvasReady(true), 180);
+    });
+
+    return () => cancelAnimationFrame(frame);
   }, [fitView, graphSignature]);
 
   // Status / bottleneck badges only — never replace positions or re-run layout.
@@ -257,7 +264,10 @@ const RoadmapCanvasInner: React.FC<RoadmapCanvasProps> = ({
   );
 
   return (
-    <div className="relative w-full max-w-[calc(100vw-3rem)] mx-auto h-[calc(100vh-220px)] min-h-[620px] max-h-[960px] bg-[#FFF9F0] border border-[#E6DCCF] rounded-3xl overflow-hidden paper-shadow-lg">
+    <div
+      className={`relative w-full max-w-[calc(100vw-3rem)] mx-auto h-[calc(100vh-220px)] min-h-[620px] max-h-[960px] bg-[#FFF9F0] border border-[#E6DCCF] rounded-3xl overflow-hidden paper-shadow-lg transition-opacity duration-300 ease-out ${isCanvasReady ? 'opacity-100' : 'opacity-70'}`}
+      style={{ transform: isCanvasReady ? 'scale(1)' : 'scale(0.995)', transformOrigin: 'center center' }}
+    >
       <ReactFlow
         nodes={nodes}
         edges={edges}
