@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { usePath } from '@/context/PathContext';
 import { TrackId, UserParsedProfile } from '@/types/ontology';
-import { Check, ArrowRight, RefreshCw, Clock, Layers, Sparkles } from 'lucide-react';
+import { Check, ArrowRight, RefreshCw, Clock, Layers, Sparkles, Award } from 'lucide-react';
 import rawOntology from '@/data/ontology.json';
 
 const TRACK_NAMES: Record<TrackId, string> = {
@@ -17,9 +17,9 @@ export default function OnboardingPage() {
   const router = useRouter();
   const {
     parsedProfile,
-    setParsedProfile,
-    setPathOutput,
-    setExplanations,
+    createAndSelectRoadmap,
+    bulkSetKnownPrior,
+    skillMasteries,
     setIsLoading,
     isLoading,
     rawGoal,
@@ -35,9 +35,13 @@ export default function OnboardingPage() {
     if (parsedProfile) {
       setSelectedTrack(parsedProfile.target_track || 'data-science');
       setBudgetWeeks(parsedProfile.time_budget_weeks || 24);
-      setSelectedKnownNodeIds(parsedProfile.known_node_ids || []);
+
+      // Pre-select skills from parsed intent OR already in global skillMasteries
+      const initialKnown = new Set<string>(parsedProfile.known_node_ids || []);
+      Object.keys(skillMasteries).forEach((id) => initialKnown.add(id));
+      setSelectedKnownNodeIds(Array.from(initialKnown));
     }
-  }, [parsedProfile]);
+  }, [parsedProfile, skillMasteries]);
 
   const toggleKnownNode = (nodeId: string) => {
     setSelectedKnownNodeIds((prev) =>
@@ -48,36 +52,24 @@ export default function OnboardingPage() {
   const handleConfirmProfile = async () => {
     setIsLoading(true);
 
-    const updatedProfile: UserParsedProfile = {
-      target_track: selectedTrack,
-      known_skills: trackNodes
-        .filter((n) => selectedKnownNodeIds.includes(n.id))
-        .map((n) => n.title),
-      known_node_ids: selectedKnownNodeIds,
-      time_budget_weeks: budgetWeeks,
-      raw_goal: rawGoal || `Master ${TRACK_NAMES[selectedTrack]}`,
-    };
-
-    setParsedProfile(updatedProfile);
-
     try {
-      const res = await fetch('/api/recommend', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          overrideProfile: updatedProfile,
-          knownNodeIds: selectedKnownNodeIds,
-        }),
+      // 1. Create and select the roadmap in the database / context
+      const newRoadmap = await createAndSelectRoadmap({
+        title: TRACK_NAMES[selectedTrack],
+        target_track: selectedTrack,
+        time_budget_weeks: budgetWeeks,
+        weekly_hours: 10,
+        raw_goal: rawGoal || `Master ${TRACK_NAMES[selectedTrack]}`,
+        known_node_ids: selectedKnownNodeIds,
       });
 
-      if (res.ok) {
-        const data = await res.json();
-        setPathOutput(data.path);
-        setExplanations(data.explanations || {});
+      if (newRoadmap) {
+        // 2. Set the selected existing competencies to 'known-prior'
+        await bulkSetKnownPrior(selectedKnownNodeIds);
         router.push('/path');
       }
     } catch (err) {
-      console.error('Error generating path:', err);
+      console.error('Error generating roadmap:', err);
     } finally {
       setIsLoading(false);
     }
@@ -88,7 +80,7 @@ export default function OnboardingPage() {
       {/* Header */}
       <div className="border-b border-[#E6DCCF] pb-6">
         <div className="inline-flex items-center gap-2 text-xs font-bold text-[#8C9A76] bg-[#E4EAD9] px-3.5 py-1 rounded-full border border-[#8C9A76]/30 mb-3 uppercase tracking-wider">
-          <Sparkles className="w-3.5 h-3.5" /> Stage 2: Profile Calibration
+          <Sparkles className="w-3.5 h-3.5" /> Stage 2: Profile Calibration & Competencies
         </div>
         <h1 className="text-4xl font-serif text-[#4A3728] tracking-tight">
           Refine & Calibrate Your Intent
@@ -149,13 +141,19 @@ export default function OnboardingPage() {
           </div>
         </div>
 
-        {/* Known Skills Mapping */}
+        {/* Known Skills Mapping (Phase 1: writes directly to known-prior) */}
         <div className="md:col-span-3 bg-[#FFF9F0] border border-[#E6DCCF] rounded-2xl p-6 space-y-4 paper-shadow">
           <div className="flex items-center justify-between">
-            <label className="text-xs font-bold uppercase tracking-wider text-[#4A3728]">
-              Existing Competencies (Will be excluded from learning path)
-            </label>
-            <span className="text-xs text-[#8C9A76] font-bold bg-[#E4EAD9] px-3 py-1 rounded-full border border-[#8C9A76]/30">
+            <div>
+              <label className="text-xs font-bold uppercase tracking-wider text-[#4A3728] flex items-center gap-2">
+                <Award className="w-4 h-4 text-[#B58B65]" />
+                Existing Competencies (Marked as Known Prior — excluded from path & 0h study)
+              </label>
+              <p className="text-[11px] text-[#7A6553] mt-0.5">
+                Skills you already know will be excluded from the active roadmap and marked with a special badge.
+              </p>
+            </div>
+            <span className="text-xs text-[#B58B65] font-bold bg-[#F7F1E7] px-3 py-1 rounded-full border border-[#E6DCCF]">
               {selectedKnownNodeIds.length} Selected
             </span>
           </div>
@@ -170,14 +168,14 @@ export default function OnboardingPage() {
                   onClick={() => toggleKnownNode(node.id)}
                   className={`flex items-start gap-3 p-3.5 rounded-xl border text-left text-xs transition-all ${
                     isChecked
-                      ? 'bg-[#E4EAD9] border-[#8C9A76] text-[#4A3728] shadow-sm'
+                      ? 'bg-[#E8D6C3]/50 border-[#B58B65] text-[#4A3728] shadow-sm'
                       : 'bg-[#FFFFFF] border-[#E6DCCF] text-[#7A6553] hover:border-[#B58B65]'
                   }`}
                 >
                   <div
                     className={`w-4 h-4 rounded border mt-0.5 flex items-center justify-center shrink-0 ${
                       isChecked
-                        ? 'bg-[#8C9A76] border-[#8C9A76] text-white'
+                        ? 'bg-[#B58B65] border-[#B58B65] text-white'
                         : 'border-[#B58B65] bg-white'
                     }`}
                   >
@@ -212,7 +210,7 @@ export default function OnboardingPage() {
           disabled={isLoading}
           className="px-8 py-3.5 bg-[#C96F4A] hover:bg-[#A85331] text-white font-bold text-sm rounded-xl shadow-md flex items-center gap-2 transition-all disabled:opacity-50"
         >
-          {isLoading ? 'Running Path Engine...' : 'Confirm & Generate Roadmap'}
+          {isLoading ? 'Building Multi-Roadmap Engine...' : 'Confirm & Launch Visual Roadmap'}
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>

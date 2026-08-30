@@ -7,6 +7,8 @@ import {
   PathEngineOutput,
 } from '@/types/ontology';
 import rawOntology from '../../data/ontology.json';
+import { optimizePathBudget } from './knapsack-optimizer';
+import { analyzeBottlenecks } from './bottleneck-analyzer';
 
 const ontologyData = rawOntology as SkillOntology;
 
@@ -26,8 +28,17 @@ export function getOntology(): SkillOntology {
 }
 
 /**
+ * Helper to get critical bottlenecks for a track
+ */
+export function getBottlenecks(targetTrack: TrackId, customOntology?: SkillOntology): string[] {
+  const ontology = customOntology || getOntology();
+  const { bottleneckNodeIds } = analyzeBottlenecks(ontology, targetTrack);
+  return bottleneckNodeIds;
+}
+
+/**
  * Pure DAG Path Engine Implementation
- * Computes an ordered, milestone-grouped, budget-trimmed learning path.
+ * Computes an ordered, milestone-grouped, knapsack-optimized learning path.
  */
 export function generateLearningPath(
   options: PathEngineOptions,
@@ -76,22 +87,29 @@ export function generateLearningPath(
     dependentsOfMap.get(edge.from_id)?.add(edge.to_id);
   });
 
-  // 2. Identify remaining nodes to learn
-  const remainingNodeIds = new Set<string>(
-    trackNodes
-      .map((n) => n.id)
-      .filter((id) => !completedOrSkipped.has(id))
-  );
+  // 2. Identify remaining candidate nodes to learn
+  const candidateNodes = trackNodes.filter((n) => !completedOrSkipped.has(n.id));
 
-  // 3. Topological sorting with parallel wave grouping (Kahn's Algorithm modified for waves)
-  // For each node, count how many UNMET prerequisites it has in remainingNodeIds
+  // 3. Apply Precedence-Constrained Knapsack Optimizer for Time-Budget Constraint
+  const knapsackResult = optimizePathBudget({
+    candidateNodes,
+    prereqMap: prereqsOfMap,
+    dependentsMap: dependentsOfMap,
+    maxHours: totalTimeBudgetHours,
+  });
+
+  const activeNodes = knapsackResult.selectedNodes;
+  const activeNodeIds = new Set(activeNodes.map((n) => n.id));
+
+  // 4. Topological sorting with parallel wave grouping (Kahn's Algorithm modified for waves)
+  // For each node in activeNodes, count how many UNMET prerequisites it has in activeNodeIds
   const unmetPrereqCount = new Map<string, number>();
 
-  remainingNodeIds.forEach((nodeId) => {
+  activeNodeIds.forEach((nodeId) => {
     const prereqs = prereqsOfMap.get(nodeId) || new Set();
     let unmetCount = 0;
     prereqs.forEach((pId) => {
-      if (remainingNodeIds.has(pId)) {
+      if (activeNodeIds.has(pId)) {
         unmetCount++;
       }
     });
@@ -102,11 +120,10 @@ export function generateLearningPath(
   const processedInPath = new Set<string>();
   let milestoneCounter = 1;
 
-  while (processedInPath.size < remainingNodeIds.size) {
-    // Find all nodes in remainingNodeIds that have unmetPrereqCount === 0 and haven't been processed
+  while (processedInPath.size < activeNodeIds.size) {
     const currentWaveIds: string[] = [];
 
-    remainingNodeIds.forEach((nodeId) => {
+    activeNodeIds.forEach((nodeId) => {
       if (
         !processedInPath.has(nodeId) &&
         (unmetPrereqCount.get(nodeId) || 0) === 0
@@ -117,11 +134,10 @@ export function generateLearningPath(
 
     // Handle potential cycles safely
     if (currentWaveIds.length === 0) {
-      const unprocessed = Array.from(remainingNodeIds).filter(
+      const unprocessed = Array.from(activeNodeIds).filter(
         (id) => !processedInPath.has(id)
       );
       if (unprocessed.length > 0) {
-        // Pick the one with smallest unmet count
         unprocessed.sort(
           (a, b) =>
             (unmetPrereqCount.get(a) || 0) - (unmetPrereqCount.get(b) || 0)
@@ -163,7 +179,6 @@ export function generateLearningPath(
       est_hours: waveEstHours,
     });
 
-    // Mark current wave as processed and reduce unmet count for dependents
     currentWaveIds.forEach((id) => {
       processedInPath.add(id);
       const dependents = dependentsOfMap.get(id) || new Set();
@@ -178,69 +193,38 @@ export function generateLearningPath(
     milestoneCounter++;
   }
 
-  // 4. Budget Trimming Logic
-  let recommendedNodes: OntologyNode[] = [];
-  milestones.forEach((m) => recommendedNodes.push(...m.nodes));
+  const finalTotalHours = activeNodes.reduce((sum, n) => sum + n.est_hours, 0);
 
-  const initialTotalHours = recommendedNodes.reduce(
-    (sum, n) => sum + n.est_hours,
-    0
-  );
+  // Build known/completed nodes list (not excluded, only known/done)
+  const knownNodes = trackNodes.filter((n) => knownNodeIds.includes(n.id));
 
-  let trimmedNodes: OntologyNode[] = [];
-  let isTrimmed = false;
-  let finalMilestones = milestones;
-
-  if (initialTotalHours > totalTimeBudgetHours) {
-    isTrimmed = true;
-    let currentHours = 0;
-    const keptNodes: OntologyNode[] = [];
-    const newMilestones: PathMilestone[] = [];
-
-    for (const milestone of milestones) {
-      const milestoneKeptNodes: OntologyNode[] = [];
-
-      for (const node of milestone.nodes) {
-        // Keep essential nodes (prerequisites or capstone) if under budget
-        if (currentHours + node.est_hours <= totalTimeBudgetHours) {
-          currentHours += node.est_hours;
-          milestoneKeptNodes.push(node);
-          keptNodes.push(node);
-        } else {
-          trimmedNodes.push(node);
-        }
-      }
-
-      if (milestoneKeptNodes.length > 0) {
-        newMilestones.push({
-          ...milestone,
-          nodes: milestoneKeptNodes,
-          est_hours: milestoneKeptNodes.reduce(
-            (sum, n) => sum + n.est_hours,
-            0
-          ),
-          is_parallel: milestoneKeptNodes.length > 1,
-        });
-      }
-    }
-
-    finalMilestones = newMilestones;
-    recommendedNodes = keptNodes;
+  // Prepend a "Completed" milestone group if there are known/done nodes
+  const allMilestones: PathMilestone[] = [];
+  if (knownNodes.length > 0) {
+    allMilestones.push({
+      milestone_index: 0,
+      title: 'Completed / Known Prior Topics',
+      nodes: knownNodes,
+      is_parallel: knownNodes.length > 1,
+      est_hours: knownNodes.reduce((s, n) => s + n.est_hours, 0),
+    });
   }
+  allMilestones.push(...milestones);
 
-  const finalTotalHours = recommendedNodes.reduce(
-    (sum, n) => sum + n.est_hours,
-    0
-  );
+  // Re-number milestones (keep 0 for completed group)
+  allMilestones.forEach((m, i) => {
+    m.milestone_index = i;
+  });
 
   return {
     target_track: targetTrack,
-    milestones: finalMilestones,
-    recommended_nodes: recommendedNodes,
-    trimmed_nodes: trimmedNodes,
+    milestones: allMilestones,
+    recommended_nodes: activeNodes,
+    known_nodes: knownNodes,
+    trimmed_nodes: knapsackResult.trimmedNodes,
     total_est_hours: finalTotalHours,
     time_budget_hours: totalTimeBudgetHours,
-    is_trimmed: isTrimmed,
+    is_trimmed: knapsackResult.isTrimmed,
     completed_node_ids: Array.from(completedOrSkipped),
   };
 }

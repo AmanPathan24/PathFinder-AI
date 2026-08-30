@@ -1,0 +1,166 @@
+[
+  { "id": "sub-py-syntax", "parent_skill_id": "ds-python-basics", "title": "Syntax & Control Flow", "est_hours": 3 },
+  { "id": "sub-py-ds", "parent_skill_id": "ds-python-basics", "title": "Lists, Dicts & Sets", "est_hours": 4 },
+  { "id": "sub-py-oop", "parent_skill_id": "ds-python-basics", "title": "OOP & Modules", "est_hours": 4 },
+  { "id": "sub-py-files", "parent_skill_id": "ds-python-basics", "title": "File I/O & Exceptions", "est_hours": 4 },
+
+  { "id": "sub-sql-select", "parent_skill_id": "ds-sql-basics", "title": "SELECT, WHERE & ORDER", "est_hours": 3 },
+  { "id": "sub-sql-joins", "parent_skill_id": "ds-sql-basics", "title": "INNER, LEFT & OUTER JOINs", "est_hours": 3 },
+  { "id": "sub-sql-agg", "parent_skill_id": "ds-sql-basics", "title": "GROUP BY & Aggregations", "est_hours": 3 },
+  { "id": "sub-sql-subq", "parent_skill_id": "ds-sql-basics", "title": "Subqueries & Window Functions", "est_hours": 3 },
+
+  { "id": "sub-math-prob", "parent_skill_id": "ds-math-stats", "title": "Probability & Distributions", "est_hours": 5 },
+  { "id": "sub-math-hypo", "parent_skill_id": "ds-math-stats", "title": "Hypothesis Testing & p-values", "est_hours": 4 },
+  { "id": "sub-math-linalg", "parent_skill_id": "ds-math-stats", "title": "Matrix Operations & Vectors", "est_hours": 5 },
+  { "id": "sub-math-calc", "parent_skill_id": "ds-math-stats", "title": "Gradients & Derivatives", "est_hours": 4 },
+
+  { "id": "sub-numpy-arrays", "parent_skill_id": "ds-numpy-pandas", "title": "NumPy N-Dim Arrays", "est_hours": 5 },
+  { "id": "sub-pandas-df", "parent_skill_id": "ds-numpy-pandas", "title": "Pandas DataFrames", "est_hours": 6 },
+  { "id": "sub-pandas-clean", "parent_skill_id": "ds-numpy-pandas", "title": "Data Cleaning & Imputation", "est_hours": 5 },
+  { "id": "sub-pandas-merge", "parent_skill_id": "ds-numpy-pandas", "title": "Merging & Pivoting", "est_hours": 4 },
+
+  { "id": "sub-viz-matplotlib", "parent_skill_id": "ds-data-visualization", "title": "Matplotlib Subplots", "est_hours": 4 },
+  { "id": "sub-viz-seaborn", "parent_skill_id": "ds-data-visualization", "title": "Seaborn Statistical Plots", "est_hours": 4 },
+  { "id": "sub-viz-plotly", "parent_skill_id": "ds-data-visualization", "title": "Plotly Interactive Charts", "est_hours": 4 },
+  { "id": "sub-viz-eda", "parent_skill_id": "ds-data-visualization", "title": "EDA Workflow Patterns", "est_hours": 3 },
+
+  { "id": "sub-feat-missing", "parent_skill_id": "ds-feature-engineering", "title": "Imputation & Outliers", "est_hours": 4 },
+  { "id": "sub-feat-encode", "parent_skill_id": "ds-feature-engineering", "title": "One-Hot & Target Encoding", "est_hours": 4 },
+  { "id": "sub-feat-scaling", "parent_skill_id": "ds-feature-engineering", "title": "Standardization & MinMax", "est_hours": 4 },
+  { "id": "sub-feat-pca", "parent_skill_id": "ds-feature-engineering", "title": "PCA Dimensionality Reduction", "est_hours": 4 },
+
+  { "id": "sub-sk-linear", "parent_skill_id": "ds-scikit-learn", "title": "Linear & Logistic Regression", "est_hours": 6 },
+  { "id": "sub-sk-trees", "parent_skill_id": "ds-scikit-learn", "title": "Random Forests & Trees", "est_hours": 6 },
+  { "id": "sub-sk-boosting", "parent_skill_id": "ds-scikit-learn", "title": "XGBoost & LightGBM", "est_hours": 7 },
+  { "id": "sub-sk-eval", "parent_skill_id": "ds-scikit-learn", "title": "Cross-Validation & ROC-AUC", "est_hours": 6 },
+
+  { "id": "sub-unsup-kmeans", "parent_skill_id": "ds-unsupervised-learning", "title": "K-Means Clustering", "est_hours": 5 },
+  { "id": "sub-unsup-hier", "parent_skill_id": "ds-unsupervised-learning", "title": "Hierarchical & Dendrograms", "est_hours": 4 },
+  { "id": "sub-unsup-dbscan", "parent_skill_id": "ds-unsupervised-learning", "title": "DBSCAN Density Clustering", "est_hours": 5 },
+  { "id": "sub-unsup-anom", "parent_skill_id": "ds-unsupervised-learning", "title": "Isolation Forests & Anomaly", "est_hours": 4 },
+
+  { "id": "sub-dl-mlp", "parent_skill_id": "ds-deep-learning", "title": "Feedforward PyTorch Tensors", "est_hours": 8 },
+  { "id": "sub-dl-cnn", "parent_skill_id": "ds-deep-learning", "title": "CNNs & Computer Vision", "est_hours": 8 },
+  { "id": "sub-dl-train", "parent_skill_id": "ds-deep-learning", "title": "Optimizers & Loss Functions", "est_hours": 7 },
+  { "id": "sub-dl-transfer", "parent_skill_id": "ds-deep-learning", "title": "Pretrained Transfer Learning", "est_hours": 7 },
+
+  { "id": "sub-nlp-tokens", "parent_skill_id": "ds-nlp-llms", "title": "Tokenizers & Word2Vec", "est_hours": 7 },
+  { "id": "sub-nlp-bert", "parent_skill_id": "ds-nlp-llms", "title": "Hugging Face Transformers", "est_hours": 7 },
+  { "id": "sub-nlp-rag", "parent_skill_id": "ds-nlp-llms", "title": "RAG Vector Databases", "est_hours": 7 },
+  { "id": "sub-nlp-lora", "parent_skill_id": "ds-nlp-llms", "title": "LoRA LLM Fine-Tuning", "est_hours": 7 },
+
+  { "id": "sub-mlops-fastapi", "parent_skill_id": "ds-mlops-deployment", "title": "FastAPI Model Inference", "est_hours": 6 },
+  { "id": "sub-mlops-mlflow", "parent_skill_id": "ds-mlops-deployment", "title": "MLflow Experiment Tracking", "est_hours": 5 },
+  { "id": "sub-mlops-docker", "parent_skill_id": "ds-mlops-deployment", "title": "Containerized Serving", "est_hours": 6 },
+  { "id": "sub-mlops-drift", "parent_skill_id": "ds-mlops-deployment", "title": "Data Drift & Monitoring", "est_hours": 5 },
+
+  { "id": "sub-ds-cap-pipe", "parent_skill_id": "ds-capstone-project", "title": "End-to-End Pipeline Architecture", "est_hours": 10 },
+  { "id": "sub-ds-cap-eval", "parent_skill_id": "ds-capstone-project", "title": "Model Benchmarking & Tuning", "est_hours": 12 },
+  { "id": "sub-ds-cap-dash", "parent_skill_id": "ds-capstone-project", "title": "Production Deployment & UI", "est_hours": 13 },
+
+  { "id": "sub-fe-html5", "parent_skill_id": "fe-html-css", "title": "Semantic HTML5 Elements", "est_hours": 3 },
+  { "id": "sub-fe-flexbox", "parent_skill_id": "fe-html-css", "title": "Flexbox & CSS Grid Systems", "est_hours": 3 },
+  { "id": "sub-fe-responsive", "parent_skill_id": "fe-html-css", "title": "Responsive Media Queries", "est_hours": 3 },
+  { "id": "sub-fe-cssvars", "parent_skill_id": "fe-html-css", "title": "CSS Custom Properties", "est_hours": 3 },
+
+  { "id": "sub-fe-es6", "parent_skill_id": "fe-js-basics", "title": "ES6+ Syntax & Scope", "est_hours": 5 },
+  { "id": "sub-fe-dom", "parent_skill_id": "fe-js-basics", "title": "DOM Events & Manipulation", "est_hours": 5 },
+  { "id": "sub-fe-fn", "parent_skill_id": "fe-js-basics", "title": "Closures & Higher-Order Functions", "est_hours": 4 },
+  { "id": "sub-fe-arrays", "parent_skill_id": "fe-js-basics", "title": "Map, Filter & Reduce", "est_hours": 4 },
+
+  { "id": "sub-fe-git-branch", "parent_skill_id": "fe-git-github", "title": "Git Branching & Rebasing", "est_hours": 3 },
+  { "id": "sub-fe-git-pr", "parent_skill_id": "fe-git-github", "title": "PRs, Merges & Conflict Resolution", "est_hours": 3 },
+  { "id": "sub-fe-git-collab", "parent_skill_id": "fe-git-github", "title": "GitHub Issues & Project Boards", "est_hours": 2 },
+
+  { "id": "sub-fe-promises", "parent_skill_id": "fe-async-api", "title": "Promises & Async/Await", "est_hours": 4 },
+  { "id": "sub-fe-fetch-api", "parent_skill_id": "fe-async-api", "title": "Fetch & Axios HTTP Clients", "est_hours": 4 },
+  { "id": "sub-fe-rest-err", "parent_skill_id": "fe-async-api", "title": "RESTful Headers & Error Handling", "est_hours": 3 },
+  { "id": "sub-fe-storage", "parent_skill_id": "fe-async-api", "title": "LocalStorage & Cookies", "est_hours": 3 },
+
+  { "id": "sub-fe-jsx", "parent_skill_id": "fe-react-basics", "title": "JSX & Component Hierarchy", "est_hours": 6 },
+  { "id": "sub-fe-hooks-core", "parent_skill_id": "fe-react-basics", "title": "useState & useEffect Lifecycle", "est_hours": 7 },
+  { "id": "sub-fe-custom-hooks", "parent_skill_id": "fe-react-basics", "title": "Custom Hooks & Composition", "est_hours": 6 },
+  { "id": "sub-fe-refs", "parent_skill_id": "fe-react-basics", "title": "useRef & DOM References", "est_hours": 6 },
+
+  { "id": "sub-fe-tw-util", "parent_skill_id": "fe-tailwind-ui", "title": "Utility Classes & Responsive Breakpoints", "est_hours": 3 },
+  { "id": "sub-fe-tw-theme", "parent_skill_id": "fe-tailwind-ui", "title": "Custom Color Tokens & Config", "est_hours": 3 },
+  { "id": "sub-fe-tw-anim", "parent_skill_id": "fe-tailwind-ui", "title": "Transitions & Micro-Animations", "est_hours": 3 },
+  { "id": "sub-fe-tw-shadcn", "parent_skill_id": "fe-tailwind-ui", "title": "Accessible Radix / shadcn UI", "est_hours": 3 },
+
+  { "id": "sub-fe-ts-basic", "parent_skill_id": "fe-typescript", "title": "Interfaces & Type Aliases", "est_hours": 5 },
+  { "id": "sub-fe-ts-generics", "parent_skill_id": "fe-typescript", "title": "Generics & Narrowing", "est_hours": 5 },
+  { "id": "sub-fe-ts-react-props", "parent_skill_id": "fe-typescript", "title": "Typing React Component Props", "est_hours": 5 },
+  { "id": "sub-fe-ts-utility", "parent_skill_id": "fe-typescript", "title": "Utility Types (Pick, Omit, Partial)", "est_hours": 5 },
+
+  { "id": "sub-fe-zustand", "parent_skill_id": "fe-state-management", "title": "Zustand Global Store & Selectors", "est_hours": 4 },
+  { "id": "sub-fe-redux-toolkit", "parent_skill_id": "fe-state-management", "title": "Redux Toolkit Slices & Thunks", "est_hours": 4 },
+  { "id": "sub-fe-context-api", "parent_skill_id": "fe-state-management", "title": "React Context Patterns", "est_hours": 4 },
+  { "id": "sub-fe-persist", "parent_skill_id": "fe-state-management", "title": "State Persistence & Hydration", "est_hours": 4 },
+
+  { "id": "sub-fe-next-routing", "parent_skill_id": "fe-nextjs-app", "title": "App Router Layouts & Pages", "est_hours": 7 },
+  { "id": "sub-fe-next-rsc", "parent_skill_id": "fe-nextjs-app", "title": "Server Components & Client Boundaries", "est_hours": 7 },
+  { "id": "sub-fe-next-actions", "parent_skill_id": "fe-nextjs-app", "title": "Server Actions & Mutations", "est_hours": 7 },
+  { "id": "sub-fe-next-api", "parent_skill_id": "fe-nextjs-app", "title": "Route Handlers & Dynamic Endpoints", "est_hours": 7 },
+
+  { "id": "sub-fe-test-vitest", "parent_skill_id": "fe-testing-perf", "title": "Vitest Unit Testing", "est_hours": 5 },
+  { "id": "sub-fe-test-rtl", "parent_skill_id": "fe-testing-perf", "title": "React Testing Library Integration", "est_hours": 5 },
+  { "id": "sub-fe-perf-vitals", "parent_skill_id": "fe-testing-perf", "title": "Core Web Vitals & Bundle Analysis", "est_hours": 4 },
+  { "id": "sub-fe-perf-memo", "parent_skill_id": "fe-testing-perf", "title": "useMemo & Dynamic Imports", "est_hours": 4 },
+
+  { "id": "sub-fe-cap-arch", "parent_skill_id": "fe-capstone-project", "title": "Component & State Architecture", "est_hours": 10 },
+  { "id": "sub-fe-cap-api", "parent_skill_id": "fe-capstone-project", "title": "Full API Integration & Auth", "est_hours": 12 },
+  { "id": "sub-fe-cap-deploy", "parent_skill_id": "fe-capstone-project", "title": "CI/CD Deployment & Monitoring", "est_hours": 13 },
+
+  { "id": "sub-dev-linux-cmd", "parent_skill_id": "dev-linux-bash", "title": "Permissions, Users & Systemctl", "est_hours": 4 },
+  { "id": "sub-dev-bash-script", "parent_skill_id": "dev-linux-bash", "title": "Bash Loops, Arguments & Scripting", "est_hours": 4 },
+  { "id": "sub-dev-text-proc", "parent_skill_id": "dev-linux-bash", "title": "Grep, Sed & Awk Processing", "est_hours": 4 },
+  { "id": "sub-dev-cron-proc", "parent_skill_id": "dev-linux-bash", "title": "Crontab Jobs & Process Signals", "est_hours": 3 },
+
+  { "id": "sub-dev-dns-http", "parent_skill_id": "dev-networking-http", "title": "DNS Records & HTTP/HTTPS Lifecycle", "est_hours": 3 },
+  { "id": "sub-dev-nginx-proxy", "parent_skill_id": "dev-networking-http", "title": "Nginx Reverse Proxy & Load Balancing", "est_hours": 3 },
+  { "id": "sub-dev-ssl-tls", "parent_skill_id": "dev-networking-http", "title": "Certbot SSL/TLS Certificates", "est_hours": 3 },
+  { "id": "sub-dev-firewalls", "parent_skill_id": "dev-networking-http", "title": "UFW, IPTables & Port Rules", "est_hours": 3 },
+
+  { "id": "sub-dev-gitflow", "parent_skill_id": "dev-git-automation", "title": "GitFlow & Trunk-Based Release", "est_hours": 3 },
+  { "id": "sub-dev-hooks", "parent_skill_id": "dev-git-automation", "title": "Husky Pre-Commit Hooks", "est_hours": 3 },
+  { "id": "sub-dev-sec-audit", "parent_skill_id": "dev-git-automation", "title": "Secret Scanning & Branch Protection", "est_hours": 2 },
+
+  { "id": "sub-dev-dockerfile", "parent_skill_id": "dev-docker-basics", "title": "Multi-Stage Dockerfile Optimization", "est_hours": 5 },
+  { "id": "sub-dev-dock-layer", "parent_skill_id": "dev-docker-basics", "title": "Image Layer Caching & Shrinking", "est_hours": 5 },
+  { "id": "sub-dev-dock-vol", "parent_skill_id": "dev-docker-basics", "title": "Docker Volumes & Bind Mounts", "est_hours": 5 },
+  { "id": "sub-dev-dock-net", "parent_skill_id": "dev-docker-basics", "title": "Bridge & Overlay Networks", "est_hours": 5 },
+
+  { "id": "sub-dev-compose-spec", "parent_skill_id": "dev-docker-compose", "title": "Compose YAML Specification", "est_hours": 4 },
+  { "id": "sub-dev-compose-dep", "parent_skill_id": "dev-docker-compose", "title": "depends_on & Healthchecks", "est_hours": 4 },
+  { "id": "sub-dev-compose-env", "parent_skill_id": "dev-docker-compose", "title": "Environment Variable Files & Stacks", "est_hours": 3 },
+  { "id": "sub-dev-compose-vol", "parent_skill_id": "dev-docker-compose", "title": "Persistent Data Volume Services", "est_hours": 3 },
+
+  { "id": "sub-dev-gha-yaml", "parent_skill_id": "dev-cicd-actions", "title": "GitHub Actions Triggers & Jobs", "est_hours": 6 },
+  { "id": "sub-dev-gha-matrix", "parent_skill_id": "dev-cicd-actions", "title": "Matrix Builds & Artifacts", "est_hours": 5 },
+  { "id": "sub-dev-gha-deploy", "parent_skill_id": "dev-cicd-actions", "title": "Automated Deployments to Cloud", "est_hours": 6 },
+  { "id": "sub-dev-gha-sec", "parent_skill_id": "dev-cicd-actions", "title": "Secrets & Environment Protection", "est_hours": 5 },
+
+  { "id": "sub-dev-tf-hcl", "parent_skill_id": "dev-terraform-iac", "title": "HCL Syntax & Resource Blocks", "est_hours": 7 },
+  { "id": "sub-dev-tf-state", "parent_skill_id": "dev-terraform-iac", "title": "S3 Remote State & DynamoDB Locks", "est_hours": 6 },
+  { "id": "sub-dev-tf-modules", "parent_skill_id": "dev-terraform-iac", "title": "Reusable Terraform Modules", "est_hours": 6 },
+  { "id": "sub-dev-tf-plan", "parent_skill_id": "dev-terraform-iac", "title": "Plan, Apply & Drift Detection", "est_hours": 6 },
+
+  { "id": "sub-dev-aws-ec2", "parent_skill_id": "dev-cloud-aws", "title": "EC2 Instances & Security Groups", "est_hours": 6 },
+  { "id": "sub-dev-aws-s3", "parent_skill_id": "dev-cloud-aws", "title": "S3 Buckets & CloudFront CDN", "est_hours": 6 },
+  { "id": "sub-dev-aws-iam", "parent_skill_id": "dev-cloud-aws", "title": "IAM Roles, Policies & Least Privilege", "est_hours": 6 },
+  { "id": "sub-dev-aws-vpc", "parent_skill_id": "dev-cloud-aws", "title": "VPC Subnets, NAT Gateways & Routes", "est_hours": 6 },
+
+  { "id": "sub-dev-k8s-arch", "parent_skill_id": "dev-kubernetes", "title": "Control Plane & Worker Node Pods", "est_hours": 8 },
+  { "id": "sub-dev-k8s-deploy", "parent_skill_id": "dev-kubernetes", "title": "Deployments, Services & Ingress", "est_hours": 8 },
+  { "id": "sub-dev-k8s-helm", "parent_skill_id": "dev-kubernetes", "title": "Helm Charts & Package Management", "est_hours": 8 },
+  { "id": "sub-dev-k8s-config", "parent_skill_id": "dev-kubernetes", "title": "ConfigMaps, Secrets & Volumes", "est_hours": 8 },
+
+  { "id": "sub-dev-prom-metrics", "parent_skill_id": "dev-monitoring-logging", "title": "Prometheus Scraping & PromQL", "est_hours": 5 },
+  { "id": "sub-dev-grafana-dash", "parent_skill_id": "dev-monitoring-logging", "title": "Grafana Visual Dashboards & Alerts", "est_hours": 5 },
+  { "id": "sub-dev-elk-logs", "parent_skill_id": "dev-monitoring-logging", "title": "Elasticsearch & Logstash Pipelines", "est_hours": 5 },
+  { "id": "sub-dev-uptime", "parent_skill_id": "dev-monitoring-logging", "title": "SLA Uptime & Health Check Probes", "est_hours": 5 },
+
+  { "id": "sub-dev-cap-cluster", "parent_skill_id": "dev-capstone-project", "title": "Production EKS / GKE Cluster Setup", "est_hours": 10 },
+  { "id": "sub-dev-cap-cicd", "parent_skill_id": "dev-capstone-project", "title": "Automated GitOps CI/CD Deployment", "est_hours": 12 },
+  { "id": "sub-dev-cap-obs", "parent_skill_id": "dev-capstone-project", "title": "Complete Monitoring & Alerting Stack", "est_hours": 13 }
+]

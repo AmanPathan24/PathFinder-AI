@@ -1,0 +1,907 @@
+{
+  "users": [
+    {
+      "id": "usr_demo_1",
+      "name": "Alex Mercer",
+      "email": "demo@pathfinder.ai",
+      "password_hash": "$2b$10$zQzf.NfTxQiq0yiNBsH07.Gt4GKubdG3EmrbPhChpMDXPWQ8Fj6Ey",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80",
+      "created_at": "2026-08-30T09:01:39.037Z"
+    },
+    {
+      "id": "usr_1788083591865_95i0p",
+      "name": "Aayush ",
+      "email": "aayush@gmail.com",
+      "password_hash": "$2b$10$i7as9I2.Ev8tZOOyiW4FUuxYliDkO8.itbDWDZciPdq9ENTnwjXLu",
+      "created_at": "2026-08-30T09:53:11.865Z"
+    }
+  ],
+  "roadmaps": [
+    {
+      "user_id": "usr_demo_1",
+      "title": "Data Science & Machine Learning",
+      "target_track": "data-science",
+      "time_budget_weeks": 24,
+      "weekly_hours": 10,
+      "raw_goal": "Master Data Science & Machine Learning",
+      "is_archived": false,
+      "id": "rdm_1788081297308_sv2bw",
+      "created_at": "2026-08-30T09:14:57.308Z",
+      "updated_at": "2026-08-30T09:14:57.308Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "title": "Frontend Web Development",
+      "target_track": "frontend",
+      "time_budget_weeks": 36,
+      "weekly_hours": 10,
+      "raw_goal": "Master Data Science & Machine Learning",
+      "is_archived": false,
+      "id": "rdm_1788081869350_6usol",
+      "created_at": "2026-08-30T09:24:29.350Z",
+      "updated_at": "2026-08-30T09:24:29.350Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "title": "Frontend Web Development",
+      "target_track": "frontend",
+      "time_budget_weeks": 34,
+      "weekly_hours": 10,
+      "raw_goal": "Master Data Science & Machine Learning",
+      "is_archived": true,
+      "id": "rdm_1788083608593_yv5uc",
+      "created_at": "2026-08-30T09:53:28.593Z",
+      "updated_at": "2026-08-30T10:35:28.681Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "title": "DevOps & Cloud Engineering",
+      "target_track": "devops",
+      "time_budget_weeks": 34,
+      "weekly_hours": 10,
+      "raw_goal": "Master Data Science & Machine Learning",
+      "is_archived": true,
+      "id": "rdm_1788083650805_asx4y",
+      "created_at": "2026-08-30T09:54:10.805Z",
+      "updated_at": "2026-08-30T10:35:30.843Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "title": "Data Science & Machine Learning",
+      "target_track": "data-science",
+      "time_budget_weeks": 34,
+      "weekly_hours": 10,
+      "raw_goal": "Master Data Science & Machine Learning",
+      "is_archived": true,
+      "id": "rdm_1788084514021_9zpr8",
+      "created_at": "2026-08-30T10:08:34.021Z",
+      "updated_at": "2026-08-30T10:35:23.217Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "title": "DevOps & Cloud Engineering",
+      "target_track": "devops",
+      "time_budget_weeks": 34,
+      "weekly_hours": 10,
+      "raw_goal": "Master Data Science & Machine Learning",
+      "is_archived": true,
+      "id": "rdm_1788086081722_49lk4",
+      "created_at": "2026-08-30T10:34:41.722Z",
+      "updated_at": "2026-08-30T10:35:26.531Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "title": "Data Science & Machine Learning",
+      "target_track": "data-science",
+      "time_budget_weeks": 34,
+      "weekly_hours": 10,
+      "raw_goal": "Master Data Science & Machine Learning",
+      "is_archived": false,
+      "id": "rdm_1788086148664_ko1fp",
+      "created_at": "2026-08-30T10:35:48.664Z",
+      "updated_at": "2026-08-30T10:35:48.664Z"
+    }
+  ],
+  "nodeStatuses": [
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-math-stats",
+      "status": "not-started",
+      "marked_at": "2026-08-30T09:51:42.483Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-python-basics",
+      "status": "not-started",
+      "marked_at": "2026-08-30T09:51:39.797Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-sql-basics",
+      "status": "not-started",
+      "marked_at": "2026-08-30T09:51:45.105Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-numpy-pandas",
+      "status": "not-started",
+      "marked_at": "2026-08-30T09:51:32.715Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-unsupervised-learning",
+      "status": "not-started",
+      "marked_at": "2026-08-30T09:51:34.050Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081869350_6usol",
+      "node_id": "ds-math-stats",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T09:24:29.416Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081869350_6usol",
+      "node_id": "ds-python-basics",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T09:24:29.529Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081869350_6usol",
+      "node_id": "ds-sql-basics",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T09:24:29.624Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081869350_6usol",
+      "node_id": "ds-numpy-pandas",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T09:24:29.652Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081869350_6usol",
+      "node_id": "ds-unsupervised-learning",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T09:24:29.683Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-data-visualization",
+      "status": "not-started",
+      "marked_at": "2026-08-30T09:51:36.266Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-feature-engineering",
+      "status": "learning",
+      "marked_at": "2026-08-30T09:42:55.953Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-deep-learning",
+      "status": "learning",
+      "marked_at": "2026-08-30T09:43:19.159Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083608593_yv5uc",
+      "node_id": "fe-html-css",
+      "status": "not-started",
+      "marked_at": "2026-08-30T09:55:06.236Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788084514021_9zpr8",
+      "node_id": "ds-sql-basics",
+      "status": "not-started",
+      "marked_at": "2026-08-30T10:08:56.899Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788084514021_9zpr8",
+      "node_id": "ds-python-basics",
+      "status": "not-started",
+      "marked_at": "2026-08-30T10:08:57.860Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788084514021_9zpr8",
+      "node_id": "ds-git-basics",
+      "status": "not-started",
+      "marked_at": "2026-08-30T10:08:59.231Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-git-automation",
+      "status": "not-started",
+      "marked_at": "2026-08-30T10:34:19.480Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "status": "not-started",
+      "marked_at": "2026-08-30T10:34:21.432Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-scripting",
+      "status": "not-started",
+      "marked_at": "2026-08-30T10:34:23.059Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-terraform-iac",
+      "status": "not-started",
+      "marked_at": "2026-08-30T10:27:15.420Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-networking-http",
+      "status": "not-started",
+      "marked_at": "2026-08-30T10:34:24.002Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-docker-basics",
+      "status": "not-started",
+      "marked_at": "2026-08-30T10:34:25.681Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "dev-git-automation",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T10:35:48.740Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "dev-linux-bash",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T10:35:48.851Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "dev-scripting",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T10:35:48.908Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "dev-terraform-iac",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T10:35:48.951Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "dev-networking-http",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T10:35:49.043Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-responsible-ai",
+      "status": "known-prior",
+      "marked_at": "2026-08-30T10:35:49.077Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "status": "done",
+      "marked_at": "2026-08-30T10:36:44.423Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-sql-basics",
+      "status": "done",
+      "marked_at": "2026-08-30T10:36:36.848Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-git-basics",
+      "status": "done",
+      "marked_at": "2026-08-30T10:36:40.922Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-data-visualization",
+      "status": "done",
+      "marked_at": "2026-08-30T10:41:59.176Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-feature-engineering",
+      "status": "learning",
+      "marked_at": "2026-08-30T10:42:03.841Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-math-stats",
+      "status": "learning",
+      "marked_at": "2026-08-30T10:43:22.677Z"
+    }
+  ],
+  "skillMasteries": [
+    {
+      "user_id": "usr_demo_1",
+      "node_id": "ds-python-basics",
+      "mastered_at": "2026-08-30T09:24:29.801Z",
+      "source": "prior-knowledge"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "node_id": "ds-sql-basics",
+      "mastered_at": "2026-08-30T09:24:29.842Z",
+      "source": "prior-knowledge"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "node_id": "ds-math-stats",
+      "mastered_at": "2026-08-30T09:24:29.767Z",
+      "source": "prior-knowledge"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "node_id": "ds-numpy-pandas",
+      "mastered_at": "2026-08-30T09:42:30.465Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "node_id": "ds-unsupervised-learning",
+      "mastered_at": "2026-08-30T09:42:29.562Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "node_id": "ds-data-visualization",
+      "mastered_at": "2026-08-30T09:42:13.563Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "dev-git-automation",
+      "mastered_at": "2026-08-30T10:35:48.740Z",
+      "source": "prior-knowledge"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "dev-linux-bash",
+      "mastered_at": "2026-08-30T10:35:48.851Z",
+      "source": "prior-knowledge"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "dev-scripting",
+      "mastered_at": "2026-08-30T10:35:48.908Z",
+      "source": "prior-knowledge"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "dev-terraform-iac",
+      "mastered_at": "2026-08-30T10:35:48.951Z",
+      "source": "prior-knowledge"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "dev-networking-http",
+      "mastered_at": "2026-08-30T10:35:49.043Z",
+      "source": "prior-knowledge"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "ds-responsible-ai",
+      "mastered_at": "2026-08-30T10:35:49.077Z",
+      "source": "prior-knowledge"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "ds-sql-basics",
+      "mastered_at": "2026-08-30T10:36:36.848Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "ds-git-basics",
+      "mastered_at": "2026-08-30T10:36:40.922Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "ds-python-basics",
+      "mastered_at": "2026-08-30T10:36:44.423Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "ds-data-visualization",
+      "mastered_at": "2026-08-30T10:41:59.176Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "ds-feature-engineering",
+      "mastered_at": "2026-08-30T10:42:03.147Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "ds-math-stats",
+      "mastered_at": "2026-08-30T10:43:22.329Z",
+      "source": "roadmap-completed"
+    }
+  ],
+  "outcomeEvents": [
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788081619338_g2n9d",
+      "created_at": "2026-08-30T09:20:19.338Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788081681579_3mq9d",
+      "created_at": "2026-08-30T09:21:21.579Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788081682011_4wu7q",
+      "created_at": "2026-08-30T09:21:22.011Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-sql-basics",
+      "action": "completed",
+      "id": "evt_1788081689155_73j1x",
+      "created_at": "2026-08-30T09:21:29.155Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-math-stats",
+      "action": "completed",
+      "id": "evt_1788081692428_5lch5",
+      "created_at": "2026-08-30T09:21:32.428Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-numpy-pandas",
+      "action": "completed",
+      "id": "evt_1788081697366_blw33",
+      "created_at": "2026-08-30T09:21:37.366Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-unsupervised-learning",
+      "action": "completed",
+      "id": "evt_1788081777225_cfvup",
+      "created_at": "2026-08-30T09:22:57.225Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-data-visualization",
+      "action": "completed",
+      "id": "evt_1788082933568_jdoa0",
+      "created_at": "2026-08-30T09:42:13.568Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-unsupervised-learning",
+      "action": "completed",
+      "id": "evt_1788082949567_c0mwt",
+      "created_at": "2026-08-30T09:42:29.567Z"
+    },
+    {
+      "user_id": "usr_demo_1",
+      "roadmap_id": "rdm_1788081297308_sv2bw",
+      "node_id": "ds-numpy-pandas",
+      "action": "completed",
+      "id": "evt_1788082950469_oaba3",
+      "created_at": "2026-08-30T09:42:30.469Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-git-automation",
+      "action": "completed",
+      "id": "evt_1788084602917_16nrs",
+      "created_at": "2026-08-30T10:10:02.917Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-git-automation",
+      "action": "completed",
+      "id": "evt_1788084609274_6drog",
+      "created_at": "2026-08-30T10:10:09.274Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788084621266_dwdho",
+      "created_at": "2026-08-30T10:10:21.267Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788084625421_zgoyb",
+      "created_at": "2026-08-30T10:10:25.421Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788084633004_kgg13",
+      "created_at": "2026-08-30T10:10:33.004Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788084860338_88llg",
+      "created_at": "2026-08-30T10:14:20.338Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788084873370_gf5d8",
+      "created_at": "2026-08-30T10:14:33.370Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "skipped",
+      "id": "evt_1788084884846_mgxdh",
+      "created_at": "2026-08-30T10:14:44.846Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788084888926_32urm",
+      "created_at": "2026-08-30T10:14:48.926Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788084894427_uad3a",
+      "created_at": "2026-08-30T10:14:54.427Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085377378_nsa28",
+      "created_at": "2026-08-30T10:22:57.378Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085381243_02hh4",
+      "created_at": "2026-08-30T10:23:01.243Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-git-automation",
+      "action": "completed",
+      "id": "evt_1788085391873_aluxj",
+      "created_at": "2026-08-30T10:23:11.873Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085397090_j8bxy",
+      "created_at": "2026-08-30T10:23:17.090Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-scripting",
+      "action": "completed",
+      "id": "evt_1788085404132_2v67z",
+      "created_at": "2026-08-30T10:23:24.132Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-scripting",
+      "action": "skipped",
+      "id": "evt_1788085408341_8r5bs",
+      "created_at": "2026-08-30T10:23:28.341Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-scripting",
+      "action": "completed",
+      "id": "evt_1788085430261_6s5xi",
+      "created_at": "2026-08-30T10:23:50.261Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-scripting",
+      "action": "completed",
+      "id": "evt_1788085450393_59pfb",
+      "created_at": "2026-08-30T10:24:10.393Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085478029_cxvv4",
+      "created_at": "2026-08-30T10:24:38.030Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085483970_rmn83",
+      "created_at": "2026-08-30T10:24:43.970Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085488904_yh513",
+      "created_at": "2026-08-30T10:24:48.904Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "skipped",
+      "id": "evt_1788085491417_4waup",
+      "created_at": "2026-08-30T10:24:51.417Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085493790_jazrd",
+      "created_at": "2026-08-30T10:24:53.790Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-terraform-iac",
+      "action": "completed",
+      "id": "evt_1788085501733_wh98s",
+      "created_at": "2026-08-30T10:25:01.733Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-terraform-iac",
+      "action": "completed",
+      "id": "evt_1788085517477_9508j",
+      "created_at": "2026-08-30T10:25:17.478Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-terraform-iac",
+      "action": "completed",
+      "id": "evt_1788085543164_iq1mp",
+      "created_at": "2026-08-30T10:25:43.164Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-git-automation",
+      "action": "completed",
+      "id": "evt_1788085564071_z0yy1",
+      "created_at": "2026-08-30T10:26:04.071Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085569774_ii891",
+      "created_at": "2026-08-30T10:26:09.774Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085574528_93f9u",
+      "created_at": "2026-08-30T10:26:14.528Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085576789_tmcqj",
+      "created_at": "2026-08-30T10:26:16.789Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-git-automation",
+      "action": "completed",
+      "id": "evt_1788085687646_rmplk",
+      "created_at": "2026-08-30T10:28:07.646Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-git-automation",
+      "action": "completed",
+      "id": "evt_1788085696082_a5r1k",
+      "created_at": "2026-08-30T10:28:16.082Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-git-automation",
+      "action": "completed",
+      "id": "evt_1788085976386_bg156",
+      "created_at": "2026-08-30T10:32:56.386Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-linux-bash",
+      "action": "completed",
+      "id": "evt_1788085981804_6z8bx",
+      "created_at": "2026-08-30T10:33:01.804Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-networking-http",
+      "action": "completed",
+      "id": "evt_1788085985719_mj81c",
+      "created_at": "2026-08-30T10:33:05.719Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-scripting",
+      "action": "completed",
+      "id": "evt_1788085988502_mbxwy",
+      "created_at": "2026-08-30T10:33:08.502Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788083650805_asx4y",
+      "node_id": "dev-git-automation",
+      "action": "completed",
+      "id": "evt_1788086019978_ustuz",
+      "created_at": "2026-08-30T10:33:39.978Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-sql-basics",
+      "action": "completed",
+      "id": "evt_1788086196851_6m2ge",
+      "created_at": "2026-08-30T10:36:36.851Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-git-basics",
+      "action": "completed",
+      "id": "evt_1788086200927_y8mu1",
+      "created_at": "2026-08-30T10:36:40.927Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788086204427_a7qfu",
+      "created_at": "2026-08-30T10:36:44.427Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-data-visualization",
+      "action": "completed",
+      "id": "evt_1788086519179_91ug3",
+      "created_at": "2026-08-30T10:41:59.179Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-feature-engineering",
+      "action": "completed",
+      "id": "evt_1788086523152_w62en",
+      "created_at": "2026-08-30T10:42:03.152Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-math-stats",
+      "action": "completed",
+      "id": "evt_1788086595982_itxdb",
+      "created_at": "2026-08-30T10:43:15.982Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-math-stats",
+      "action": "completed",
+      "id": "evt_1788086599867_5s0gz",
+      "created_at": "2026-08-30T10:43:19.867Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-math-stats",
+      "action": "completed",
+      "id": "evt_1788086602333_1wd8v",
+      "created_at": "2026-08-30T10:43:22.333Z"
+    }
+  ],
+  "resources": [],
+  "subtopics": [],
+  "resourceUpvotes": []
+}

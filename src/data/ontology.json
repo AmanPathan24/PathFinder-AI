@@ -120,6 +120,156 @@
       "description": "Build a production-grade data science application from data ingestion to model deployment and interactive web dashboard.",
       "keywords": ["data science capstone", "ds project", "portfolio project", "end to end ml"]
     },
+    {
+      "id": "ds-git-basics",
+      "title": "Version Control for Data Projects",
+      "type": "skill",
+      "track": "data-science",
+      "difficulty": 1,
+      "est_hours": 6,
+      "description": "Use Git and GitHub to version notebooks, datasets, experiments, and collaborative data projects.",
+      "keywords": ["git", "github", "version control", "notebooks", "data projects"]
+    },
+    {
+      "id": "ds-eda",
+      "title": "Exploratory Data Analysis",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 2,
+      "est_hours": 10,
+      "description": "Apply a repeatable EDA workflow to inspect distributions, relationships, outliers, and data quality.",
+      "keywords": ["eda", "exploratory data analysis", "outliers", "correlation", "data quality"]
+    },
+    {
+      "id": "ds-regression",
+      "title": "Supervised Learning: Regression",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 2,
+      "est_hours": 16,
+      "description": "Build regression models with linear and polynomial methods, regularization, and regression evaluation metrics.",
+      "keywords": ["regression", "linear regression", "polynomial regression", "ridge", "lasso", "rmse", "mae"]
+    },
+    {
+      "id": "ds-classification",
+      "title": "Supervised Learning: Classification",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 3,
+      "est_hours": 18,
+      "description": "Train classification models and evaluate precision, recall, F1, ROC-AUC, and class imbalance strategies.",
+      "keywords": ["classification", "logistic regression", "decision trees", "knn", "precision", "recall", "roc auc"]
+    },
+    {
+      "id": "ds-ensemble",
+      "title": "Ensemble Methods",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 3,
+      "est_hours": 16,
+      "description": "Use random forests, gradient boosting, bagging, boosting, stacking, XGBoost, and LightGBM.",
+      "keywords": ["ensemble", "random forest", "gradient boosting", "xgboost", "lightgbm", "stacking"]
+    },
+    {
+      "id": "ds-model-validation",
+      "title": "Model Validation & Tuning",
+      "type": "skill",
+      "track": "data-science",
+      "difficulty": 3,
+      "est_hours": 12,
+      "description": "Design train, validation, and test splits, cross-validate models, and tune hyperparameters without leakage.",
+      "keywords": ["model validation", "cross validation", "hyperparameter tuning", "grid search", "bias variance"]
+    },
+    {
+      "id": "ds-dl-foundations",
+      "title": "Deep Learning Foundations",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 3,
+      "est_hours": 20,
+      "description": "Understand neural networks, backpropagation, gradient descent, activation functions, losses, and optimizers.",
+      "keywords": ["deep learning", "neural networks", "backpropagation", "gradient descent", "activation", "loss"]
+    },
+    {
+      "id": "ds-dl-frameworks",
+      "title": "Deep Learning Frameworks",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 4,
+      "est_hours": 18,
+      "description": "Train models with TensorFlow, Keras, and PyTorch, including the basics of GPU-accelerated training.",
+      "keywords": ["tensorflow", "keras", "pytorch", "gpu", "deep learning frameworks"]
+    },
+    {
+      "id": "ds-computer-vision",
+      "title": "Computer Vision",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 4,
+      "est_hours": 22,
+      "description": "Prepare images, build CNN-based models, use augmentation and transfer learning, and explore object detection.",
+      "keywords": ["computer vision", "cnn", "images", "augmentation", "transfer learning", "object detection"]
+    },
+    {
+      "id": "ds-time-series",
+      "title": "Time Series Analysis",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 3,
+      "est_hours": 16,
+      "description": "Decompose trends and seasonality, build ARIMA and Prophet forecasts, and evaluate time-series predictions.",
+      "keywords": ["time series", "arima", "sarima", "prophet", "forecasting", "seasonality"]
+    },
+    {
+      "id": "ds-model-deployment",
+      "title": "Model Deployment",
+      "type": "skill",
+      "track": "data-science",
+      "difficulty": 4,
+      "est_hours": 18,
+      "description": "Serve trained models through Flask or FastAPI, design ML REST APIs, version models, and package services with Docker.",
+      "keywords": ["model deployment", "flask", "fastapi", "rest api", "model versioning", "docker"]
+    },
+    {
+      "id": "ds-mlops",
+      "title": "MLOps Practices",
+      "type": "skill",
+      "track": "data-science",
+      "difficulty": 4,
+      "est_hours": 20,
+      "description": "Track experiments, automate ML pipelines, monitor drift, and manage reproducible production workflows.",
+      "keywords": ["mlops", "mlflow", "weights and biases", "ci cd", "model monitoring", "feature stores"]
+    },
+    {
+      "id": "ds-bigdata",
+      "title": "Big Data with Apache Spark",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 4,
+      "est_hours": 18,
+      "description": "Process large datasets with Spark and learn distributed computing patterns for data science workloads.",
+      "keywords": ["big data", "apache spark", "pyspark", "distributed computing", "large datasets"]
+    },
+    {
+      "id": "ds-cloud-ml",
+      "title": "Cloud Machine Learning Platforms",
+      "type": "course",
+      "track": "data-science",
+      "difficulty": 4,
+      "est_hours": 16,
+      "description": "Use managed training, storage, and deployment services on AWS SageMaker, GCP Vertex AI, or Azure ML.",
+      "keywords": ["cloud ml", "sagemaker", "vertex ai", "azure ml", "managed training", "cloud storage"]
+    },
+    {
+      "id": "ds-responsible-ai",
+      "title": "Responsible AI",
+      "type": "skill",
+      "track": "data-science",
+      "difficulty": 3,
+      "est_hours": 10,
+      "description": "Assess bias and fairness, explain model decisions, and apply privacy and ethical practices to ML systems.",
+      "keywords": ["responsible ai", "bias", "fairness", "shap", "lime", "privacy", "ai ethics"]
+    },
 
     {
       "id": "fe-html-css",
@@ -230,6 +380,136 @@
       "est_hours": 35,
       "description": "Build and deploy a feature-rich, high-performance web application with full state management, API integration, and polished UI.",
       "keywords": ["frontend capstone", "react project", "nextjs app", "portfolio website"]
+    },
+    {
+      "id": "fe-web-basics",
+      "title": "How the Web Works",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 1,
+      "est_hours": 10,
+      "description": "Learn how the internet, HTTP, DNS, hosting, browsers, and rendering engines work together.",
+      "keywords": ["web basics", "internet", "http", "https", "dns", "browser", "hosting"]
+    },
+    {
+      "id": "fe-package-managers",
+      "title": "Package Managers & Build Tools",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 2,
+      "est_hours": 12,
+      "description": "Use npm, yarn, or pnpm, understand module bundlers, and configure frontend environments.",
+      "keywords": ["npm", "yarn", "pnpm", "vite", "webpack", "build tools", "environment"]
+    },
+    {
+      "id": "fe-css-frameworks",
+      "title": "CSS Frameworks & Styling Systems",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 2,
+      "est_hours": 14,
+      "description": "Build consistent interfaces with Tailwind, Sass, CSS-in-JS, and component libraries.",
+      "keywords": ["tailwind", "sass", "css in js", "shadcn", "material ui", "component library"]
+    },
+    {
+      "id": "fe-js-deep-dive",
+      "title": "JavaScript Deep Dive",
+      "type": "course",
+      "track": "frontend",
+      "difficulty": 2,
+      "est_hours": 20,
+      "description": "Master closures, higher-order functions, prototypes, classes, error handling, and browser APIs.",
+      "keywords": ["javascript deep dive", "closures", "prototypes", "classes", "fetch", "error handling"]
+    },
+    {
+      "id": "fe-testing",
+      "title": "Frontend Testing",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 3,
+      "est_hours": 18,
+      "description": "Test frontend behavior with unit, component, and end-to-end testing tools such as Vitest, RTL, and Playwright.",
+      "keywords": ["frontend testing", "vitest", "jest", "react testing library", "playwright", "cypress"]
+    },
+    {
+      "id": "fe-performance",
+      "title": "Frontend Performance Optimization",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 3,
+      "est_hours": 14,
+      "description": "Improve loading and runtime performance with code splitting, lazy loading, memoization, and Core Web Vitals.",
+      "keywords": ["performance", "code splitting", "lazy loading", "memoization", "core web vitals", "bundle size"]
+    },
+    {
+      "id": "fe-accessibility",
+      "title": "Accessibility & UX",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 3,
+      "est_hours": 12,
+      "description": "Create accessible, responsive interfaces with WCAG principles, keyboard navigation, and screen-reader support.",
+      "keywords": ["accessibility", "a11y", "wcag", "keyboard navigation", "screen readers", "ux"]
+    },
+    {
+      "id": "fe-api-integration",
+      "title": "API Integration",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 3,
+      "est_hours": 14,
+      "description": "Consume REST and GraphQL APIs, implement authentication flows, and work with WebSockets.",
+      "keywords": ["api integration", "rest", "graphql", "jwt", "oauth", "websockets"]
+    },
+    {
+      "id": "fe-meta-frameworks",
+      "title": "Modern Meta-Frameworks",
+      "type": "course",
+      "track": "frontend",
+      "difficulty": 4,
+      "est_hours": 22,
+      "description": "Apply SSR, SSG, ISR, data fetching, and routing patterns in Next.js and comparable meta-frameworks.",
+      "keywords": ["nextjs", "next.js", "ssr", "ssg", "isr", "remix", "meta frameworks"]
+    },
+    {
+      "id": "fe-deployment",
+      "title": "Frontend Build & Deployment",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 4,
+      "est_hours": 14,
+      "description": "Ship frontend applications with CI/CD, static hosting, containers, and production error tracking.",
+      "keywords": ["frontend deployment", "ci cd", "vercel", "netlify", "containers", "sentry"]
+    },
+    {
+      "id": "fe-security",
+      "title": "Frontend Security",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 4,
+      "est_hours": 12,
+      "description": "Protect browser applications with secure authentication, CORS, CSP, XSS, and CSRF prevention.",
+      "keywords": ["frontend security", "cors", "csp", "xss", "csrf", "secure authentication"]
+    },
+    {
+      "id": "fe-tooling",
+      "title": "Advanced Frontend Tooling",
+      "type": "skill",
+      "track": "frontend",
+      "difficulty": 4,
+      "est_hours": 10,
+      "description": "Adopt advanced linting, formatting, monorepo, micro-frontend, and module-federation workflows.",
+      "keywords": ["eslint", "prettier", "biome", "micro frontends", "turborepo", "nx", "monorepo"]
+    },
+    {
+      "id": "fe-design-systems",
+      "title": "Design Systems",
+      "type": "course",
+      "track": "frontend",
+      "difficulty": 4,
+      "est_hours": 14,
+      "description": "Design reusable components with Storybook, themes, design tokens, and maintainable UI principles.",
+      "keywords": ["design systems", "storybook", "design tokens", "theming", "component design"]
     },
 
     {
@@ -342,6 +622,116 @@
       "description": "Design and deploy a resilient, self-healing k8s cluster infrastructure with automated CI/CD and full monitoring.",
       "keywords": ["devops capstone", "k8s project", "terraform aws project", "infrastructure project"]
     }
+    ,{
+      "id": "dev-scripting",
+      "title": "Scripting for Automation",
+      "type": "skill",
+      "track": "devops",
+      "difficulty": 1,
+      "est_hours": 12,
+      "description": "Automate operations with Python or Bash and work confidently with REST APIs, JSON, and YAML.",
+      "keywords": ["scripting", "automation", "python", "bash", "rest api", "json", "yaml"]
+    },
+    {
+      "id": "dev-package-managers",
+      "title": "Package & Dependency Management",
+      "type": "skill",
+      "track": "devops",
+      "difficulty": 2,
+      "est_hours": 8,
+      "description": "Manage dependencies and reproducible environments for Node.js and other operational tooling.",
+      "keywords": ["package managers", "npm", "pnpm", "bun", "dependencies", "reproducible environments"]
+    },
+    {
+      "id": "dev-cloud-networking",
+      "title": "Cloud Networking",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 3,
+      "est_hours": 16,
+      "description": "Design cloud VPCs, subnets, routes, CDNs, and managed DNS for reliable application delivery.",
+      "keywords": ["cloud networking", "vpc", "subnets", "routing", "cdn", "cloud dns"]
+    },
+    {
+      "id": "dev-security",
+      "title": "Security & Compliance",
+      "type": "skill",
+      "track": "devops",
+      "difficulty": 4,
+      "est_hours": 18,
+      "description": "Apply secrets management, pipeline security scanning, least-privilege IAM, and compliance fundamentals.",
+      "keywords": ["devops security", "vault", "security scanning", "least privilege", "soc2", "gdpr"]
+    },
+    {
+      "id": "dev-sre",
+      "title": "Site Reliability Engineering",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 4,
+      "est_hours": 20,
+      "description": "Define SLIs, SLOs, and SLAs, respond to incidents, run postmortems, and plan service capacity.",
+      "keywords": ["sre", "sli", "slo", "sla", "incident response", "chaos engineering"]
+    },
+    {
+      "id": "dev-serverless",
+      "title": "Serverless Computing",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 4,
+      "est_hours": 16,
+      "description": "Build event-driven systems with Lambda or Cloud Functions, API Gateway, and serverless frameworks.",
+      "keywords": ["serverless", "lambda", "cloud functions", "event driven", "api gateway"]
+    },
+    {
+      "id": "dev-advanced-k8s",
+      "title": "Advanced Kubernetes",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 5,
+      "est_hours": 28,
+      "description": "Operate Kubernetes with service meshes, GitOps, custom resources, operators, and multi-cluster management.",
+      "keywords": ["advanced kubernetes", "istio", "linkerd", "argocd", "gitops", "operators", "multi cluster"]
+    },
+    {
+      "id": "dev-multicloud",
+      "title": "Multi-Cloud & Hybrid Cloud",
+      "type": "course",
+      "track": "devops",
+      "difficulty": 4,
+      "est_hours": 18,
+      "description": "Compare cloud providers, connect hybrid environments, and optimize cost across multiple platforms.",
+      "keywords": ["multicloud", "hybrid cloud", "cross cloud networking", "cost optimization"]
+    },
+    {
+      "id": "dev-platform-eng",
+      "title": "Platform Engineering",
+      "type": "skill",
+      "track": "devops",
+      "difficulty": 4,
+      "est_hours": 16,
+      "description": "Build internal developer platforms and self-service infrastructure that improves developer experience.",
+      "keywords": ["platform engineering", "internal developer platform", "self service infrastructure", "developer experience"]
+    },
+    {
+      "id": "dev-dr-ha",
+      "title": "Disaster Recovery & High Availability",
+      "type": "skill",
+      "track": "devops",
+      "difficulty": 4,
+      "est_hours": 16,
+      "description": "Plan backups, multi-region architectures, failover procedures, and highly available production services.",
+      "keywords": ["disaster recovery", "high availability", "backup", "multi region", "failover"]
+    },
+    {
+      "id": "dev-finops",
+      "title": "Cost & Performance Optimization",
+      "type": "skill",
+      "track": "devops",
+      "difficulty": 4,
+      "est_hours": 12,
+      "description": "Apply FinOps practices, autoscaling, capacity planning, and performance tuning at cloud scale.",
+      "keywords": ["finops", "cost optimization", "autoscaling", "performance tuning", "cloud costs"]
+    }
   ],
   "edges": [
     { "from_id": "ds-python-basics", "to_id": "ds-numpy-pandas" },
@@ -359,6 +749,32 @@
     { "from_id": "ds-data-visualization", "to_id": "ds-capstone-project" },
     { "from_id": "ds-mlops-deployment", "to_id": "ds-capstone-project" },
     { "from_id": "ds-nlp-llms", "to_id": "ds-capstone-project" },
+    { "from_id": "ds-python-basics", "to_id": "ds-eda" },
+    { "from_id": "ds-sql-basics", "to_id": "ds-eda" },
+    { "from_id": "ds-git-basics", "to_id": "ds-numpy-pandas" },
+    { "from_id": "ds-eda", "to_id": "ds-data-visualization" },
+    { "from_id": "ds-numpy-pandas", "to_id": "ds-regression" },
+    { "from_id": "ds-feature-engineering", "to_id": "ds-regression" },
+    { "from_id": "ds-numpy-pandas", "to_id": "ds-classification" },
+    { "from_id": "ds-feature-engineering", "to_id": "ds-classification" },
+    { "from_id": "ds-regression", "to_id": "ds-ensemble" },
+    { "from_id": "ds-classification", "to_id": "ds-ensemble" },
+    { "from_id": "ds-regression", "to_id": "ds-model-validation" },
+    { "from_id": "ds-classification", "to_id": "ds-model-validation" },
+    { "from_id": "ds-ensemble", "to_id": "ds-deep-learning" },
+    { "from_id": "ds-model-validation", "to_id": "ds-deep-learning" },
+    { "from_id": "ds-deep-learning", "to_id": "ds-dl-foundations" },
+    { "from_id": "ds-dl-foundations", "to_id": "ds-dl-frameworks" },
+    { "from_id": "ds-dl-frameworks", "to_id": "ds-computer-vision" },
+    { "from_id": "ds-dl-foundations", "to_id": "ds-time-series" },
+    { "from_id": "ds-model-validation", "to_id": "ds-time-series" },
+    { "from_id": "ds-model-validation", "to_id": "ds-responsible-ai" },
+    { "from_id": "ds-scikit-learn", "to_id": "ds-model-deployment" },
+    { "from_id": "ds-model-deployment", "to_id": "ds-mlops" },
+    { "from_id": "ds-mlops", "to_id": "ds-cloud-ml" },
+    { "from_id": "ds-mlops", "to_id": "ds-bigdata" },
+    { "from_id": "ds-model-deployment", "to_id": "ds-capstone-project" },
+    { "from_id": "ds-mlops", "to_id": "ds-capstone-project" },
 
     { "from_id": "fe-html-css", "to_id": "fe-js-basics" },
     { "from_id": "fe-html-css", "to_id": "fe-tailwind-ui" },
@@ -373,6 +789,23 @@
     { "from_id": "fe-state-management", "to_id": "fe-nextjs-app" },
     { "from_id": "fe-nextjs-app", "to_id": "fe-testing-perf" },
     { "from_id": "fe-testing-perf", "to_id": "fe-capstone-project" },
+    { "from_id": "fe-web-basics", "to_id": "fe-html-css" },
+    { "from_id": "fe-web-basics", "to_id": "fe-js-basics" },
+    { "from_id": "fe-js-basics", "to_id": "fe-js-deep-dive" },
+    { "from_id": "fe-js-deep-dive", "to_id": "fe-package-managers" },
+    { "from_id": "fe-package-managers", "to_id": "fe-react-basics" },
+    { "from_id": "fe-css-frameworks", "to_id": "fe-tailwind-ui" },
+    { "from_id": "fe-async-api", "to_id": "fe-api-integration" },
+    { "from_id": "fe-react-basics", "to_id": "fe-accessibility" },
+    { "from_id": "fe-react-basics", "to_id": "fe-testing" },
+    { "from_id": "fe-react-basics", "to_id": "fe-performance" },
+    { "from_id": "fe-nextjs-app", "to_id": "fe-meta-frameworks" },
+    { "from_id": "fe-meta-frameworks", "to_id": "fe-deployment" },
+    { "from_id": "fe-api-integration", "to_id": "fe-security" },
+    { "from_id": "fe-testing", "to_id": "fe-tooling" },
+    { "from_id": "fe-accessibility", "to_id": "fe-design-systems" },
+    { "from_id": "fe-deployment", "to_id": "fe-capstone-project" },
+    { "from_id": "fe-design-systems", "to_id": "fe-capstone-project" },
 
     { "from_id": "dev-linux-bash", "to_id": "dev-networking-http" },
     { "from_id": "dev-linux-bash", "to_id": "dev-docker-basics" },
@@ -385,6 +818,21 @@
     { "from_id": "dev-terraform-iac", "to_id": "dev-cloud-aws" },
     { "from_id": "dev-cloud-aws", "to_id": "dev-kubernetes" },
     { "from_id": "dev-kubernetes", "to_id": "dev-monitoring-logging" },
-    { "from_id": "dev-monitoring-logging", "to_id": "dev-capstone-project" }
+    { "from_id": "dev-monitoring-logging", "to_id": "dev-capstone-project" },
+    { "from_id": "dev-linux-bash", "to_id": "dev-scripting" },
+    { "from_id": "dev-scripting", "to_id": "dev-package-managers" },
+    { "from_id": "dev-docker-basics", "to_id": "dev-security" },
+    { "from_id": "dev-cloud-aws", "to_id": "dev-cloud-networking" },
+    { "from_id": "dev-cloud-networking", "to_id": "dev-security" },
+    { "from_id": "dev-cloud-networking", "to_id": "dev-serverless" },
+    { "from_id": "dev-kubernetes", "to_id": "dev-advanced-k8s" },
+    { "from_id": "dev-monitoring-logging", "to_id": "dev-sre" },
+    { "from_id": "dev-cloud-aws", "to_id": "dev-multicloud" },
+    { "from_id": "dev-sre", "to_id": "dev-dr-ha" },
+    { "from_id": "dev-cloud-aws", "to_id": "dev-finops" },
+    { "from_id": "dev-terraform-iac", "to_id": "dev-platform-eng" },
+    { "from_id": "dev-security", "to_id": "dev-capstone-project" },
+    { "from_id": "dev-advanced-k8s", "to_id": "dev-capstone-project" },
+    { "from_id": "dev-sre", "to_id": "dev-capstone-project" }
   ]
 }
