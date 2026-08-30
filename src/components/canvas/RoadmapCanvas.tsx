@@ -10,6 +10,7 @@ import {
   BackgroundVariant,
   useReactFlow,
   Panel,
+  PanOnScrollMode,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { Maximize2, Minus, Plus } from 'lucide-react';
@@ -25,6 +26,7 @@ import rawSubtopics from '@/data/subtopics.json';
 import { Subtopic } from '@/types/resource';
 import {
   filterKnownMilestonesForGraph,
+  filterLayoutByStatus,
   layoutRoadmapGraph,
   LayoutCheckpointData,
 } from '@/lib/canvas/layoutGraph';
@@ -117,10 +119,10 @@ const RoadmapCanvasInner: React.FC<RoadmapCanvasProps> = ({
     [milestones, nodeStatuses]
   );
 
-  const { nodes: layoutNodes, edges: layoutEdges, translateExtent } = useMemo(
-    () => layoutRoadmapGraph(visibleMilestones, subtopicsByParent),
-    [visibleMilestones, subtopicsByParent]
-  );
+  const { nodes: layoutNodes, edges: layoutEdges, translateExtent } = useMemo(() => {
+    const initialLayout = layoutRoadmapGraph(visibleMilestones, subtopicsByParent);
+    return filterLayoutByStatus(initialLayout, nodeStatuses, subtopicsByParent);
+  }, [nodeStatuses, subtopicsByParent, visibleMilestones]);
 
   const graphSignature = useMemo(() => layoutNodes.map((node) => node.id).join('|'), [layoutNodes]);
 
@@ -188,7 +190,19 @@ const RoadmapCanvasInner: React.FC<RoadmapCanvasProps> = ({
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutEdges);
 
   useEffect(() => {
-    setNodes(decorateNodes(layoutNodes));
+    setNodes((prev) => {
+      const prevById = new Map(prev.map((node) => [node.id, node]));
+      return decorateNodes(layoutNodes).map((node) => {
+        const previous = prevById.get(node.id);
+        if (!previous) return node;
+        return {
+          ...node,
+          position: previous.position,
+          dragging: previous.dragging,
+          selected: previous.selected,
+        };
+      });
+    });
     setEdges(layoutEdges);
   }, [decorateNodes, graphSignature, layoutEdges, layoutNodes, setEdges, setNodes]);
 
@@ -257,7 +271,7 @@ const RoadmapCanvasInner: React.FC<RoadmapCanvasProps> = ({
         nodesConnectable={false}
         elementsSelectable={true}
         panOnScroll={true}
-        panOnScrollMode="vertical"
+        panOnScrollMode={PanOnScrollMode.Vertical}
         panOnDrag={false}
         zoomOnScroll={false}
         zoomOnPinch={false}

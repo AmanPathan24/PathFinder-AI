@@ -249,26 +249,15 @@ export default function PathPage() {
 
           <div className="space-y-6">
             {milestones.map((milestone) => {
-              const isCompletedGroup = milestone.milestone_index === 0;
               return (
                 <div
                   key={milestone.milestone_index}
-                  className={`border rounded-3xl p-6 sm:p-8 space-y-5 paper-shadow ${
-                    isCompletedGroup
-                      ? 'bg-[#F2F6ED] border-[#8C9A76]'
-                      : 'bg-[#FFF9F0] border-[#E6DCCF]'
-                  }`}
+                  className="border rounded-3xl p-6 sm:p-8 space-y-5 paper-shadow bg-[#FFF9F0] border-[#E6DCCF]"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div
-                        className={`w-9 h-9 rounded-xl font-serif font-bold text-sm flex items-center justify-center shadow-sm ${
-                          isCompletedGroup
-                            ? 'bg-[#8C9A76] text-white'
-                            : 'bg-[#4A3728] text-white'
-                        }`}
-                      >
-                        {isCompletedGroup ? '✓' : `M${milestone.milestone_index}`}
+                      <div className="w-9 h-9 rounded-xl font-serif font-bold text-sm flex items-center justify-center shadow-sm bg-[#4A3728] text-white">
+                        M{milestone.milestone_index}
                       </div>
                       <div>
                         <h3 className="text-lg font-serif font-bold text-[#4A3728]">{milestone.title}</h3>
@@ -279,12 +268,7 @@ export default function PathPage() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      {isCompletedGroup && (
-                        <span className="text-xs font-bold text-[#8C9A76] bg-[#E4EAD9] px-3.5 py-1 rounded-full border border-[#8C9A76]/30">
-                          ✓ Mastered / Known Prior
-                        </span>
-                      )}
-                      {!isCompletedGroup && milestone.is_parallel && (
+                      {milestone.is_parallel && (
                         <span className="text-xs font-bold text-[#8C9A76] bg-[#E4EAD9] px-3.5 py-1 rounded-full border border-[#8C9A76]/30">
                           ⚡ Parallel Study Milestone
                         </span>
@@ -294,7 +278,7 @@ export default function PathPage() {
 
                   <div className="space-y-4">
                     {milestone.nodes.map((node) => {
-                      const st = nodeStatuses[node.id] || (isCompletedGroup ? 'done' : 'not-started');
+                      const st = nodeStatuses[node.id] || 'not-started';
                       const isDone = st === 'done';
                       const isKnownPrior = st === 'known-prior';
                       const isLearning = st === 'learning';

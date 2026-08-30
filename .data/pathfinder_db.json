@@ -96,10 +96,22 @@
       "time_budget_weeks": 34,
       "weekly_hours": 10,
       "raw_goal": "Master Data Science & Machine Learning",
-      "is_archived": false,
+      "is_archived": true,
       "id": "rdm_1788086148664_ko1fp",
       "created_at": "2026-08-30T10:35:48.664Z",
-      "updated_at": "2026-08-30T10:35:48.664Z"
+      "updated_at": "2026-08-30T17:52:16.570Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "title": "Data Science & Machine Learning",
+      "target_track": "data-science",
+      "time_budget_weeks": 24,
+      "weekly_hours": 10,
+      "raw_goal": "Master Data Science & Machine Learning",
+      "is_archived": false,
+      "id": "rdm_1788112352304_t50v9",
+      "created_at": "2026-08-30T17:52:32.304Z",
+      "updated_at": "2026-08-30T17:52:32.304Z"
     }
   ],
   "nodeStatuses": [
@@ -310,127 +322,127 @@
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "ds-python-basics",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:15.671Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:50:58.782Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "ds-sql-basics",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:20.119Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:51:00.534Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "ds-git-basics",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:46.632Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:51:02.011Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "ds-data-visualization",
-      "status": "learning",
-      "marked_at": "2026-08-30T14:55:59.586Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:09:00.081Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "ds-feature-engineering",
-      "status": "learning",
-      "marked_at": "2026-08-30T10:42:03.841Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:09:00.956Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "ds-math-stats",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:52.349Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:08:56.948Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-sql-select",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:17.915Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:51:00.572Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-sql-joins",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:18.681Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:51:00.580Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-sql-agg",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:19.397Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:51:00.593Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-sql-subq",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:20.131Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:51:00.586Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-py-syntax",
       "status": "done",
-      "marked_at": "2026-08-30T16:44:12.568Z"
+      "marked_at": "2026-08-30T17:51:46.708Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-py-ds",
       "status": "done",
-      "marked_at": "2026-08-30T16:44:13.283Z"
+      "marked_at": "2026-08-30T17:51:47.525Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-py-oop",
       "status": "done",
-      "marked_at": "2026-08-30T16:44:14.188Z"
+      "marked_at": "2026-08-30T17:51:48.319Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-py-files",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:15.697Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:50:58.812Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-math-prob",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:52.384Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:08:56.977Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-math-hypo",
       "status": "done",
-      "marked_at": "2026-08-30T16:44:52.409Z"
+      "marked_at": "2026-08-30T17:44:51.520Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-math-linalg",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:52.398Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:08:56.992Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-math-calc",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:52.422Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:08:57.000Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
@@ -443,15 +455,15 @@
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-sk-trees",
-      "status": "not-started",
-      "marked_at": "2026-08-30T16:38:48.173Z"
+      "status": "done",
+      "marked_at": "2026-08-30T17:45:15.345Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-sk-boosting",
-      "status": "not-started",
-      "marked_at": "2026-08-30T16:38:48.167Z"
+      "status": "done",
+      "marked_at": "2026-08-30T17:51:56.842Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
@@ -472,49 +484,49 @@
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "ds-classification",
       "status": "not-started",
-      "marked_at": "2026-08-30T16:38:49.650Z"
+      "marked_at": "2026-08-30T17:51:04.874Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "ds-regression",
       "status": "not-started",
-      "marked_at": "2026-08-30T16:38:51.004Z"
+      "marked_at": "2026-08-30T17:40:17.594Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "ds-numpy-pandas",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:53.328Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:08:58.383Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-numpy-arrays",
       "status": "done",
-      "marked_at": "2026-08-30T16:44:53.363Z"
+      "marked_at": "2026-08-30T17:44:59.551Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-pandas-df",
       "status": "done",
-      "marked_at": "2026-08-30T16:44:53.373Z"
+      "marked_at": "2026-08-30T17:44:47.255Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-pandas-clean",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:53.385Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:08:58.396Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "roadmap_id": "rdm_1788086148664_ko1fp",
       "node_id": "sub-pandas-merge",
-      "status": "done",
-      "marked_at": "2026-08-30T16:44:53.400Z"
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:08:58.403Z"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
@@ -522,6 +534,90 @@
       "node_id": "ds-eda",
       "status": "skipped",
       "marked_at": "2026-08-30T16:45:20.299Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-feat-missing",
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:09:00.989Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-feat-encode",
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:09:00.996Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-feat-scaling",
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:09:01.006Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-feat-pca",
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:09:01.015Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-viz-matplotlib",
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:09:00.113Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-viz-seaborn",
+      "status": "done",
+      "marked_at": "2026-08-30T17:45:32.435Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-viz-plotly",
+      "status": "done",
+      "marked_at": "2026-08-30T17:45:34.910Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-viz-eda",
+      "status": "not-started",
+      "marked_at": "2026-08-30T17:09:00.141Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-time-series",
+      "status": "done",
+      "marked_at": "2026-08-30T17:34:00.094Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-dl-foundations",
+      "status": "done",
+      "marked_at": "2026-08-30T17:51:28.972Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788112352304_t50v9",
+      "node_id": "sub-feat-scaling",
+      "status": "done",
+      "marked_at": "2026-08-30T17:53:05.949Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788112352304_t50v9",
+      "node_id": "sub-sql-select",
+      "status": "learning",
+      "marked_at": "2026-08-30T17:54:07.817Z"
     }
   ],
   "skillMasteries": [
@@ -600,31 +696,31 @@
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "ds-sql-basics",
-      "mastered_at": "2026-08-30T16:44:20.119Z",
+      "mastered_at": "2026-08-30T17:39:52.612Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "ds-git-basics",
-      "mastered_at": "2026-08-30T16:44:46.632Z",
+      "mastered_at": "2026-08-30T17:33:20.435Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "ds-python-basics",
-      "mastered_at": "2026-08-30T16:44:15.671Z",
+      "mastered_at": "2026-08-30T17:23:08.646Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "ds-data-visualization",
-      "mastered_at": "2026-08-30T14:55:58.987Z",
+      "mastered_at": "2026-08-30T17:07:51.906Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "ds-feature-engineering",
-      "mastered_at": "2026-08-30T10:42:03.147Z",
+      "mastered_at": "2026-08-30T17:07:36.168Z",
       "source": "roadmap-completed"
     },
     {
@@ -636,25 +732,25 @@
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-sql-select",
-      "mastered_at": "2026-08-30T16:44:17.915Z",
+      "mastered_at": "2026-08-30T17:39:52.619Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-sql-joins",
-      "mastered_at": "2026-08-30T16:44:18.681Z",
+      "mastered_at": "2026-08-30T17:39:41.754Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-sql-agg",
-      "mastered_at": "2026-08-30T16:44:19.397Z",
+      "mastered_at": "2026-08-30T17:39:52.647Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-sql-subq",
-      "mastered_at": "2026-08-30T16:44:20.131Z",
+      "mastered_at": "2026-08-30T17:39:52.630Z",
       "source": "roadmap-completed"
     },
     {
@@ -666,7 +762,7 @@
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-math-hypo",
-      "mastered_at": "2026-08-30T16:44:52.409Z",
+      "mastered_at": "2026-08-30T17:44:51.520Z",
       "source": "roadmap-completed"
     },
     {
@@ -684,25 +780,25 @@
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-py-syntax",
-      "mastered_at": "2026-08-30T16:44:12.568Z",
+      "mastered_at": "2026-08-30T17:51:46.708Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-py-ds",
-      "mastered_at": "2026-08-30T16:44:13.283Z",
+      "mastered_at": "2026-08-30T17:51:47.525Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-py-oop",
-      "mastered_at": "2026-08-30T16:44:14.188Z",
+      "mastered_at": "2026-08-30T17:51:48.320Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-py-files",
-      "mastered_at": "2026-08-30T16:44:15.697Z",
+      "mastered_at": "2026-08-30T17:23:08.733Z",
       "source": "roadmap-completed"
     },
     {
@@ -714,13 +810,13 @@
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-sk-trees",
-      "mastered_at": "2026-08-30T16:37:30.676Z",
+      "mastered_at": "2026-08-30T17:45:15.345Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-sk-boosting",
-      "mastered_at": "2026-08-30T16:37:32.651Z",
+      "mastered_at": "2026-08-30T17:51:56.842Z",
       "source": "roadmap-completed"
     },
     {
@@ -738,13 +834,13 @@
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "ds-classification",
-      "mastered_at": "2026-08-30T16:38:13.756Z",
+      "mastered_at": "2026-08-30T17:45:55.476Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "ds-regression",
-      "mastered_at": "2026-08-30T16:38:16.405Z",
+      "mastered_at": "2026-08-30T17:23:53.843Z",
       "source": "roadmap-completed"
     },
     {
@@ -756,13 +852,13 @@
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-numpy-arrays",
-      "mastered_at": "2026-08-30T16:44:53.363Z",
+      "mastered_at": "2026-08-30T17:44:59.551Z",
       "source": "roadmap-completed"
     },
     {
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "sub-pandas-df",
-      "mastered_at": "2026-08-30T16:44:53.373Z",
+      "mastered_at": "2026-08-30T17:44:47.256Z",
       "source": "roadmap-completed"
     },
     {
@@ -781,6 +877,66 @@
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "ds-eda",
       "mastered_at": "2026-08-30T16:45:11.357Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "sub-feat-missing",
+      "mastered_at": "2026-08-30T17:07:28.284Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "sub-feat-encode",
+      "mastered_at": "2026-08-30T17:07:30.844Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "sub-feat-scaling",
+      "mastered_at": "2026-08-30T17:53:05.950Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "sub-feat-pca",
+      "mastered_at": "2026-08-30T17:07:36.124Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "sub-viz-matplotlib",
+      "mastered_at": "2026-08-30T17:07:51.920Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "sub-viz-seaborn",
+      "mastered_at": "2026-08-30T17:45:32.436Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "sub-viz-plotly",
+      "mastered_at": "2026-08-30T17:45:34.910Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "sub-viz-eda",
+      "mastered_at": "2026-08-30T17:07:51.993Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "ds-time-series",
+      "mastered_at": "2026-08-30T17:34:00.094Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "node_id": "ds-dl-foundations",
+      "mastered_at": "2026-08-30T17:51:28.973Z",
       "source": "roadmap-completed"
     }
   ],
@@ -1768,6 +1924,518 @@
       "action": "skipped",
       "id": "evt_1788108320303_xxg4m",
       "created_at": "2026-08-30T16:45:20.303Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-feature-engineering",
+      "action": "completed",
+      "id": "evt_1788109645763_jwtzk",
+      "created_at": "2026-08-30T17:07:25.763Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-feat-missing",
+      "action": "completed",
+      "id": "evt_1788109648288_7oao8",
+      "created_at": "2026-08-30T17:07:28.288Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-feat-encode",
+      "action": "completed",
+      "id": "evt_1788109650847_iagye",
+      "created_at": "2026-08-30T17:07:30.848Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-feat-scaling",
+      "action": "completed",
+      "id": "evt_1788109653743_bqnk6",
+      "created_at": "2026-08-30T17:07:33.743Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-feat-pca",
+      "action": "completed",
+      "id": "evt_1788109656127_esreh",
+      "created_at": "2026-08-30T17:07:36.127Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-feature-engineering",
+      "action": "completed",
+      "id": "evt_1788109656173_jqisb",
+      "created_at": "2026-08-30T17:07:36.173Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-data-visualization",
+      "action": "completed",
+      "id": "evt_1788109671910_la2t3",
+      "created_at": "2026-08-30T17:07:51.910Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-viz-matplotlib",
+      "action": "completed",
+      "id": "evt_1788109671925_0wsr5",
+      "created_at": "2026-08-30T17:07:51.925Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-viz-seaborn",
+      "action": "completed",
+      "id": "evt_1788109671971_wy51p",
+      "created_at": "2026-08-30T17:07:51.971Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-viz-plotly",
+      "action": "completed",
+      "id": "evt_1788109671986_kmh80",
+      "created_at": "2026-08-30T17:07:51.986Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-viz-eda",
+      "action": "completed",
+      "id": "evt_1788109671999_ld6tq",
+      "created_at": "2026-08-30T17:07:51.999Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788109733113_9w7yo",
+      "created_at": "2026-08-30T17:08:53.113Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-syntax",
+      "action": "completed",
+      "id": "evt_1788109733143_55hrh",
+      "created_at": "2026-08-30T17:08:53.143Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-ds",
+      "action": "completed",
+      "id": "evt_1788109733160_yatus",
+      "created_at": "2026-08-30T17:08:53.160Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-files",
+      "action": "completed",
+      "id": "evt_1788109733174_w0q4e",
+      "created_at": "2026-08-30T17:08:53.174Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-oop",
+      "action": "completed",
+      "id": "evt_1788109733189_kzyux",
+      "created_at": "2026-08-30T17:08:53.189Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788109758236_kj5ku",
+      "created_at": "2026-08-30T17:09:18.236Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-syntax",
+      "action": "completed",
+      "id": "evt_1788109758281_4g08z",
+      "created_at": "2026-08-30T17:09:18.281Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-ds",
+      "action": "completed",
+      "id": "evt_1788109758293_t57si",
+      "created_at": "2026-08-30T17:09:18.293Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-oop",
+      "action": "completed",
+      "id": "evt_1788109758305_6jzg5",
+      "created_at": "2026-08-30T17:09:18.305Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-files",
+      "action": "completed",
+      "id": "evt_1788109758317_47k2j",
+      "created_at": "2026-08-30T17:09:18.317Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788109764847_g0dvd",
+      "created_at": "2026-08-30T17:09:24.847Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-files",
+      "action": "completed",
+      "id": "evt_1788109764858_jedtm",
+      "created_at": "2026-08-30T17:09:24.858Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788109833800_d1ubo",
+      "created_at": "2026-08-30T17:10:33.800Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788109836331_1n5gr",
+      "created_at": "2026-08-30T17:10:36.331Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788109843109_lt1ja",
+      "created_at": "2026-08-30T17:10:43.109Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-oop",
+      "action": "completed",
+      "id": "evt_1788109843152_tktjj",
+      "created_at": "2026-08-30T17:10:43.152Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-syntax",
+      "action": "completed",
+      "id": "evt_1788109843164_rzkmb",
+      "created_at": "2026-08-30T17:10:43.164Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-ds",
+      "action": "completed",
+      "id": "evt_1788109843183_qlqno",
+      "created_at": "2026-08-30T17:10:43.183Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-files",
+      "action": "completed",
+      "id": "evt_1788109843196_kehvf",
+      "created_at": "2026-08-30T17:10:43.196Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788109977069_6cezo",
+      "created_at": "2026-08-30T17:12:57.069Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-ds",
+      "action": "completed",
+      "id": "evt_1788109981611_fovmh",
+      "created_at": "2026-08-30T17:13:01.611Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-syntax",
+      "action": "completed",
+      "id": "evt_1788110005419_8uikr",
+      "created_at": "2026-08-30T17:13:25.419Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-ds",
+      "action": "completed",
+      "id": "evt_1788110007135_6bxio",
+      "created_at": "2026-08-30T17:13:27.136Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-oop",
+      "action": "completed",
+      "id": "evt_1788110009046_enfpg",
+      "created_at": "2026-08-30T17:13:29.046Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-files",
+      "action": "completed",
+      "id": "evt_1788110012467_hmw5a",
+      "created_at": "2026-08-30T17:13:32.467Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788110012524_hbx8o",
+      "created_at": "2026-08-30T17:13:32.524Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-python-basics",
+      "action": "completed",
+      "id": "evt_1788110588655_0ikjj",
+      "created_at": "2026-08-30T17:23:08.655Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-ds",
+      "action": "completed",
+      "id": "evt_1788110588695_z1u3u",
+      "created_at": "2026-08-30T17:23:08.695Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-syntax",
+      "action": "completed",
+      "id": "evt_1788110588710_5e4kx",
+      "created_at": "2026-08-30T17:23:08.710Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-oop",
+      "action": "completed",
+      "id": "evt_1788110588727_vnps0",
+      "created_at": "2026-08-30T17:23:08.727Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-files",
+      "action": "completed",
+      "id": "evt_1788110588747_pbxeo",
+      "created_at": "2026-08-30T17:23:08.747Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-regression",
+      "action": "completed",
+      "id": "evt_1788110633848_p717y",
+      "created_at": "2026-08-30T17:23:53.848Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-git-basics",
+      "action": "completed",
+      "id": "evt_1788111200449_2guwm",
+      "created_at": "2026-08-30T17:33:20.449Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-time-series",
+      "action": "completed",
+      "id": "evt_1788111240101_j4zn9",
+      "created_at": "2026-08-30T17:34:00.101Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-classification",
+      "action": "completed",
+      "id": "evt_1788111399683_yq3qy",
+      "created_at": "2026-08-30T17:36:39.683Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-sql-joins",
+      "action": "completed",
+      "id": "evt_1788111581758_p9g9r",
+      "created_at": "2026-08-30T17:39:41.758Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-sql-basics",
+      "action": "completed",
+      "id": "evt_1788111592615_dcap3",
+      "created_at": "2026-08-30T17:39:52.615Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-sql-select",
+      "action": "completed",
+      "id": "evt_1788111592623_hsx3y",
+      "created_at": "2026-08-30T17:39:52.623Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-sql-subq",
+      "action": "completed",
+      "id": "evt_1788111592637_4thx7",
+      "created_at": "2026-08-30T17:39:52.637Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-sql-agg",
+      "action": "completed",
+      "id": "evt_1788111592654_6pan7",
+      "created_at": "2026-08-30T17:39:52.654Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-pandas-df",
+      "action": "completed",
+      "id": "evt_1788111887262_2cdk2",
+      "created_at": "2026-08-30T17:44:47.262Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-math-hypo",
+      "action": "completed",
+      "id": "evt_1788111891527_bzt3z",
+      "created_at": "2026-08-30T17:44:51.527Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-numpy-arrays",
+      "action": "completed",
+      "id": "evt_1788111899555_bbl8e",
+      "created_at": "2026-08-30T17:44:59.555Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-sk-trees",
+      "action": "completed",
+      "id": "evt_1788111915348_f4y7j",
+      "created_at": "2026-08-30T17:45:15.348Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-viz-seaborn",
+      "action": "completed",
+      "id": "evt_1788111932441_qk7xv",
+      "created_at": "2026-08-30T17:45:32.441Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-viz-plotly",
+      "action": "completed",
+      "id": "evt_1788111934914_9kxis",
+      "created_at": "2026-08-30T17:45:34.914Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-classification",
+      "action": "completed",
+      "id": "evt_1788111955481_r9v7k",
+      "created_at": "2026-08-30T17:45:55.481Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "ds-dl-foundations",
+      "action": "completed",
+      "id": "evt_1788112288977_xfrtf",
+      "created_at": "2026-08-30T17:51:28.977Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-syntax",
+      "action": "completed",
+      "id": "evt_1788112306713_vzy9p",
+      "created_at": "2026-08-30T17:51:46.713Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-ds",
+      "action": "completed",
+      "id": "evt_1788112307528_42g1h",
+      "created_at": "2026-08-30T17:51:47.528Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-py-oop",
+      "action": "completed",
+      "id": "evt_1788112308324_vdgqs",
+      "created_at": "2026-08-30T17:51:48.324Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788086148664_ko1fp",
+      "node_id": "sub-sk-boosting",
+      "action": "completed",
+      "id": "evt_1788112316847_i4wm8",
+      "created_at": "2026-08-30T17:51:56.847Z"
+    },
+    {
+      "user_id": "usr_1788083591865_95i0p",
+      "roadmap_id": "rdm_1788112352304_t50v9",
+      "node_id": "sub-feat-scaling",
+      "action": "completed",
+      "id": "evt_1788112385954_rwbn4",
+      "created_at": "2026-08-30T17:53:05.954Z"
     }
   ],
   "resources": [],

@@ -67,9 +67,9 @@ export function generateLearningPath(
     (edge) => trackNodeIds.has(edge.from_id) && trackNodeIds.has(edge.to_id)
   );
 
-  // Combine known and explicitly excluded nodes into satisfied/ignored set
-  const completedOrSkipped = new Set<string>([
-    ...knownNodeIds,
+  // Exclude only explicitly skipped nodes from the learning set. Completed and
+  // known-prior nodes should remain in the roadmap while being styled green.
+  const ignoredNodeIds = new Set<string>([
     ...excludedNodeIds,
   ]);
 
@@ -88,7 +88,7 @@ export function generateLearningPath(
   });
 
   // 2. Identify remaining candidate nodes to learn
-  const candidateNodes = trackNodes.filter((n) => !completedOrSkipped.has(n.id));
+  const candidateNodes = trackNodes.filter((n) => !ignoredNodeIds.has(n.id));
 
   // 3. Apply Precedence-Constrained Knapsack Optimizer for Time-Budget Constraint
   const knapsackResult = optimizePathBudget({
@@ -196,35 +196,20 @@ export function generateLearningPath(
   const finalTotalHours = activeNodes.reduce((sum, n) => sum + n.est_hours, 0);
 
   // Build known/completed nodes list (not excluded, only known/done)
+  // Keep this metadata for status badges and tracking, but do not prepend a
+  // synthetic milestone group because that reorders the active roadmap and makes
+  // completed nodes appear to jump to the top of the flow.
   const knownNodes = trackNodes.filter((n) => knownNodeIds.includes(n.id));
-
-  // Prepend a "Completed" milestone group if there are known/done nodes
-  const allMilestones: PathMilestone[] = [];
-  if (knownNodes.length > 0) {
-    allMilestones.push({
-      milestone_index: 0,
-      title: 'Completed / Known Prior Topics',
-      nodes: knownNodes,
-      is_parallel: knownNodes.length > 1,
-      est_hours: knownNodes.reduce((s, n) => s + n.est_hours, 0),
-    });
-  }
-  allMilestones.push(...milestones);
-
-  // Re-number milestones (keep 0 for completed group)
-  allMilestones.forEach((m, i) => {
-    m.milestone_index = i;
-  });
 
   return {
     target_track: targetTrack,
-    milestones: allMilestones,
+    milestones,
     recommended_nodes: activeNodes,
     known_nodes: knownNodes,
     trimmed_nodes: knapsackResult.trimmedNodes,
     total_est_hours: finalTotalHours,
     time_budget_hours: totalTimeBudgetHours,
     is_trimmed: knapsackResult.isTrimmed,
-    completed_node_ids: Array.from(completedOrSkipped),
+    completed_node_ids: Array.from(knownNodeIds),
   };
 }

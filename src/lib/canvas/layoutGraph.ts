@@ -57,6 +57,67 @@ export function filterKnownMilestonesForGraph(
     .filter((milestone) => milestone.nodes.length > 0);
 }
 
+export function filterLayoutByStatus(
+  layout: LayoutResult,
+  nodeStatuses: Record<string, 'done' | 'known-prior' | 'learning' | 'not-started' | 'skipped'>,
+  _subtopicsByParent?: Map<string, Subtopic[]>
+): LayoutResult {
+  const visibleNodeIds = new Set<string>();
+
+  layout.nodes.forEach((node) => {
+    if (node.type === 'checkpointCard') {
+      visibleNodeIds.add(node.id);
+      return;
+    }
+
+    const layoutData = node.data as LayoutTopicData | undefined;
+    const topicId = layoutData?.id ?? node.id.replace(/^sub_/, '');
+    const status = nodeStatuses[topicId] ?? 'not-started';
+
+    if (status === 'known-prior') {
+      return;
+    }
+
+    visibleNodeIds.add(node.id);
+  });
+
+  const filteredNodes = layout.nodes.filter((node) => visibleNodeIds.has(node.id));
+  const filteredNodeIds = new Set(filteredNodes.map((node) => node.id));
+  const filteredEdges = layout.edges.filter(
+    (edge) => filteredNodeIds.has(edge.source) && filteredNodeIds.has(edge.target)
+  );
+
+  return {
+    nodes: filteredNodes,
+    edges: filteredEdges,
+    translateExtent: computeTranslateExtent(filteredNodes),
+  };
+}
+
+export function getSubtopicProgress(
+  topicIds: string[],
+  nodeStatuses: Record<string, 'done' | 'known-prior' | 'learning' | 'not-started' | 'skipped'>,
+  subtopicsByParent: Map<string, Subtopic[]>
+): { completed: number; total: number } {
+  const relevantSubtopicIds = new Set<string>();
+
+  topicIds.forEach((topicId) => {
+    (subtopicsByParent.get(topicId) || []).forEach((subtopic) => {
+      relevantSubtopicIds.add(subtopic.id);
+    });
+  });
+
+  const completed = Array.from(relevantSubtopicIds).filter((subtopicId) => {
+    const status = nodeStatuses[subtopicId] ?? 'not-started';
+    return status === 'done' || status === 'known-prior';
+  }).length;
+
+  return {
+    completed,
+    total: relevantSubtopicIds.size,
+  };
+}
+
 export function syncParentAndSubtopicStatuses(
   currentStatuses: Record<string, 'done' | 'known-prior' | 'learning' | 'not-started' | 'skipped'>,
   subtopicsByParent: Map<string, Subtopic[]>,

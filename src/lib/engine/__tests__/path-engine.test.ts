@@ -21,7 +21,7 @@ describe('Path Engine DAG Algorithm', () => {
     expect(nodeIds).toContain('ds-python-basics');
   });
 
-  it('should skip known skills and recommend downstream prerequisites', () => {
+  it('should keep known skills in the roadmap while still recommending downstream work', () => {
     const result = generateLearningPath({
       knownNodeIds: ['ds-python-basics', 'ds-sql-basics'],
       targetTrack: 'data-science',
@@ -30,9 +30,36 @@ describe('Path Engine DAG Algorithm', () => {
     });
 
     const recommendedIds = result.recommended_nodes.map((n) => n.id);
-    expect(recommendedIds).not.toContain('ds-python-basics');
-    expect(recommendedIds).not.toContain('ds-sql-basics');
+    const allMilestoneIds = result.milestones.flatMap((milestone) => milestone.nodes.map((node) => node.id));
+    expect(recommendedIds).toContain('ds-python-basics');
+    expect(recommendedIds).toContain('ds-sql-basics');
+    expect(allMilestoneIds).toContain('ds-python-basics');
+    expect(allMilestoneIds).toContain('ds-sql-basics');
     expect(recommendedIds).toContain('ds-numpy-pandas');
+  });
+
+  it('should keep done nodes in the roadmap instead of deleting them', () => {
+    const result = generateLearningPath({
+      knownNodeIds: ['ds-python-basics'],
+      targetTrack: 'data-science',
+      timeBudgetWeeks: 50,
+      weeklyHours: 10,
+    });
+
+    const allMilestoneIds = result.milestones.flatMap((milestone) => milestone.nodes.map((node) => node.id));
+    expect(allMilestoneIds).toContain('ds-python-basics');
+  });
+
+  it('should not prepend a synthetic completed milestone that reorders the graph', () => {
+    const result = generateLearningPath({
+      knownNodeIds: ['ds-python-basics'],
+      targetTrack: 'data-science',
+      timeBudgetWeeks: 50,
+      weeklyHours: 10,
+    });
+
+    expect(result.milestones.some((milestone) => milestone.title.includes('Completed / Known Prior Topics'))).toBe(false);
+    expect(result.known_nodes?.some((node) => node.id === 'ds-python-basics')).toBe(true);
   });
 
   it('should group independent parallel-eligible topics into parallel milestones', () => {
@@ -43,12 +70,12 @@ describe('Path Engine DAG Algorithm', () => {
       weeklyHours: 10,
     });
 
-    // Milestone 1 after Python & SQL should include ds-numpy-pandas and ds-math-stats in parallel
     const milestone1 = result.milestones[0];
     const ids = milestone1.nodes.map((n) => n.id);
-    expect(ids).toContain('ds-numpy-pandas');
-    expect(ids).toContain('ds-math-stats');
     expect(milestone1.is_parallel).toBe(true);
+    expect(ids.length).toBeGreaterThanOrEqual(2);
+    expect(ids).toContain('ds-python-basics');
+    expect(ids).toContain('ds-sql-basics');
   });
 
   it('should apply budget trimming when total hours exceed the time budget', () => {

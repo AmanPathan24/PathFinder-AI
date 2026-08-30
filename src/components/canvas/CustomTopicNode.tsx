@@ -1,6 +1,7 @@
 'use client';
 
 import React, { memo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Handle, Position, NodeProps } from '@xyflow/react';
 import {
   CheckCircle2,
@@ -47,6 +48,7 @@ export const CustomTopicNode = memo(({ data, selected }: NodeProps<any>) => {
   } = nodeData;
 
   const [showMenu, setShowMenu] = useState(false);
+  const [menuPosition, setMenuPosition] = useState<{ x: number; y: number } | null>(null);
 
   // Status Badge Rendering
   const renderStatusBadge = () => {
@@ -113,7 +115,8 @@ export const CustomTopicNode = memo(({ data, selected }: NodeProps<any>) => {
 
   const handleContextMenu = (e: React.MouseEvent) => {
     e.preventDefault();
-    setShowMenu(!showMenu);
+    setMenuPosition({ x: e.clientX, y: e.clientY });
+    setShowMenu(true);
   };
 
   const handleAction = (newStatus: NodeStatusType) => {
@@ -121,12 +124,14 @@ export const CustomTopicNode = memo(({ data, selected }: NodeProps<any>) => {
       onSetStatus(id, newStatus);
     }
     setShowMenu(false);
+    setMenuPosition(null);
   };
 
   return (
     <div
       onClick={() => onSelectNode?.(id)}
       onContextMenu={handleContextMenu}
+      style={{ zIndex: 30 }}
       className={`relative box-border rounded-2xl border-2 cursor-pointer select-none ${getBorderColor()} ${
         isSubtopic
           ? 'p-3 w-56 h-[90px] shadow-sm'
@@ -212,43 +217,48 @@ export const CustomTopicNode = memo(({ data, selected }: NodeProps<any>) => {
         </div>
       </div>
 
-      {/* Quick Context Menu on Right Click */}
-      {showMenu && (
-        <div
-          className="absolute left-0 top-full mt-2 w-48 bg-[#FFF9F0] border border-[#E6DCCF] rounded-xl shadow-2xl p-1.5 z-50 space-y-1 animate-in fade-in"
-          onClick={(e) => e.stopPropagation()}
-          onPointerDown={(e) => e.stopPropagation()}
-          onMouseLeave={() => setShowMenu(false)}
-        >
-          <div className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#7A6553] border-b border-[#E6DCCF]">
-            Set Node Status
-          </div>
-          <button
-            onClick={() => handleAction('learning')}
-            className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-semibold text-[#4A3728] hover:bg-[#F0E8DC] flex items-center gap-2"
+      {showMenu && menuPosition &&
+        createPortal(
+          <div
+            style={{ position: 'fixed', left: menuPosition.x, top: menuPosition.y, zIndex: 999999 }}
+            className="w-48 bg-[#FFF9F0] border border-[#E6DCCF] rounded-xl shadow-2xl p-1.5 space-y-1 animate-in fade-in"
+            onClick={(e) => e.stopPropagation()}
+            onPointerDown={(e) => e.stopPropagation()}
+            onMouseLeave={() => {
+              setShowMenu(false);
+              setMenuPosition(null);
+            }}
           >
-            <BookOpen className="w-3.5 h-3.5 text-[#C96F4A]" /> Learning
-          </button>
-          <button
-            onClick={() => handleAction('done')}
-            className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-semibold text-[#4A3728] hover:bg-[#F0E8DC] flex items-center gap-2"
-          >
-            <CheckCircle2 className="w-3.5 h-3.5 text-[#8C9A76]" /> Done (Mastered)
-          </button>
-          <button
-            onClick={() => handleAction('known-prior')}
-            className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-semibold text-[#4A3728] hover:bg-[#F0E8DC] flex items-center gap-2"
-          >
-            <Award className="w-3.5 h-3.5 text-[#B58B65]" /> Mark as Known Prior
-          </button>
-          <button
-            onClick={() => handleAction('skipped')}
-            className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-semibold text-[#7A6553] hover:bg-[#F0E8DC] flex items-center gap-2"
-          >
-            <AlertTriangle className="w-3.5 h-3.5 text-[#7A6553]" /> Skip Node
-          </button>
-        </div>
-      )}
+            <div className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#7A6553] border-b border-[#E6DCCF]">
+              Set Node Status
+            </div>
+            <button
+              onClick={() => handleAction('learning')}
+              className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-semibold text-[#4A3728] hover:bg-[#F0E8DC] flex items-center gap-2"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-[#C96F4A]" /> Learning
+            </button>
+            <button
+              onClick={() => handleAction('done')}
+              className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-semibold text-[#4A3728] hover:bg-[#F0E8DC] flex items-center gap-2"
+            >
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#8C9A76]" /> Done (Mastered)
+            </button>
+            <button
+              onClick={() => handleAction('known-prior')}
+              className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-semibold text-[#4A3728] hover:bg-[#F0E8DC] flex items-center gap-2"
+            >
+              <Award className="w-3.5 h-3.5 text-[#B58B65]" /> Mark as Known Prior
+            </button>
+            <button
+              onClick={() => handleAction('skipped')}
+              className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-semibold text-[#7A6553] hover:bg-[#F0E8DC] flex items-center gap-2"
+            >
+              <AlertTriangle className="w-3.5 h-3.5 text-[#7A6553]" /> Skip Node
+            </button>
+          </div>,
+          document.body
+        )}
     </div>
   );
 });

@@ -3,6 +3,8 @@ import { PathMilestone } from '@/types/ontology';
 import { Subtopic } from '@/types/resource';
 import {
   filterKnownMilestonesForGraph,
+  filterLayoutByStatus,
+  getSubtopicProgress,
   layoutRoadmapGraph,
   syncParentAndSubtopicStatuses,
 } from '@/lib/canvas/layoutGraph';
@@ -115,7 +117,9 @@ describe('layoutRoadmapGraph', () => {
   });
 
   it('keeps a parent topic and all subtopics in sync when completion changes', () => {
-    const subtopicsByParent = new Map<string, { id: string }[]>([['a', [{ id: 'sub-a-1' }, { id: 'sub-a-2' }]]]);
+    const subtopicsByParent = new Map<string, Subtopic[]>([
+      ['a', [{ id: 'sub-a-1', parent_skill_id: 'a', title: 'Sub A 1', est_hours: 2 } as Subtopic, { id: 'sub-a-2', parent_skill_id: 'a', title: 'Sub A 2', est_hours: 2 } as Subtopic]],
+    ]);
     const next = syncParentAndSubtopicStatuses(
       {
         a: 'not-started',
@@ -147,7 +151,9 @@ describe('layoutRoadmapGraph', () => {
   });
 
   it('does not auto-complete a parent when only one child is marked done', () => {
-    const subtopicsByParent = new Map<string, { id: string }[]>([['a', [{ id: 'sub-a-1' }, { id: 'sub-a-2' }]]]);
+    const subtopicsByParent = new Map<string, Subtopic[]>([
+      ['a', [{ id: 'sub-a-1', parent_skill_id: 'a', title: 'Sub A 1', est_hours: 2 } as Subtopic, { id: 'sub-a-2', parent_skill_id: 'a', title: 'Sub A 2', est_hours: 2 } as Subtopic]],
+    ]);
     const next = syncParentAndSubtopicStatuses(
       {
         a: 'not-started',
@@ -160,5 +166,43 @@ describe('layoutRoadmapGraph', () => {
     );
 
     expect(next['a']).toBe('not-started');
+  });
+
+  it('counts only truly completed subtopics for dashboard progress', () => {
+    const subtopicsByParent = new Map<string, Subtopic[]>([
+      ['a', [{ id: 'sub-a-1', parent_skill_id: 'a', title: 'Sub A 1', est_hours: 2 } as Subtopic, { id: 'sub-a-2', parent_skill_id: 'a', title: 'Sub A 2', est_hours: 2 } as Subtopic]],
+    ]);
+
+    const progress = getSubtopicProgress(['a'], {
+      a: 'done',
+      'sub-a-1': 'done',
+      'sub-a-2': 'not-started',
+    }, subtopicsByParent);
+
+    expect(progress).toEqual({ completed: 1, total: 2 });
+  });
+
+  it('preserves the positions of visible nodes when known-prior nodes are filtered out', () => {
+    const fullGraph = layoutRoadmapGraph(milestones, subtopicsByParent);
+    const filtered = filterLayoutByStatus(fullGraph, {
+      a: 'done',
+      b: 'done',
+      c: 'not-started',
+      'sub-a-1': 'done',
+      'sub-a-2': 'done',
+      'sub-a-3': 'done',
+      'sub-b-1': 'known-prior',
+    }, subtopicsByParent);
+
+    const filteredIds = filtered.nodes.map((node) => node.id);
+    expect(filteredIds).not.toContain('sub_sub-b-1');
+    expect(filteredIds).toContain('node_a');
+    expect(filteredIds).toContain('node_b');
+    expect(filteredIds).toContain('node_c');
+
+    const sample = filtered.nodes.find((node) => node.id === 'node_b');
+    const original = fullGraph.nodes.find((node) => node.id === 'node_b');
+    expect(sample?.position.x).toBe(original?.position.x);
+    expect(sample?.position.y).toBe(original?.position.y);
   });
 });

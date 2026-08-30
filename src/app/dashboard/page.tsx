@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePath } from '@/context/PathContext';
 import { PaceCard } from '@/components/dashboard/PaceCard';
 import { calculatePaceMetrics } from '@/lib/engine/pace-calculator';
+import { getSubtopicProgress } from '@/lib/canvas/layoutGraph';
 import rawSubtopics from '@/data/subtopics.json';
 import { Subtopic } from '@/types/resource';
 import {
@@ -118,19 +119,16 @@ export default function DashboardPage() {
     return map;
   }, []);
 
-  const completedSubtopicsCount = useMemo(() => {
-    let count = 0;
-    allTrackNodes.forEach((n) => {
-      if (nodeStatuses[n.id] === 'done' || nodeStatuses[n.id] === 'known-prior') {
-        count += (subtopicsByParent.get(n.id) || []).length;
-      }
-    });
-    return count;
+  const subtopicProgress = useMemo(() => {
+    return getSubtopicProgress(
+      allTrackNodes.map((n) => n.id),
+      nodeStatuses,
+      subtopicsByParent
+    );
   }, [allTrackNodes, nodeStatuses, subtopicsByParent]);
 
-  const totalSubtopicsCount = useMemo(() => {
-    return allTrackNodes.reduce((acc, n) => acc + (subtopicsByParent.get(n.id) || []).length, 0);
-  }, [allTrackNodes, subtopicsByParent]);
+  const completedSubtopicsCount = subtopicProgress.completed;
+  const totalSubtopicsCount = subtopicProgress.total;
 
   // --- Hours logged (for the sand timer card) ---
   const totalHoursLogged = useMemo(() => {
