@@ -114,7 +114,7 @@ export default function LandingPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
             <div className="text-xs text-[#7A6553] font-medium text-center sm:text-left">
-              Stage 1: Intent &bull; Stage 2: Profiling &bull; Stage 3: DAG Engine
+              Stage 1: Intent &bull; Stage 2: Profiling &bull; Stage 2.5: Diagnostic &bull; Stage 3: DAG Engine
             </div>
 
             <button
@@ -202,9 +202,9 @@ export default function LandingPage() {
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-[#4A3728]">Grounded Explanations</h4>
+            <h4 className="text-sm font-bold text-[#4A3728]">Diagnostic Confidence</h4>
             <p className="text-xs text-[#7A6553] mt-1 leading-relaxed">
-              Explanations are strictly constrained to graph facts—preventing AI hallucinations.
+              Micro-quiz verifies each claimed skill. Partial knowledge becomes a smart refresher instead of binary skip.
             </p>
           </div>
         </div>

@@ -18,6 +18,19 @@ export interface PathEngineOptions {
   timeBudgetWeeks: number;
   weeklyHours?: number; // default 10h
   excludedNodeIds?: string[]; // for feedback loop ("skip" / "too hard")
+  /**
+   * Diagnostic confidence scores per node id (0–1), produced by the
+   * Diagnostic Confidence Agent.
+   *
+   * Thresholds:
+   *   >= 0.75  → node is pruned as mastered (fully excluded from roadmap)
+   *   0.4–0.75 → node kept but est_hours reduced to 20% (lightweight refresher)
+   *   < 0.4    → node included at full est_hours
+   *
+   * Nodes in knownNodeIds that have NO entry here default to 0.6
+   * (graceful degradation — keep as refresher, same as fallback).
+   */
+  diagnosticConfidences?: Record<string, number>;
 }
 
 /**
@@ -51,9 +64,38 @@ export function generateLearningPath(
     timeBudgetWeeks,
     weeklyHours = 10,
     excludedNodeIds = [],
+    diagnosticConfidences = {},
   } = options;
 
   const totalTimeBudgetHours = timeBudgetWeeks * weeklyHours;
+
+  // ── Confidence-threshold pruning ──────────────────────────────────────────
+  // For each claimed-known node apply the diagnostic result:
+  //   confidence >= 0.75 → mastered: fully exclude from roadmap (same as before)
+  //   confidence 0.4–0.75 → refresher: keep but shrink est_hours to 20%
+  //   confidence < 0.4   → full inclusion (do not treat as known)
+  // Nodes in knownNodeIds with no diagnostic entry default to 0.6 (refresher).
+  const MASTERY_THRESHOLD = 0.75;
+  const REFRESHER_THRESHOLD = 0.4;
+  const REFRESHER_HOURS_FACTOR = 0.2;
+
+  // Collect the node ids that are fully mastered (pruned from active path)
+  const masteredNodeIds = new Set<string>();
+  // Map node id → override est_hours for refresher nodes
+  const refresherHoursOverride = new Map<string, number>();
+
+  for (const nodeId of knownNodeIds) {
+    const confidence =
+      nodeId in diagnosticConfidences ? diagnosticConfidences[nodeId] : 0.6;
+
+    if (confidence >= MASTERY_THRESHOLD) {
+      masteredNodeIds.add(nodeId);
+    } else if (confidence >= REFRESHER_THRESHOLD) {
+      // Mark for reduced hours — resolved after we load the node
+      refresherHoursOverride.set(nodeId, -1); // placeholder, filled below
+    }
+    // confidence < REFRESHER_THRESHOLD → node included at full hours (no action needed)
+  }
 
   // 1. Filter nodes for the target track
   const trackNodes = ontology.nodes.filter((node) => node.track === targetTrack);
@@ -67,10 +109,11 @@ export function generateLearningPath(
     (edge) => trackNodeIds.has(edge.from_id) && trackNodeIds.has(edge.to_id)
   );
 
-  // Exclude only explicitly skipped nodes from the learning set. Completed and
-  // known-prior nodes should remain in the roadmap while being styled green.
+  // Exclude fully-mastered nodes (confidence >= 0.75) and explicitly skipped nodes.
+  // Refresher nodes (confidence 0.4–0.75) stay in the path but with reduced hours.
   const ignoredNodeIds = new Set<string>([
     ...excludedNodeIds,
+    ...Array.from(masteredNodeIds),
   ]);
 
   // Build adjacency lists
@@ -88,7 +131,20 @@ export function generateLearningPath(
   });
 
   // 2. Identify remaining candidate nodes to learn
-  const candidateNodes = trackNodes.filter((n) => !ignoredNodeIds.has(n.id));
+  // Apply refresher hours override for mid-confidence nodes before budget optimisation.
+  const candidateNodes = trackNodes
+    .filter((n) => !ignoredNodeIds.has(n.id))
+    .map((n) => {
+      if (refresherHoursOverride.has(n.id)) {
+        return {
+          ...n,
+          est_hours: Math.max(1, Math.round(n.est_hours * REFRESHER_HOURS_FACTOR)),
+          // tag so UI can render a "Refresher" badge
+          _isRefresher: true,
+        } as OntologyNode & { _isRefresher?: boolean };
+      }
+      return n;
+    });
 
   // 3. Apply Precedence-Constrained Knapsack Optimizer for Time-Budget Constraint
   const knapsackResult = optimizePathBudget({
@@ -195,11 +251,15 @@ export function generateLearningPath(
 
   const finalTotalHours = activeNodes.reduce((sum, n) => sum + n.est_hours, 0);
 
-  // Build known/completed nodes list (not excluded, only known/done)
-  // Keep this metadata for status badges and tracking, but do not prepend a
-  // synthetic milestone group because that reorders the active roadmap and makes
-  // completed nodes appear to jump to the top of the flow.
-  const knownNodes = trackNodes.filter((n) => knownNodeIds.includes(n.id));
+  // Build known/completed nodes list:
+  //   - Fully mastered (confidence >= 0.75): excluded from path, listed in known_nodes
+  //   - Other known nodes: already in active path (as refreshers or full)
+  const knownNodes = trackNodes.filter((n) => masteredNodeIds.has(n.id));
+
+  // Also capture which active nodes are refreshers for output metadata
+  const refresherNodeIds = Array.from(refresherHoursOverride.keys()).filter((id) =>
+    activeNodes.some((n) => n.id === id)
+  );
 
   return {
     target_track: targetTrack,
@@ -211,5 +271,6 @@ export function generateLearningPath(
     time_budget_hours: totalTimeBudgetHours,
     is_trimmed: knapsackResult.isTrimmed,
     completed_node_ids: Array.from(knownNodeIds),
+    refresher_node_ids: refresherNodeIds,
   };
 }

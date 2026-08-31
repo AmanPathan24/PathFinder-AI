@@ -35,6 +35,10 @@ interface PathContextType {
   explanations: Record<string, string>;
   setExplanations: React.Dispatch<React.SetStateAction<Record<string, string>>>;
 
+  // Diagnostic Confidence Agent
+  diagnosticConfidences: Record<string, number>;
+  setDiagnosticConfidences: React.Dispatch<React.SetStateAction<Record<string, number>>>;
+
   // Node Statuses & Mastery
   nodeStatuses: Record<string, NodeStatusType>;
   skillMasteries: Record<string, SkillMasterySource>;
@@ -57,6 +61,7 @@ interface PathContextType {
     excludedIds?: string[];
     activeTrack?: TrackId;
     timeBudgetWeeks?: number;
+    confidences?: Record<string, number>;
   }) => Promise<void>;
 }
 
@@ -80,6 +85,7 @@ export const PathProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [skillMasteries, setSkillMasteries] = useState<Record<string, SkillMasterySource>>({});
   const [loggedHoursMap, setLoggedHoursMap] = useState<Record<string, number>>({});
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [diagnosticConfidences, setDiagnosticConfidences] = useState<Record<string, number>>({});
 
   // Derived sets from nodeStatuses & skillMasteries
   const completedNodeIds = Object.keys(nodeStatuses).filter(
@@ -180,6 +186,7 @@ export const PathProvider: React.FC<{ children: React.ReactNode }> = ({ children
             excludedNodeIds: Object.keys(statusMap).filter(
               (id) => statusMap[id] === 'skipped'
             ),
+            diagnosticConfidences,
           }),
         });
 
@@ -204,6 +211,7 @@ export const PathProvider: React.FC<{ children: React.ReactNode }> = ({ children
     excludedIds?: string[];
     activeTrack?: TrackId;
     timeBudgetWeeks?: number;
+    confidences?: Record<string, number>;
   }) => {
     const profile = parsedProfile || {
       target_track: activeRoadmap?.target_track || 'data-science',
@@ -221,6 +229,9 @@ export const PathProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const targetExcludedIds =
       options?.excludedIds !== undefined ? options.excludedIds : skippedNodeIds;
 
+    const targetConfidences =
+      options?.confidences !== undefined ? options.confidences : diagnosticConfidences;
+
     const updatedProfile: UserParsedProfile = {
       ...profile,
       target_track: options?.activeTrack || profile.target_track,
@@ -237,6 +248,7 @@ export const PathProvider: React.FC<{ children: React.ReactNode }> = ({ children
           overrideProfile: updatedProfile,
           knownNodeIds: targetKnownIds,
           excludedNodeIds: targetExcludedIds,
+          diagnosticConfidences: targetConfidences,
         }),
       });
 
@@ -398,6 +410,8 @@ export const PathProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setPathOutput,
         explanations,
         setExplanations,
+        diagnosticConfidences,
+        setDiagnosticConfidences,
         nodeStatuses,
         skillMasteries,
         completedNodeIds,

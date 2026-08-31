@@ -17,6 +17,7 @@ import {
   LogOut,
   Sparkles,
   Layers,
+  ShieldCheck,
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -34,7 +35,8 @@ export const Navbar: React.FC = () => {
 
   const navItems = [
     { label: 'Intake', href: '/', icon: Compass },
-    { label: 'Onboarding', href: '/onboarding', icon: Target },
+    { label: 'Calibrate', href: '/onboarding', icon: Target },
+    { label: 'Diagnostic', href: '/diagnostic', icon: ShieldCheck },
     { label: 'Learning Path', href: '/path', icon: GitFork },
     { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
   ];

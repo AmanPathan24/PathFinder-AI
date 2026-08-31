@@ -109,7 +109,7 @@ export default function PathPage() {
     );
   }
 
-  const { milestones, total_est_hours, time_budget_hours, is_trimmed, trimmed_nodes } = pathOutput;
+  const { milestones, total_est_hours, time_budget_hours, is_trimmed, trimmed_nodes, refresher_node_ids = [] } = pathOutput;
 
   return (
     <div className="w-full max-w-[calc(100vw-2rem)] mx-auto space-y-8 py-2">
@@ -129,6 +129,12 @@ export default function PathPage() {
                 <span className="text-xs text-[#A85331] font-bold bg-[#C96F4A]/15 px-3 py-1 rounded-full border border-[#C96F4A]/30 flex items-center gap-1">
                   <Zap className="w-3 h-3 fill-current text-[#C96F4A]" />
                   {bottlenecks.length} Critical Bottleneck Skills
+                </span>
+              )}
+              {refresher_node_ids.length > 0 && (
+                <span className="text-xs text-[#B58B65] font-bold bg-[#F7EEE3] px-3 py-1 rounded-full border border-[#B58B65]/40 flex items-center gap-1">
+                  <Zap className="w-3 h-3 text-[#B58B65]" />
+                  {refresher_node_ids.length} Diagnostic Refresher{refresher_node_ids.length !== 1 ? 's' : ''}
                 </span>
               )}
             </div>
@@ -295,6 +301,7 @@ export default function PathPage() {
                       const isSkipped = st === 'skipped';
                       const exp = explanations[node.id];
                       const isBottleneck = bottlenecks.includes(node.id);
+                      const isRefresher = refresher_node_ids.includes(node.id);
 
                       return (
                         <div
@@ -339,6 +346,12 @@ export default function PathPage() {
                                     <span className="text-[9px] font-bold text-[#A85331] bg-[#C96F4A]/15 px-2 py-0.5 rounded-full border border-[#C96F4A]/30 uppercase tracking-wider flex items-center gap-1">
                                       <Zap className="w-2.5 h-2.5 fill-current" />
                                       Bottleneck
+                                    </span>
+                                  )}
+                                  {isRefresher && (
+                                    <span className="text-[9px] font-bold text-[#B58B65] bg-[#F7EEE3] px-2 py-0.5 rounded-full border border-[#B58B65]/40 uppercase tracking-wider flex items-center gap-1">
+                                      <Zap className="w-2.5 h-2.5 text-[#B58B65]" />
+                                      Diagnostic Refresher
                                     </span>
                                   )}
                                   {/* Current status pill */}

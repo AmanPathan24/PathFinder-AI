@@ -14,6 +14,7 @@ export async function POST(req: NextRequest) {
       overrideProfile,
       knownNodeIds: explicitKnownIds,
       excludedNodeIds = [],
+      diagnosticConfidences = {},
     } = body;
 
     let profile = overrideProfile;
@@ -40,6 +41,7 @@ export async function POST(req: NextRequest) {
       targetTrack: profile.target_track,
       timeBudgetWeeks: profile.time_budget_weeks || 24,
       excludedNodeIds,
+      diagnosticConfidences,
     });
 
     const ontology = getOntology();

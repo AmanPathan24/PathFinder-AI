@@ -66,7 +66,14 @@ export default function OnboardingPage() {
       if (newRoadmap) {
         // 2. Set the selected existing competencies to 'known-prior'
         await bulkSetKnownPrior(selectedKnownNodeIds);
-        router.push('/path');
+
+        // 3. Route to Diagnostic step if any skills were claimed,
+        //    otherwise skip straight to the path view.
+        if (selectedKnownNodeIds.length > 0) {
+          router.push('/diagnostic');
+        } else {
+          router.push('/path');
+        }
       }
     } catch (err) {
       console.error('Error generating roadmap:', err);
@@ -80,7 +87,7 @@ export default function OnboardingPage() {
       {/* Header */}
       <div className="border-b border-[#E6DCCF] pb-6">
         <div className="inline-flex items-center gap-2 text-xs font-bold text-[#8C9A76] bg-[#E4EAD9] px-3.5 py-1 rounded-full border border-[#8C9A76]/30 mb-3 uppercase tracking-wider">
-          <Sparkles className="w-3.5 h-3.5" /> Stage 2: Profile Calibration & Competencies
+          <Sparkles className="w-3.5 h-3.5" /> Stage 2: Profile Calibration &rarr; Stage 2.5: Skill Diagnostic
         </div>
         <h1 className="text-4xl font-serif text-[#4A3728] tracking-tight">
           Refine & Calibrate Your Intent
@@ -210,7 +217,11 @@ export default function OnboardingPage() {
           disabled={isLoading}
           className="px-8 py-3.5 bg-[#C96F4A] hover:bg-[#A85331] text-white font-bold text-sm rounded-xl shadow-md flex items-center gap-2 transition-all disabled:opacity-50"
         >
-          {isLoading ? 'Building Multi-Roadmap Engine...' : 'Confirm & Launch Visual Roadmap'}
+          {isLoading
+            ? 'Saving profile…'
+            : selectedKnownNodeIds.length > 0
+            ? `Confirm & Verify ${selectedKnownNodeIds.length} Skill${selectedKnownNodeIds.length !== 1 ? 's' : ''} →`
+            : 'Confirm & Launch Roadmap'}
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>

@@ -51,7 +51,8 @@ export interface PathEngineOutput {
   target_track: TrackId;
   milestones: PathMilestone[];
   recommended_nodes: OntologyNode[];
-  known_nodes?: OntologyNode[];   // done + known-prior nodes (shown with colored badges)
+  known_nodes?: OntologyNode[];   // fully mastered nodes (pruned from active path)
+  refresher_node_ids?: string[];  // mid-confidence nodes kept with reduced est_hours
   trimmed_nodes: OntologyNode[];
   total_est_hours: number;
   time_budget_hours: number;
