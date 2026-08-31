@@ -112,6 +112,18 @@
       "id": "rdm_1788112352304_t50v9",
       "created_at": "2026-08-30T17:52:32.304Z",
       "updated_at": "2026-08-30T17:52:32.304Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "title": "Frontend Web Development",
+      "target_track": "frontend",
+      "time_budget_weeks": 24,
+      "weekly_hours": 10,
+      "raw_goal": "I know basic HTML, CSS, and Vanilla JavaScript. I want to master React, TypeScript, and Next.js in 12 weeks.",
+      "is_archived": false,
+      "id": "rdm_1788165958562_scrgm",
+      "created_at": "2026-08-31T08:45:58.562Z",
+      "updated_at": "2026-08-31T08:45:58.562Z"
     }
   ],
   "nodeStatuses": [
@@ -618,6 +630,223 @@
       "node_id": "sub-sql-select",
       "status": "learning",
       "marked_at": "2026-08-30T17:54:07.817Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-html-css",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:02.069Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-js-basics",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:06.447Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-tailwind-ui",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:08.325Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-web-basics",
+      "status": "done",
+      "marked_at": "2026-08-31T08:53:56.150Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-html5",
+      "status": "done",
+      "marked_at": "2026-08-31T08:53:53.084Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-flexbox",
+      "status": "done",
+      "marked_at": "2026-08-31T08:53:53.978Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-css-frameworks",
+      "status": "done",
+      "marked_at": "2026-08-31T08:53:58.126Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-cssvars",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:02.087Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-responsive",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:02.121Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-es6",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:06.456Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-dom",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:06.469Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-fn",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:06.482Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-arrays",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:06.499Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-tw-util",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:08.313Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-tw-theme",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:08.337Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-tw-anim",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:08.349Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-tw-shadcn",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:08.359Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-git-github",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:10.300Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-git-branch",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:10.318Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-git-pr",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:10.332Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-git-collab",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:10.348Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-promises",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:12.189Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-async-api",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:12.207Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-fetch-api",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:12.228Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-storage",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:12.247Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-rest-err",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:12.266Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-js-deep-dive",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:13.555Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-package-managers",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:15.230Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-accessibility",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:39.920Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-performance",
+      "status": "done",
+      "marked_at": "2026-08-31T08:54:43.985Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-api-integration",
+      "status": "learning",
+      "marked_at": "2026-08-31T08:56:28.243Z"
     }
   ],
   "skillMasteries": [
@@ -937,6 +1166,186 @@
       "user_id": "usr_1788083591865_95i0p",
       "node_id": "ds-dl-foundations",
       "mastered_at": "2026-08-30T17:51:28.973Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-html-css",
+      "mastered_at": "2026-08-31T08:54:02.069Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-js-basics",
+      "mastered_at": "2026-08-31T08:54:06.447Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-tailwind-ui",
+      "mastered_at": "2026-08-31T08:54:08.325Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-html5",
+      "mastered_at": "2026-08-31T08:53:53.085Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-flexbox",
+      "mastered_at": "2026-08-31T08:53:53.978Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-web-basics",
+      "mastered_at": "2026-08-31T08:53:56.150Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-css-frameworks",
+      "mastered_at": "2026-08-31T08:53:58.126Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-cssvars",
+      "mastered_at": "2026-08-31T08:54:02.087Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-responsive",
+      "mastered_at": "2026-08-31T08:54:02.121Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-es6",
+      "mastered_at": "2026-08-31T08:54:06.457Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-dom",
+      "mastered_at": "2026-08-31T08:54:06.469Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-fn",
+      "mastered_at": "2026-08-31T08:54:06.482Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-arrays",
+      "mastered_at": "2026-08-31T08:54:06.499Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-tw-util",
+      "mastered_at": "2026-08-31T08:54:08.313Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-tw-theme",
+      "mastered_at": "2026-08-31T08:54:08.337Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-tw-anim",
+      "mastered_at": "2026-08-31T08:54:08.349Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-tw-shadcn",
+      "mastered_at": "2026-08-31T08:54:08.359Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-git-github",
+      "mastered_at": "2026-08-31T08:54:10.300Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-git-branch",
+      "mastered_at": "2026-08-31T08:54:10.318Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-git-pr",
+      "mastered_at": "2026-08-31T08:54:10.332Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-git-collab",
+      "mastered_at": "2026-08-31T08:54:10.348Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-promises",
+      "mastered_at": "2026-08-31T08:54:12.189Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-async-api",
+      "mastered_at": "2026-08-31T08:54:12.207Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-fetch-api",
+      "mastered_at": "2026-08-31T08:54:12.228Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-storage",
+      "mastered_at": "2026-08-31T08:54:12.247Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "sub-fe-rest-err",
+      "mastered_at": "2026-08-31T08:54:12.266Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-js-deep-dive",
+      "mastered_at": "2026-08-31T08:54:13.555Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-package-managers",
+      "mastered_at": "2026-08-31T08:54:15.230Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-accessibility",
+      "mastered_at": "2026-08-31T08:54:39.920Z",
+      "source": "roadmap-completed"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "node_id": "fe-performance",
+      "mastered_at": "2026-08-31T08:54:43.985Z",
       "source": "roadmap-completed"
     }
   ],
@@ -2436,6 +2845,270 @@
       "action": "completed",
       "id": "evt_1788112385954_rwbn4",
       "created_at": "2026-08-30T17:53:05.954Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-tailwind-ui",
+      "action": "completed",
+      "id": "evt_1788166082792_wpct8",
+      "created_at": "2026-08-31T08:48:02.792Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-tailwind-ui",
+      "action": "completed",
+      "id": "evt_1788166084328_oyh6a",
+      "created_at": "2026-08-31T08:48:04.328Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-tailwind-ui",
+      "action": "skipped",
+      "id": "evt_1788166085972_0h0bb",
+      "created_at": "2026-08-31T08:48:05.972Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-html5",
+      "action": "completed",
+      "id": "evt_1788166433088_vfpmd",
+      "created_at": "2026-08-31T08:53:53.089Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-flexbox",
+      "action": "completed",
+      "id": "evt_1788166433982_ac5pm",
+      "created_at": "2026-08-31T08:53:53.982Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-web-basics",
+      "action": "completed",
+      "id": "evt_1788166436154_5ty9n",
+      "created_at": "2026-08-31T08:53:56.154Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-css-frameworks",
+      "action": "completed",
+      "id": "evt_1788166438131_5c6rk",
+      "created_at": "2026-08-31T08:53:58.131Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-html-css",
+      "action": "completed",
+      "id": "evt_1788166442074_bnbum",
+      "created_at": "2026-08-31T08:54:02.074Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-cssvars",
+      "action": "completed",
+      "id": "evt_1788166442110_5xqbo",
+      "created_at": "2026-08-31T08:54:02.110Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-responsive",
+      "action": "completed",
+      "id": "evt_1788166442124_zly4k",
+      "created_at": "2026-08-31T08:54:02.124Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-js-basics",
+      "action": "completed",
+      "id": "evt_1788166446450_evi2w",
+      "created_at": "2026-08-31T08:54:06.450Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-es6",
+      "action": "completed",
+      "id": "evt_1788166446460_dm7bj",
+      "created_at": "2026-08-31T08:54:06.460Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-dom",
+      "action": "completed",
+      "id": "evt_1788166446475_3ajqi",
+      "created_at": "2026-08-31T08:54:06.475Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-fn",
+      "action": "completed",
+      "id": "evt_1788166446489_m6eb0",
+      "created_at": "2026-08-31T08:54:06.489Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-arrays",
+      "action": "completed",
+      "id": "evt_1788166446506_cyzbd",
+      "created_at": "2026-08-31T08:54:06.506Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-tw-util",
+      "action": "completed",
+      "id": "evt_1788166448316_fpxcy",
+      "created_at": "2026-08-31T08:54:08.316Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-tailwind-ui",
+      "action": "completed",
+      "id": "evt_1788166448328_hjz11",
+      "created_at": "2026-08-31T08:54:08.328Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-tw-theme",
+      "action": "completed",
+      "id": "evt_1788166448341_p2daj",
+      "created_at": "2026-08-31T08:54:08.341Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-tw-anim",
+      "action": "completed",
+      "id": "evt_1788166448352_u7ghl",
+      "created_at": "2026-08-31T08:54:08.352Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-tw-shadcn",
+      "action": "completed",
+      "id": "evt_1788166448364_cdfdb",
+      "created_at": "2026-08-31T08:54:08.364Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-git-github",
+      "action": "completed",
+      "id": "evt_1788166450306_ok956",
+      "created_at": "2026-08-31T08:54:10.306Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-git-branch",
+      "action": "completed",
+      "id": "evt_1788166450322_kdyf4",
+      "created_at": "2026-08-31T08:54:10.322Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-git-pr",
+      "action": "completed",
+      "id": "evt_1788166450337_f5m7t",
+      "created_at": "2026-08-31T08:54:10.337Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-git-collab",
+      "action": "completed",
+      "id": "evt_1788166450354_cs90o",
+      "created_at": "2026-08-31T08:54:10.354Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-promises",
+      "action": "completed",
+      "id": "evt_1788166452195_19jbt",
+      "created_at": "2026-08-31T08:54:12.195Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-async-api",
+      "action": "completed",
+      "id": "evt_1788166452213_wxmr7",
+      "created_at": "2026-08-31T08:54:12.213Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-fetch-api",
+      "action": "completed",
+      "id": "evt_1788166452236_v5ghp",
+      "created_at": "2026-08-31T08:54:12.236Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-storage",
+      "action": "completed",
+      "id": "evt_1788166452253_6ymgq",
+      "created_at": "2026-08-31T08:54:12.253Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "sub-fe-rest-err",
+      "action": "completed",
+      "id": "evt_1788166452273_nbxvm",
+      "created_at": "2026-08-31T08:54:12.273Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-js-deep-dive",
+      "action": "completed",
+      "id": "evt_1788166453566_cncmr",
+      "created_at": "2026-08-31T08:54:13.566Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-package-managers",
+      "action": "completed",
+      "id": "evt_1788166455236_vi00f",
+      "created_at": "2026-08-31T08:54:15.236Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-accessibility",
+      "action": "completed",
+      "id": "evt_1788166479924_33aq7",
+      "created_at": "2026-08-31T08:54:39.924Z"
+    },
+    {
+      "user_id": "usr_1788099396653_j8owv",
+      "roadmap_id": "rdm_1788165958562_scrgm",
+      "node_id": "fe-performance",
+      "action": "completed",
+      "id": "evt_1788166483989_ev03j",
+      "created_at": "2026-08-31T08:54:43.989Z"
     }
   ],
   "resources": [],
